@@ -37,5 +37,27 @@ define('FOPEN_WRITE_CREATE_STRICT',				'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 
 
+/*
+|--------------------------------------------------------------------------
+| MESES
+|--------------------------------------------------------------------------
+|
+| Por si no funciona el LOC
+|
+*/
+
+define('1', 'Diciembre');
+define('2', 'Enero');
+define('3', 'Febrero');
+define('4', 'Marzo');
+define('5', 'Abril');
+define('6', 'Mayo');
+define('7', 'Junio');
+define('8', 'Julio');
+define('9', 'Agosto');
+define('10', 'Septiembre');
+define('11', 'Octubre');
+define('12', 'Noviembre');
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

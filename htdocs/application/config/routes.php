@@ -41,14 +41,18 @@
 $route['default_controller'] = 'revista/view';
 $route['404_override'] = '';
 
+
+
 //Revista
 $route['verificar_revista/(:any)'] = 'revista/ajax_verificar_existente/$1/$2';
 $route['revista/login'] = 'revista/login';
 $route['revista/logout'] = 'revista/logout';
 $route['do_upload'] = 'revista/do_upload';
 
-$route['usuario/(:any)'] = 'usuario/view/$1/$2';
-$route['(:any)'] = 'revista/view/$1';
+//General
+$route['(:any)'] = 'pages/view/$1';
+
+//$route['usuario/(:any)'] = 'usuario/view/$1/$2';
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

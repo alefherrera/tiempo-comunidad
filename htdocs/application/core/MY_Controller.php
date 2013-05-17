@@ -67,7 +67,6 @@ class MY_Controller extends CI_Controller{
         else
             $this->data['error_login'] = validation_errors();
         $this->data['usuario'] = $this->session->userdata('usuario');
-        
         $this->view();
     }
     

@@ -43,22 +43,27 @@
                                 <div id="loginContainer" class="floatleft">
                                     <a href="#" id="loginButton"><span>Login</span><em></em></a>
                                     <div style="clear:both"></div>
-
-                                    <div id="loginBox">     
+                                    
+                                    <div id="loginBox" <?php if(isset($error_login)) echo 'style="display:inline"'; ?>>     
                                         <?php
-                                        if (isset($error_login))
-                                            echo $error_login;
+                                        
                                         ?>
                                         <?php
+                                        $atributos = array('id' => 'loginForm');
                                         if ($usuario != false) {
-                                            echo form_open('revista/logout');
+
+                                            echo form_open('revista/logout', $atributos);
+                                            echo '<fieldset id="body">';
                                             echo $usuario['nombre_usuario'] . '<br/>';
                                             echo form_open('revista/logout') . '
-                                    <input type="submit" name"submit" value="Desloguear"/>';
+                                                <input type="submit" name"submit" value="Desloguear"/>
+                                            </fieldset>';
                                         } else {
-                                            $atributos = array('id' => 'loginForm');
                                             echo form_open('revista/login', $atributos) . '
-                                        <fieldset id="body">
+                                        <fieldset id="body">';
+                                            if (isset($error_login))
+                                                echo '<div id="error">' . $error_login . '</div>';
+                                            echo '
                                             <fieldset>
                                                 <label for="usuario">Usuario</label> 
                                                 <input type="input" value="' . $this->input->post('usuario') . '"  name="usuario" id="usuario" />

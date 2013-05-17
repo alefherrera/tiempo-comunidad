@@ -22,6 +22,7 @@ class revistas_model extends CI_Model{
             'titulo' => '',
             'mes' => 1,
             'año' => 1,
+            'idusuario' => 0,
             'activo' => true
         );
     }
@@ -40,6 +41,7 @@ class revistas_model extends CI_Model{
         $insert['titulo'] = $this->input->post('titulo');
         $insert['mes'] = $this->input->post('mes');
         $insert['año'] = $this->input->post('ano');
+        $insert['idusuario'] = $this->session->userdata('usuario')['idusuarios'];
         $insert['activo'] = true;
         
         return $this->db->insert('revistas', $insert);

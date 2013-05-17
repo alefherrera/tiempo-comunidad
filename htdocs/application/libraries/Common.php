@@ -23,7 +23,7 @@ class Common {
             $select .= '<option value="' . $i . '"';
             if($selected == ('0' . $i) || $selected == $i)
                 $select .= 'selected="selected"';
-            $select .= '>' . strftime('%B', mktime(0,0,0,$i,0,0)) .'</option>';
+            $select .= '>' . constant($i) .'</option>';
         }
         $select .= '</select>';
         
