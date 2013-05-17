@@ -20,7 +20,7 @@
                 <header>
                     <div id="principal">
                         <div id="logo" class="floatleft">
-                            <img src="/images/index/bannerlogo.gif"/>
+                            <a href="/index.php"> <img src="/images/index/bannerlogo.gif"/></a>
                         </div>
 
                         <div id="slogan" class="floatleft">	<p>"El futuro es nuestro</p> 
