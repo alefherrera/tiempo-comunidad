@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = 'nacho692.no-ip.org';
 $db['default']['username'] = 'tiempo';
 $db['default']['password'] = 'hyunaesamor';
 $db['default']['database'] = 'tiempo_comunidad';

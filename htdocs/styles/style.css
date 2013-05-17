@@ -2,7 +2,7 @@
 /* CSS Document */
 
 * { border:0; margin:0; padding:0;
-	font-family:'Open Sans Condensed', Arial, Helvetica; font-size:26px; font-weight:300; letter-spacing:0.03em;
+	font-family:'Open Sans Condensed', Arial, Helvetica; font-size:26px; font-weight:300; letter-spacing:0.00em;
 	list-style:none; text-decoration:none;}/* CSS Document */
 
 body{background-image:url(../images/index/background_body.png);}
@@ -47,7 +47,8 @@ footer{background-color:#C32127; display:table; width:982px;}
 
 
 
-#contenido1{display:table; width:783px; height:440px; background-color:#666; clear:both; margin-top:15px; margin-bottom:20px;}
+#contenido1{display:table; width:783px; height:440px;  border-top:2px solid #c32127;
+            border-bottom:2px solid #c32127; clear:both; margin-top:15px; margin-bottom:20px;}
 aside{display:block; width:178px;}
 #anexo1{display:block; width:178px; height:206px; background-color:#03F; margin-top:15px; margin-left:21px;}
 
@@ -194,3 +195,25 @@ input:focus {
 
 
 /* log in style end */
+/* contenido1 formulario */
+#contenido1 h1{font-weight: 700;}
+#inputtitulo{border:1px solid #666;
+              border-radius:3px; -moz-border-radius:3px;}
+#contenido1 label{font-size:18px; font-weight: 0;}
+#contenido1 input{font-size:16px;}
+#contenido1 select{font-size:18px; 
+              border-left:1px solid #666;
+              border-radius:3px; 
+              -moz-border-radius:3px;}
+
+#contenido1 select:hover{cursor:pointer;}
+
+#contenido1 tr{height: 40px;}
+#contenido1 td{padding-right:10px;}
+#botonconfrev{padding-left:10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;
+              background-color:#E6E7E8; border:1px solid #666;
+              border-radius:3px; -moz-border-radius:3px;}
+#botonconfrev:hover{background-color: #999; cursor: pointer;}
+#revpdf{font-size: 18px; font-weight: 700;color:#000;}
+#revpdf:hover{color:#ccc;}
+/* contenido1 formulario FIN */
