@@ -92,11 +92,11 @@
                                 <li><a href="#">ÚTILES </a> </li>
                                 <li><a href="#">ANUNCIANTES </a> </li>
                                 <li><a href="/index.php/contacto">CONTÁCTENOS </a> </li>
-                                <li><img src="/images/index/promo_prueba.gif"/></li>
+                                <!--<li><img src="/images/index/promo_prueba.gif"/></li>-->
                             </ul></nav>
                     </div>
-
+                    <div class="clearboth"/>
                 </header>
-
+                
 
                 </form>
