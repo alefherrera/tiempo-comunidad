@@ -46,17 +46,14 @@
                                     
                                     <div id="loginBox" <?php if(isset($error_login)) echo 'style="display:inline"'; ?>>     
                                         <?php
-                                        
-                                        ?>
-                                        <?php
                                         $atributos = array('id' => 'loginForm');
                                         if ($usuario != false) {
 
                                             echo form_open('revista/logout', $atributos);
                                             echo '<fieldset id="body">';
-                                            echo $usuario['nombre_usuario'] . '<br/>';
+                                            echo $usuario['nombre_usuario'];
                                             echo form_open('revista/logout') . '
-                                                <input type="submit" name"submit" value="Desloguear"/>
+                                                <input type="submit" id="login2" name"submit" value="Desloguear"/>
                                             </fieldset>';
                                         } else {
                                             echo form_open('revista/login', $atributos) . '
@@ -94,7 +91,7 @@
                                 <li><a href="#">NOTICIAS </a> </li>
                                 <li><a href="#">ÚTILES </a> </li>
                                 <li><a href="#">ANUNCIANTES </a> </li>
-                                <li><a href="#">CONTÁCTENOS </a> </li>
+                                <li><a href="/index.php/contacto">CONTÁCTENOS </a> </li>
                                 <li><img src="/images/index/promo_prueba.gif"/></li>
                             </ul></nav>
                     </div>
