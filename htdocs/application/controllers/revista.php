@@ -9,11 +9,15 @@ class revista extends MY_Controller{
         $this->load->library('common');
     }
     
-    public function view($filtro_revista = '')
+    public function view($mes = '', $año = '')
     {
-        $this->data['title'] = 'Tiempo de la Comunidad';
+        if($mes == '')
+            $mes = date('m');
+        if($año == '')
+            $año = date('Y');
         
-        $revista = $this->revistas_model->revista();
+        $this->data['title'] = 'Tiempo de la Comunidad';
+        $revista = $this->revistas_model->revista($mes, $año);
         $this->data['nombre_imagen'] = $revista['nombre_imagen'];
         $this->data['nombre_pdf'] = $revista['nombre_pdf'];
         $this->data['titulo'] = $revista['titulo'];

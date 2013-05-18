@@ -12,7 +12,6 @@ class Pages extends MY_Controller{
 	{
             show_404();
 	}
-
 	$this->data['title'] = ucfirst($page); // Capitalize the first letter
 	$this->data['error'] = '';
         

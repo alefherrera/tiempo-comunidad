@@ -88,7 +88,7 @@
                     <div id="botonera" class="clearboth">
                         <nav>   <ul>
                                 <li><a href="#">LA REVISTA </a> </li>
-                                <li><a href="#">NOTICIAS </a> </li>
+                                <li><a href="/index.php/notas">NOTAS </a> </li>
                                 <li><a href="#">ÚTILES </a> </li>
                                 <li><a href="#">ANUNCIANTES </a> </li>
                                 <li><a href="/index.php/contacto">CONTÁCTENOS </a> </li>

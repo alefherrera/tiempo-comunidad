@@ -47,6 +47,7 @@ $route['404_override'] = '';
 $route['verificar_revista/(:any)'] = 'revista/ajax_verificar_existente/$1/$2';
 $route['revista/login'] = 'revista/login';
 $route['revista/logout'] = 'revista/logout';
+$route['revista/(:any)'] = 'revista/view/$1/$2';
 $route['do_upload'] = 'revista/do_upload';
 
 //General

@@ -57,18 +57,26 @@ class revistas_model extends CI_Model{
         return $query->row_array();
     }
     
-    public function revista()
+    public function revista($mes, $año)
     {
         $this->db->select('nombre_pdf');
         $this->db->select('nombre_imagen');
         $this->db->select('titulo');
         $this->db->select('mes');
         $this->db->select('año');
-        $this->db->order_by('año','desc');
-        $this->db->order_by('mes','desc');
-        $this->db->limit(1);
-        $query = $this->db->get_where('revistas', array('activo' => true));
-        
+        $query = $this->db->get_where('revistas', array('activo' => true, 'mes' => $mes, 'año' => $año));
+        if(sizeof($query->row_array()) == 0)
+        {
+            $this->db->select('nombre_pdf');
+            $this->db->select('nombre_imagen');
+            $this->db->select('titulo');
+            $this->db->select('mes');
+            $this->db->select('año');
+            $this->db->order_by('año', 'desc');
+            $this->db->order_by('mes', 'desc');
+            $this->db->limit(1);
+            $query = $this->db->get_where('revistas', array('activo' => true));
+        }
         return $query->row_array();
     }
 }
