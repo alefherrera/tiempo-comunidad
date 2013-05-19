@@ -45,6 +45,8 @@ class notas extends MY_Controller{
                 $numeros[$i] = $pagina - $medio + $i;
             }
         }
+        $this->data['pagina'] = $pagina;
+        $this->data['ultima_pagina'] = ceil($this->data['cantidad']/$cant_pagina);
         $this->data['numeros'] = $numeros;
         
         $this->load->template('pages/notas.php', $this->data);
