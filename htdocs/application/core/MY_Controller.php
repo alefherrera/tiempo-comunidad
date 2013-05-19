@@ -9,7 +9,6 @@ class MY_Controller extends CI_Controller{
         $this->load->helper('cookie');
         $this->load->model('usuarios_model');
         
-
         //Si ya esta en sesion el usuario
         if($this->session->userdata('usuario') != false)
             $this->data['usuario'] = $this->session->userdata('usuario');
@@ -32,6 +31,7 @@ class MY_Controller extends CI_Controller{
     
     public function login()
     {
+        $this->load->library('user_agent');
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->library('form_validation');
@@ -67,16 +67,17 @@ class MY_Controller extends CI_Controller{
         else
             $this->data['error_login'] = validation_errors();
         $this->data['usuario'] = $this->session->userdata('usuario');
-        $this->view();
+        redirect($this->agent->referrer());
     }
     
     public function logout()
     {
+        $this->load->library('user_agent');
         setcookie('usuario', '', time()-3600, '/');
         setcookie('password', '', time()-3600, '/');
         $this->data['usuario'] = false;
         $this->session->set_userdata('usuario', false);
-        $this->view();
+        redirect($this->agent->referrer());
     }
 }
 
