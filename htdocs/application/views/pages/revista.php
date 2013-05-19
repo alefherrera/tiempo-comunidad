@@ -86,6 +86,7 @@
         </div>
 
         <div id="anexo2">
+            <select
         </div>
     </div>          
 </div>

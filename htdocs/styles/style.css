@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-* { border:0; margin:0; padding:0;
+* { margin:0; padding:0;
 	font-family:'Open Sans Condensed', Arial, Helvetica; font-size:26px; font-weight:300; letter-spacing:0.00em;
 	list-style:none; text-decoration:none;}/* CSS Document */
 
@@ -198,13 +198,14 @@ input:focus {
 /* contenido1 formulario */
 #contenido1 h1{font-weight: 700;}
 #inputtitulo{border:1px solid #666;
-              border-radius:3px; -moz-border-radius:3px;}
+              border-radius:3px;}
 #contenido1 label{font-size:18px; font-weight: 0;}
 #contenido1 input{font-size:16px;}
 #contenido1 select{font-size:18px; 
-              border-left:1px solid #666;
+  
               border-radius:3px; 
               -moz-border-radius:3px;}
+#contenido1 select option{font-size:18px;}
 
 #contenido1 select:hover{cursor:pointer;}
 
