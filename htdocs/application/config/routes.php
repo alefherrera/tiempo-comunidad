@@ -41,9 +41,12 @@
 $route['default_controller'] = 'revista/view';
 $route['404_override'] = '';
 
-
+//Notas
+$route['notas'] = 'notas/view';
+$route['notas/(:any)'] = 'notas/view/$1';
 
 //Revista
+$route['revista'] = 'revista/view';
 $route['verificar_revista/(:any)'] = 'revista/ajax_verificar_existente/$1/$2';
 $route['revista/login'] = 'revista/login';
 $route['revista/logout'] = 'revista/logout';
