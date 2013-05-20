@@ -8,7 +8,7 @@
         foreach ($notas as $nota) {
             ?>
             <div>
-                <p><a href='notas/<?php echo $nota['idnota'] ?>'><?php echo $nota['titulo'] ?></a></p>
+                <p><a href='notas/<?php echo $nota['idnota'] ?>'><?php echo $nota['titulo'] ?></a> por <?php echo $nota['autor']; ?> - <?php echo $nota['fecha_alta']; ?></p> 
                 <p><?php echo $nota['contenido'] ?></p>
             </div>
 
