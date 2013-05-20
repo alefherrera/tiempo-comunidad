@@ -23,6 +23,7 @@ class revistas_model extends CI_Model{
             'mes' => 1,
             'año' => 1,
             'idusuario' => 0,
+            'editorial' => '',
             'activo' => true
         );
     }
@@ -42,6 +43,7 @@ class revistas_model extends CI_Model{
         $insert['mes'] = $this->input->post('mes');
         $insert['año'] = $this->input->post('ano');
         $insert['idusuario'] = $this->session->userdata('usuario')['idusuarios'];
+        $insert['editorial'] = $this->input->post('editorial');
         $insert['activo'] = true;
         
         return $this->db->insert('revistas', $insert);
@@ -64,6 +66,7 @@ class revistas_model extends CI_Model{
         $this->db->select('titulo');
         $this->db->select('mes');
         $this->db->select('año');
+        $this->db->select('editorial');
         $query = $this->db->get_where('revistas', array('activo' => true, 'mes' => $mes, 'año' => $año));
         if(sizeof($query->row_array()) == 0)
         {

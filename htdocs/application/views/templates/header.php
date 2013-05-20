@@ -47,47 +47,41 @@
                                     <div id="loginBox" <?php if(isset($error_login)) echo 'style="display:inline"'; ?>>     
                                         <?php
                                         $atributos = array('id' => 'loginForm');
-                                        if ($usuario != false) {
-
-                                            echo form_open('revista/logout', $atributos);
-                                            echo '<fieldset id="body">';
-                                            echo $usuario['nombre_usuario'];
-                                            echo form_open('revista/logout') . '
-                                                <input type="submit" id="login2" name"submit" value="Desloguear"/>
-                                            </fieldset>';
-                                        } else {
-                                            echo form_open('revista/login', $atributos) . '
-                                        <fieldset id="body">';
-                                            if (isset($error_login))
-                                                echo '<div id="error">' . $error_login . '</div>';
-                                            echo '
+                                        if ($usuario != false):
+                                            echo form_open('revista/logout', $atributos); ?>
+                                            <fieldset id="body">
+                                            <?php echo $usuario['nombre_usuario']; ?>
+                                            <?php echo form_open('revista/logout'); ?>
+                                                <input type="submit" id="login2" name="submit" value="Desloguear"/>
+                                            </fieldset>
+                                        <?php else:
+                                            echo form_open('revista/login', $atributos) ?>
+                                        <fieldset id="body">
+                                            <?php if (isset($error_login)): ?>
+                                                <div id="error"> <?php echo $error_login ?> </div>
+                                            <?php endif ?>
                                             <fieldset>
                                                 <label for="usuario">Usuario</label> 
-                                                <input type="input" value="' . $this->input->post('usuario') . '"  name="usuario" id="usuario" />
+                                                <input type="input" value="<?php echo $this->input->post('usuario')?>"  name="usuario" id="usuario" />
                                             </fieldset>
                                             <fieldset>
                                                 <label for="password">Contraseña</label>
                                                 <input type="password" name="password" />
                                             </fieldset>
-
                                             <input type="submit" name="submit" id="login2" value="Ingresar" />
-                                            
                                             <label for="checkbox"><input type="checkbox" id="checkbox" name="recordar"/>Recuérdame</label>
-                                        </fieldset>';
-                                        }
-                                        ?>
-
+                                        </fieldset>
+                                        <?php endif ?>
                                     </div>
-
                                 </div>
-
                             </div>
                         </div>
                     </div>
 
                     <div id="botonera" class="clearboth">
                         <nav>   <ul>
-                                <li><a href="#">LA REVISTA </a> </li>
+                                <li><a href="#">QUINES SOMOS</a> </li>
+                                <li><a href='index.php/revista'>EDICIÓN IMPRESA</a> </li>
                                 <li><a href="/index.php/notas">NOTAS </a> </li>
                                 <li><a href="#">ÚTILES </a> </li>
                                 <li><a href="#">ANUNCIANTES </a> </li>

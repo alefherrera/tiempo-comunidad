@@ -22,12 +22,12 @@ class notas extends MY_Controller{
         //$this->data['nombre_pdf'] = $revista['nombre_pdf'];
         //$this->data['titulo'] = $revista['titulo'];
         $this->data['cantidad'] = $this->notas_model->cantidad_notas();
-        $cant_pagina = 3;
+        $cant_pagina = 5;
         if($this->data['cantidad'] != 0)
             $this->data['notas'] = $this->notas_model->notas($pagina, $cant_pagina);
 //        echo ceil($this->data['cantidad']/5);
         
-        $paginas_mostrar_max = 3;
+        $paginas_mostrar_max = 5;
         
         if(ceil($this->data['cantidad']/$cant_pagina) <= $paginas_mostrar_max)
             $paginas_mostrar_max = ceil($this->data['cantidad']/$cant_pagina);

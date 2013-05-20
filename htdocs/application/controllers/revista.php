@@ -21,6 +21,7 @@ class revista extends MY_Controller{
         $this->data['nombre_imagen'] = $revista['nombre_imagen'];
         $this->data['nombre_pdf'] = $revista['nombre_pdf'];
         $this->data['titulo'] = $revista['titulo'];
+        $this->data['editorial'] = $revista['editorial'];
         
         $this->load->template('pages/revista.php', $this->data);
     }
@@ -51,7 +52,7 @@ class revista extends MY_Controller{
 
         //Valido el formulario
         $this->form_validation->set_rules('titulo', "Titulo", 'required');
-        
+        $this->form_validation->set_rules('editorial', "Editorial", 'required');
         if($this->form_validation->run() === FALSE)
         {
             $this->data['error_upload'] = validation_errors();
