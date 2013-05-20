@@ -1,7 +1,7 @@
 @charset "utf-8";
 /* CSS Document */
 
-* { margin:0; padding:0;
+* { border:0; margin:0; padding:0;
 	font-family:'Open Sans Condensed', Arial, Helvetica; font-size:26px; font-weight:300; letter-spacing:0.00em;
 	list-style:none; text-decoration:none;}/* CSS Document */
 
@@ -193,24 +193,26 @@ input:focus {
     outline:none;
 }
 
+#inforev {
+    float:left;
+    width:261px;
+}
 
 /* log in style end */
 /* contenido1 formulario */
+#contenido1 #formulario {width: 500px;}
 #contenido1 h1{font-weight: 700;}
 #inputtitulo{border:1px solid #666;
-              border-radius:3px;}
+              border-radius:3px; -moz-border-radius:3px;}
 #contenido1 label{font-size:18px; font-weight: 0;}
 #contenido1 input{font-size:16px;}
 #contenido1 select{font-size:18px; 
-  
+              border-left:1px solid #666;
               border-radius:3px; 
               -moz-border-radius:3px;}
-#contenido1 select option{font-size:18px;}
 
 #contenido1 select:hover{cursor:pointer;}
 
-#contenido1 tr{height: 40px;}
-#contenido1 td{padding-right:10px;}
 #botonconfrev{padding-left:10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;
               background-color:#E6E7E8; border:1px solid #666;
               border-radius:3px; -moz-border-radius:3px;}
