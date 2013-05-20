@@ -6,79 +6,70 @@
 <div id="contenido">
 
     <div id="contenido1" class="floatleft">
-        <?php
-            echo '<div id="inforev" >';
-        if (isset($titulo))
-            echo '<h1>' . $titulo . '</h1>';
-        if (isset($nombre_imagen))
-            echo '<img src="/revista/' . $nombre_imagen . '"/> ';
-        echo '<br/>';
-        if (isset($nombre_pdf))
-            echo '<a id="revpdf" href="/revista/' . $nombre_pdf . '">Revista .pdf</a> <br/>';
-        echo '</div>';
-        if (isset($error_upload))
-            echo $error_upload;
-
-        if ($usuario != false && $usuario['idnivel'] == 1) {
-            echo '<div id="formulario" >';
-            echo form_open_multipart('do_upload');
-
-            echo '<table>
-                <tr>
-                <td>
+        <div id="inforev">
+            <?php if (isset($titulo)): ?>
+                <h1><?php echo $titulo ?></h1>
+            <?php endif ?>
+            <?php if (isset($nombre_imagen)): ?>
+                <img src="/revista/<?php echo $nombre_imagen ?>"/>
+            <?php endif ?>
+            <br/>
+            <?php if (isset($nombre_pdf)): ?>
+                <a id="revpdf" href="/revista/<?php echo $nombre_pdf ?>">Edición Impresa</a> <br/>
+            <?php endif ?>
+        </div>
+        <div style="float:left; width:522px; word-wrap: break-word;">
+                <?php if(isset($editorial)):?>
+                    <?php echo nl2br($editorial); ?>
+                <?php endif ?>
+        </div>
+        <div class="clearboth"></div>
+        <?php if (isset($error_upload)): ?>
+            <div id="error"><?php echo $error_upload ?></div>
+        <?php endif ?>
+        <?php if ($usuario != false && $usuario['idnivel'] == 1): ?>
+            <div id="formulario" >
+                <?php echo form_open_multipart('do_upload') ?>
+                <div>
                     <label for="titulo">Titulo</label>
-                </td>
-                <td>
-                    <input id="inputtitulo" type="text" name="titulo" size="45" value="';
-            if (isset($titulo_form))
-                echo $titulo_form;
-            echo '"/>
-                    </td>
-                    <tr>
-                    <td>
-                        <label for="imagen">Portada (Imágen)</label>
-                    </td>
-                    <td>
-                        <input type="file" name="imagen" size="45" />
-                    </td>
-                    </tr>
-                    <tr>
-                    <td>
-                        <label for="pdf">Revista (PDF)</label>
-                    </td>
-                    <td>
-                        <input type="file" name="pdf" size="45" />
-                    </td>
-                    </tr>
-                    <tr>
-                    <td>
-                        <label for="ano">Año</label>
-                    </td>
-                    <td>';
-                        echo $this->common->select_año();
-                        echo '
-                    </td>
-                    <tr>
-                    <td>
+                </div>
+                <div>
+                    <input id="inputtitulo" type="text" name="titulo" maxlength="45" value="<?php if (isset($titulo_form)) echo $titulo_form ?>"/>
+                </div>
+                <div>
+                    <label for="imagen">Portada (Imágen)</label>
+                </div>
+                <div>
+                    <input type="file" name="imagen" size="45" />
+                </div>
+                <div>
+                    <label for="pdf">Revista (PDF)</label>
+                </div>
+                <div>
+                    <input type="file" name="pdf" size="45" />
+                </div>
+                <div>
+                    <label for="ano">Año</label>
+                </div>
+                <div>
+                    <?php echo $this->common->select_año(); ?>
+                </div>
+                <div>
                     <label for="mes">Mes</label>
-                    </td>
-                    <td>';
-                        echo $this->common->select_mes();
-                        echo '
-                    </td>
-                    </tr>
-                    <tr>
-                    <td></td>
-                    <td>
-                    
-                    <input id="botonconfrev" type="submit" onclick="return verificar_revista()" value="Confirmar" />
-                    </td>
-                    </tr>
-                    </table>
-                    </form>';
-            echo '</div>';
-        }
-        ?>
+                </div>
+                <div>
+                    <?php echo $this->common->select_mes(); ?>
+                </div>
+                <div>
+                    <label for="editorial">Editorial On-Line</label>
+                </div>
+                <div>
+                    <textarea name="editorial" maxlength="500" rows="5"></textarea>
+                </div>
+                <input id="botonconfrev" type="submit" onclick="return verificar_revista()" value="Confirmar" />
+                </form>
+            </div>
+        <?php endif ?>
     </div>
 
     <div id="aside" class="floatleft">
@@ -86,32 +77,31 @@
         </div>
 
         <div id="anexo2">
-            <select
         </div>
     </div>          
 </div>
 
 
 <script>
-    function verificar_revista()
-    {
-//        $.get('/index.php/verificar_revista/' + $('#ddlMes').val() + '/' + $('#ddlAno').val(), function(revista){
-//            if(revista === 'false')
-//                return false;
-//            window.confirm("Ya existe una revista en el mes y año seleccionado: " + revista + " ¿Continuar?");
-//        });
+                function verificar_revista()
+                {
+                    //        $.get('/index.php/verificar_revista/' + $('#ddlMes').val() + '/' + $('#ddlAno').val(), function(revista){
+                    //            if(revista === 'false')
+                    //                return false;
+                    //            window.confirm("Ya existe una revista en el mes y año seleccionado: " + revista + " ¿Continuar?");
+                    //        });
 
-        var revista;
-        $.ajax({url: '/index.php/verificar_revista/' + $('#ddlMes').val() + '/' + $('#ddlAno').val(),
-            async: false,
-            dataType: 'html',
-            success: function(data) {
-                revista = data;
-            }
-        });
-        if (revista === 'false')
-            return true;
-        window.confirm("Ya existe una revista en el mes y año seleccionado: " + revista + " ¿Continuar?");
-    }
+                    var revista;
+                    $.ajax({url: '/index.php/verificar_revista/' + $('#ddlMes').val() + '/' + $('#ddlAno').val(),
+                        async: false,
+                        dataType: 'html',
+                        success: function(data) {
+                            revista = data;
+                        }
+                    });
+                    if (revista === 'false')
+                        return true;
+                    window.confirm("Ya existe una revista en el mes y año seleccionado: " + revista + " ¿Continuar?");
+                }
 
 </script>
