@@ -81,7 +81,7 @@
                     <div id="botonera" class="clearboth">
                         <nav>   <ul>
                                 <li><a href="/index.php/quienes">QUINES SOMOS</a> </li>
-                                <li><a href=""/index.php/revista">EDICIÓN IMPRESA</a> </li>
+                                <li><a href="/index.php/revista">EDICIÓN IMPRESA</a> </li>
                                 <li><a href="/index.php/notas">NOTAS </a> </li>
                                 <li><a href="/index.php/utiles">ÚTILES </a> </li>
                                 <li><a href="/index.php/anunciantes">ANUNCIANTES </a> </li>
