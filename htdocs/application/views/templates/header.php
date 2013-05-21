@@ -41,7 +41,7 @@
                                 <a id="twitter" href="#" class="floatleft">tiempo twitter </a>
 
                                 <div id="loginContainer" class="floatleft">
-                                    <a href="#" id="loginButton"><span>Login</span><em></em></a>
+                                    <a href="#" id="loginButton" <?php if($usuario != false) echo 'style="background: url(../images/index/login_logo_verde.gif) no-repeat;"'?>><span>Login</span><em></em></a>
                                     <div style="clear:both"></div>
                                     
                                     <div id="loginBox" <?php if(isset($error_login)) echo 'style="display:inline"'; ?>>     
