@@ -49,7 +49,23 @@ class notas extends MY_Controller{
         $this->data['ultima_pagina'] = ceil($this->data['cantidad']/$cant_pagina);
         $this->data['numeros'] = $numeros;
         
-        $this->load->template('pages/notas.php', $this->data);
+        $this->load->template('/notas/notas.php', $this->data);
+    }
+    
+    public function nota_view($idnota = 0){
+        if($idnota == 0){
+            show_404();
+            return;
+        }
+        $nota = $this->notas_model->nota($idnota);
+        if(sizeof($nota) == 0 || $nota == false){
+            show_404();
+            return;
+        }
+        
+        $this->data['title'] = $nota['titulo'];
+        $this->data['nota'] = $nota;
+        $this->load->template('/notas/nota.php', $this->data);
     }
 }
 

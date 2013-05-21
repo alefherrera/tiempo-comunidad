@@ -202,10 +202,11 @@ input:focus {
 /* contenido1 formulario */
 #contenido1 #formulario {width: 500px;}
 #contenido1 h1{font-weight: 700;}
-#inputtitulo{border:1px solid #666;
-              border-radius:3px; -moz-border-radius:3px;}
 #contenido1 label{font-size:18px; font-weight: 0;}
-#contenido1 input{font-size:16px;}
+#contenido1 input{font-size:16px; border:1px solid #666;
+              border-radius:3px; -moz-border-radius:3px;}
+#contenido1 textarea{font-size:16px; border:1px solid #666;
+              border-radius:3px; -moz-border-radius:3px;}
 #contenido1 select{font-size:18px; 
               border-left:1px solid #666;
               border-radius:3px; 

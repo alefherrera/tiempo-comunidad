@@ -35,6 +35,16 @@ class notas_model extends CI_Model{
         $query = $this->db->get('notas', $cant_pag, ($pagina-1)*$cant_pag);
         return $query->result_array();
     }
+    
+    public function nota($idnota){
+        if($idnota == 0)
+            return false;
+        
+        $campos = "idnota, titulo, idusuario, autor, contenido, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta";
+        $this->db->select($campos, false);
+        $query = $this->db->get_where('notas', array('idnota' => $idnota, 'activo' => true));
+        return $query->row_array();
+    }
 }
 
 ?>

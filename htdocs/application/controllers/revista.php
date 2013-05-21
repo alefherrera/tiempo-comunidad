@@ -23,7 +23,7 @@ class revista extends MY_Controller{
         $this->data['titulo'] = $revista['titulo'];
         $this->data['editorial'] = $revista['editorial'];
         
-        $this->load->template('pages/revista.php', $this->data);
+        $this->load->template('revista/revista.php', $this->data);
     }
     
     public function ajax_verificar_existente($mes, $ano)
@@ -100,7 +100,7 @@ class revista extends MY_Controller{
         }
         else{
             $this->revistas_model->upload($imagen, $pdf);
-            $this->load->view('pages/upload_success', $this->data['imagen']);
+            $this->load->view('revista/upload_success', $this->data['imagen']);
         }
     }
 }
