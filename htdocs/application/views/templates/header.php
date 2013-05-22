@@ -50,9 +50,9 @@
                                         if ($usuario != false):
                                             echo form_open('revista/logout', $atributos); ?>
                                             <fieldset id="body">
-                                            <?php echo $usuario['nombre_usuario']; ?>
+                                                <div id="usuariologueado" class="floatleft"> <?php echo  $usuario['nombre_usuario']; ?></div>
                                             <?php echo form_open('revista/logout'); ?>
-                                                <input type="submit" id="login2" name="submit" value="Desloguear"/>
+                                                <input type="submit" id="login3" name="submit" value="Desloguear"/>
                                             </fieldset>
                                         <?php else:
                                             echo form_open('revista/login', $atributos) ?>
