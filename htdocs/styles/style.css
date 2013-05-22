@@ -2,7 +2,7 @@
 /* CSS Document */
 
 * { border:0; margin:0; padding:0;
-	font-family:'Open Sans Condensed', Arial, Helvetica; font-size:26px; font-weight:300; letter-spacing:0.00em;
+	font-family:'Open Sans Condensed', Arial, Helvetica; font-size: 18px; font-weight:300; letter-spacing:0.00em;
 	list-style:none; text-decoration:none;}/* CSS Document */
 
 body{background-image:url(../images/index/background_body.png);}
@@ -127,9 +127,11 @@ fieldset#body {
     margin:0;
 }
 
+#usuariologueado{margin-top:8px; margin-right:10px;margin-left: 10px;}
+
 #loginForm #checkbox {
     width:auto;
-    margin:1px 9px 0 0;
+    margin:6px 9px 0 0;
     float:left;
     *margin:-3px 9px 0 0; /* IE7 Fix */
 }
@@ -174,9 +176,23 @@ fieldset#body {
     margin:0 12px 0 0;
     cursor:pointer;
     *padding:7px 2px 8px 2px; /* IE7 Fix */
+    
+    
 }
+#loginForm #login3 {
+    float:right;
+    width:auto;
+    background:#de4633 url(../images/login/loginbuttonbg.png) repeat-x;
+    color:#fff;
+    padding:7px 10px 8px 10px;
+    box-shadow:none;
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    margin:0 12px 0 0;
+    cursor:pointer;
+    *padding:7px 2px 8px 2px; /* IE7 Fix */
 
-/* Forgot your password */
+/* Recuerdame */
 #loginForm span {
     text-align:center;
     display:block;
@@ -201,7 +217,6 @@ input:focus {
 /* log in style end */
 /* contenido1 formulario */
 #contenido1 #formulario {width: 500px;}
-#contenido1 h1{font-weight: 700;}
 #contenido1 label{font-size:18px; font-weight: 0;}
 #contenido1 input{font-size:16px; border:1px solid #666;
               border-radius:3px; -moz-border-radius:3px;}
@@ -220,4 +235,6 @@ input:focus {
 #botonconfrev:hover{background-color: #999; cursor: pointer;}
 #revpdf{font-size: 18px; font-weight: 700;color:#000;}
 #revpdf:hover{color:#ccc;}
+
+#contenido #contenido1 #inforev h2{font-size: 60px; font-weight: 700;}
 /* contenido1 formulario FIN */
