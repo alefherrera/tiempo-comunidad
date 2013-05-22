@@ -60,11 +60,13 @@ aside{display:block; width:178px;}
 }
 
 /* Login Button */
+
+
+
 #loginButton { 
     display:block;
     float:left;
 	margin-left:10px; height:29px; width:29px;
-    background:url(../images/index/login_logo.gif) no-repeat;  
     position:relative;
     cursor:pointer;
 }
@@ -74,6 +76,14 @@ aside{display:block; width:178px;}
     display:block;
 	text-indent: -99999px;
 	}
+
+.nologueadoButton {
+    background:url(../images/index/login_logo.gif) no-repeat;
+}
+.logueadoButton { 
+    background:url(../images/index/login_logo_verde.gif) no-repeat;  
+}
+
 
 #loginButton:hover {
     background-position: bottom;
