@@ -67,6 +67,19 @@ class notas extends MY_Controller{
         $this->data['nota'] = $nota;
         $this->load->template('/notas/nota.php', $this->data);
     }
+    
+    public function nueva_nota($imagen = ''){
+           //Inserto la nueva
+        $insert['titulo'] = $this->input->post('titulo');
+        $insert['imagen'] = $imagen;
+        $insert['contenido'] = $this->input->post('contenido');
+        $insert['idusuario'] = $this->session->userdata('usuario')['idusuarios'];
+        $insert['activo'] = true;
+        $insert['autor'] = $this->input->post('autor');
+        $insert['activo'] = true;
+        
+        return $this->db->insert('notas', $insert);
+    }
 }
 
 ?>

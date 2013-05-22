@@ -6,10 +6,15 @@
 <div id="contenido">
 
     <div id="contenido1" class="floatleft">
-        <div id="inforev">
-            <?php if (isset($titulo)): ?>
+        
+        <div class="success">
+            <?php if(isset($success) && $success == true) echo 'Subido con éxito!'; ?>
+        </div>
+        <?php if (isset($titulo)): ?>
                 <h1 id="test"><?php echo $titulo ?></h1>
             <?php endif ?>
+        <div id="inforev">
+            
             <?php if (isset($nombre_imagen)): ?>
                 <img src="/revista/<?php echo $nombre_imagen ?>"/>
             <?php endif ?>
@@ -64,7 +69,7 @@
                     <label for="editorial">Editorial On-Line</label>
                 </div>
                 <div>
-                    <textarea name="editorial" maxlength="500" rows="5"></textarea>
+                    <textarea name="editorial" maxlength="500" rows="5"><?php if (isset($editorial_form)) echo $editorial_form;?></textarea>
                 </div>
                 <input id="botonconfrev" type="submit" onclick="return verificar_revista()" value="Confirmar" />
                 </form>
@@ -101,7 +106,7 @@
                     });
                     if (revista === 'false')
                         return true;
-                    window.confirm("Ya existe una revista en el mes y año seleccionado: " + revista + " ¿Continuar?");
+                    return window.confirm("Ya existe una revista en el mes y año seleccionado: " + revista + " ¿Continuar?");
                 }
 
 </script>

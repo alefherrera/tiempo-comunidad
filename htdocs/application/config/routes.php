@@ -50,12 +50,12 @@ $route['nota/(:any)'] = 'notas/nota_view/$1';
 //Revista
 $route['revista'] = 'revista/view';
 $route['verificar_revista/(:any)'] = 'revista/ajax_verificar_existente/$1/$2';
-$route['revista/login'] = 'revista/login';
-$route['revista/logout'] = 'revista/logout';
 $route['revista/(:any)'] = 'revista/view/$1/$2';
 $route['do_upload'] = 'revista/do_upload';
 
 //General
+$route['revista/login'] = 'revista/login';
+$route['revista/logout'] = 'revista/logout';
 $route['(:any)'] = 'pages/view/$1';
 
 //$route['usuario/(:any)'] = 'usuario/view/$1/$2';

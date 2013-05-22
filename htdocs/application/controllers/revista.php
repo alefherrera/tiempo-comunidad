@@ -15,7 +15,6 @@ class revista extends MY_Controller{
             $mes = date('m');
         if($año == '')
             $año = date('Y');
-        
         $this->data['title'] = 'Tiempo de la Comunidad';
         $revista = $this->revistas_model->revista($mes, $año);
         $this->data['nombre_imagen'] = $revista['nombre_imagen'];
@@ -55,16 +54,16 @@ class revista extends MY_Controller{
         $this->form_validation->set_rules('editorial', "Editorial", 'required');
         if($this->form_validation->run() === FALSE)
         {
+            $this->data['titulo_form'] = $this->input->post('titulo');
+            $this->data['editorial_form'] = $this->input->post('editorial');
             $this->data['error_upload'] = validation_errors();
             $this->view();
             return;
         }
-        $this->data['titulo_form'] = $this->input->post('titulo');
         
         //Manejo la subida de archivos
         $pdf = '';
         $imagen = '';
-        
         $ferror = FALSE;
         $uploaded_files = $_FILES;
         foreach($uploaded_files as $key => $value){
@@ -92,6 +91,10 @@ class revista extends MY_Controller{
         }
         
         if($ferror){
+            $this->data['titulo_form'] = $this->input->post('titulo');
+            $this->data['editorial_form'] = $this->input->post('editorial');
+            $this->data['titulo_form'] = $this->input->post('titulo');
+            $this->data['editorial_form'] = $this->input->post('editorial');
             if($imagen != '')
                 unlink('./revista/'.$this->data['imagen']['upload_data']['file_name']);
             if($pdf != '')
@@ -100,7 +103,9 @@ class revista extends MY_Controller{
         }
         else{
             $this->revistas_model->upload($imagen, $pdf);
-            $this->load->view('revista/upload_success', $this->data['imagen']);
+            $this->data['success'] = true;
+            echo $this->data['success'];
+            $this->view();
         }
     }
 }
