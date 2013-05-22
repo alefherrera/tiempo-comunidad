@@ -15,7 +15,6 @@ class revistas_model extends CI_Model{
     
     public function __construct()
     {
-        $this->load->database();
         $this->insert = array(
             'nombre_pdf' => '',
             'nombre_imagen' => '',

@@ -33,6 +33,7 @@ class CI_Model {
 	 */
 	function __construct()
 	{
+                $this->load->database();
 		log_message('debug', "Model Class Initialized");
 	}
 
@@ -50,6 +51,10 @@ class CI_Model {
 		$CI =& get_instance();
 		return $CI->$key;
 	}
+        
+        public function __destruct(){
+            $this->db->close();
+        }
 }
 // END Model Class
 
