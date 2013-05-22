@@ -13,6 +13,7 @@
 class notas_model extends CI_Model{
     public function __construct()
     {
+        
     }
     
     public function cantidad_notas(){

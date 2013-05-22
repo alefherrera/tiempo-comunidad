@@ -42,7 +42,11 @@ class revista extends MY_Controller{
             show_404();
             return;
         }
-        
+        $this->data['titulo_form'] = $this->input->post('titulo');
+        $this->data['editorial_form'] = $this->input->post('editorial');
+        $this->data['titulo_form'] = $this->input->post('titulo');
+        $this->data['editorial_form'] = $this->input->post('editorial');
+
         $config['upload_path'] = './revista/';
         $config['allowed_types'] = 'gif|jpg|png|pdf';
         $config['max_size'] = '5000';
@@ -59,8 +63,6 @@ class revista extends MY_Controller{
         $this->form_validation->set_rules('editorial', "Editorial", 'required');
         if($this->form_validation->run() === FALSE)
         {
-            $this->data['titulo_form'] = $this->input->post('titulo');
-            $this->data['editorial_form'] = $this->input->post('editorial');
             $this->data['error_upload'] = validation_errors();
             $this->view();
             return;
@@ -96,10 +98,7 @@ class revista extends MY_Controller{
         }
         
         if($ferror){
-            $this->data['titulo_form'] = $this->input->post('titulo');
-            $this->data['editorial_form'] = $this->input->post('editorial');
-            $this->data['titulo_form'] = $this->input->post('titulo');
-            $this->data['editorial_form'] = $this->input->post('editorial');
+
             if($imagen != '')
                 unlink('./revista/'.$this->data['imagen']['upload_data']['file_name']);
             if($pdf != '')
@@ -108,9 +107,8 @@ class revista extends MY_Controller{
         }
         else{
             $this->revistas_model->upload($imagen, $pdf);
-            $this->data['success'] = true;
-            echo $this->data['success'];
-            $this->view();
+            $this->data['redireccion'] = '/index.php/revista';
+            $this->load->template('/success.php', $this->data);
         }
     }
 }

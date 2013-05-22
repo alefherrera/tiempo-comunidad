@@ -6,6 +6,7 @@ class MY_Controller extends CI_Controller{
     function __construct()
     {
         parent::__construct();
+        $this->data['title'] = 'Tiempo de la Comunidad';
         $this->load->helper('cookie');
         $this->load->model('usuarios_model');
         

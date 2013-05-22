@@ -66,10 +66,10 @@
                     <?php echo $this->common->select_mes(); ?>
                 </div>
                 <div>
-                    <label for="editorial">Editorial On-Line</label>
+                    <label for="editorial">Editorial On-Line (Maximo 1000 caracteres)</label>
                 </div>
                 <div>
-                    <textarea name="editorial" maxlength="500" rows="5"><?php if (isset($editorial_form)) echo $editorial_form;?></textarea>
+                    <textarea name="editorial" maxlength="1000" rows="10"><?php if (isset($editorial_form)) echo $editorial_form;?></textarea>
                 </div>
                 <input id="botonconfrev" type="submit" onclick="return verificar_revista()" value="Confirmar" />
                 </form>

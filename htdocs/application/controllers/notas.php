@@ -106,10 +106,13 @@ class notas extends MY_Controller {
                 $imagen = $this->upload->data();
             }
         }
+        
         $idnota = $this->notas_model->nueva_nota($imagen['file_name']);
-
-        if ($idnota > 0)
-            redirect('/nota/' . $idnota);
+        
+        if ($idnota > 0){
+            $this->data['redireccion'] = '/index.php/nota/' . $idnota;
+            $this->load->template('/success.php', $this->data);
+        }
         else
             show_404();
     }
