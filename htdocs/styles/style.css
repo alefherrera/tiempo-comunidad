@@ -191,6 +191,7 @@ fieldset#body {
     margin:0 12px 0 0;
     cursor:pointer;
     *padding:7px 2px 8px 2px; /* IE7 Fix */
+}
 
 /* Recuerdame */
 #loginForm span {
@@ -236,5 +237,6 @@ input:focus {
 #revpdf{font-size: 18px; font-weight: 700;color:#000;}
 #revpdf:hover{color:#ccc;}
 
-#contenido #contenido1 #inforev h2{font-size: 60px; font-weight: 700;}
+#contenido #contenido1 #inforev h1{font-size: 60px; font-weight: 700; background-color: red;}
+
 /* contenido1 formulario FIN */

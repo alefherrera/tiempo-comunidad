@@ -8,7 +8,7 @@
     <div id="contenido1" class="floatleft">
         <div id="inforev">
             <?php if (isset($titulo)): ?>
-                <h1><?php echo $titulo ?></h1>
+                <h1 id="test"><?php echo $titulo ?></h1>
             <?php endif ?>
             <?php if (isset($nombre_imagen)): ?>
                 <img src="/revista/<?php echo $nombre_imagen ?>"/>
