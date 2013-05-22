@@ -38,9 +38,14 @@ class revista extends MY_Controller{
     
     public function do_upload()
     {
+        if(!($this->data['usuario']['idnivel'] <= constant(Administrador))){
+            show_404();
+            return;
+        }
+        
         $config['upload_path'] = './revista/';
         $config['allowed_types'] = 'gif|jpg|png|pdf';
-        $config['max_size'] = '10000';
+        $config['max_size'] = '5000';
         $config['remove_spaces'] = TRUE;
         
         $this->load->helper('file');

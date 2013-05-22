@@ -57,9 +57,10 @@
             </div>
         <?php endif ?>
             <div class="clearboth"></div>
+            <div class="error"><?php if(isset($error_nota)) echo $error_nota ?></div>
         <?php if ($usuario != false && $usuario['idnivel'] < 2): ?>
             <div id="formulario" >
-                <?php echo form_open_multipart('do_upload') ?>
+                <?php echo form_open_multipart('nueva_nota') ?>
                 <div>
                     <label for="titulo">Titulo *</label>
                 </div>
@@ -82,9 +83,9 @@
                     <label for="contenido">Contenido *</label>
                 </div>
                 <div>
-                    <textarea name="contenido" maxlength="65000" rows="10"></textarea>
+                    <textarea name="contenido" maxlength="65000" rows="10"><?php if (isset($contenido_form)) echo $contenido_form ?></textarea>
                 </div>
-                <input id="botonconfrev" type="submit" value="Confirmar" />
+                <input id="botonconfrev" type="submit" onclick="return (window.confirm('¿Esta seguro que quiere crear esta nota?'))" value="Confirmar" />
                 </form>
                 <div>
                     Los campos con "*" son obligatorios.

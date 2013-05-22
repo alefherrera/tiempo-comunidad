@@ -7,7 +7,11 @@
         </h1>
         <p>
             <?php echo $nota['contenido'] ?>
+
         </p>
+        <?php if ($nota['imagen'] != ''): ?>
+            <img src="/images/notas/<?php echo $nota['imagen'] ?>"/>
+        <?php endif ?>
         <p>
             Por <?php echo $nota['autor'] ?> el <?php echo $nota['fecha_alta'] ?>
         </p>

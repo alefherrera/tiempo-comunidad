@@ -58,7 +58,7 @@
                                             echo form_open('revista/login', $atributos) ?>
                                         <fieldset id="body">
                                             <?php if (isset($error_login)): ?>
-                                                <div id="error"> <?php echo $error_login ?> </div>
+                                                <div class="error"> <?php echo $error_login ?> </div>
                                             <?php endif ?>
                                             <fieldset>
                                                 <label for="usuario">Usuario</label> 

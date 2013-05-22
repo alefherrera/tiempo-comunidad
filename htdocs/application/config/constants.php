@@ -59,5 +59,18 @@ define('10', 'Septiembre');
 define('11', 'Octubre');
 define('12', 'Noviembre');
 
+/*
+|--------------------------------------------------------------------------
+| Roles
+|--------------------------------------------------------------------------
+|
+| Roles de usuario
+|
+*/
+
+define('Administrador', '1');
+define('Contribuidor', '2');
+define('Usuario', '3');
+
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */

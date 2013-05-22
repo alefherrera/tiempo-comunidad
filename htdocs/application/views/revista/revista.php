@@ -30,7 +30,7 @@
         </div>
         <div class="clearboth"></div>
         <?php if (isset($error_upload)): ?>
-            <div id="error"><?php echo $error_upload ?></div>
+            <div id="class"><?php echo $error_upload ?></div>
         <?php endif ?>
         <?php if ($usuario != false && $usuario['idnivel'] == 1): ?>
             <div id="formulario" >
