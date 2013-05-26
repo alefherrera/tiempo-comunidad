@@ -15,9 +15,11 @@
             <?php endif ?>
         <div id="inforev">
             
-            <?php if (isset($nombre_imagen)): ?>
-                <img src="/revista/<?php echo $nombre_imagen ?>"/>
+            <div id="taparevactual">
+                <?php if (isset($nombre_imagen)): ?>
+                    <img src="/revista/<?php echo $nombre_imagen ?>"/>
             <?php endif ?>
+            </div>
             <br/>
             <?php if (isset($nombre_pdf)): ?>
                 <a id="revpdf" href="/revista/<?php echo $nombre_pdf ?>">Edición Impresa</a> <br/>
@@ -78,7 +80,7 @@
     </div>
 
     <div id="aside" class="floatleft">
-        <div id="anexo1">
+        <div id="anexo1"> <img src="/images/index/20anos.png"/>
         </div>
 
         <div id="anexo2">
