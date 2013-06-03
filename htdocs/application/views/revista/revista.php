@@ -16,6 +16,7 @@
         <div id="inforev">
             
             <div id="taparevactual">
+                <img src="/images/index/tiempotapamarzo.png"/>
                 <?php if (isset($nombre_imagen)): ?>
                     <img src="/revista/<?php echo $nombre_imagen ?>"/>
             <?php endif ?>
