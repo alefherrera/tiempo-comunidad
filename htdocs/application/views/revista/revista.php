@@ -11,12 +11,12 @@
             <?php if(isset($success) && $success == true) echo 'Subido con éxito!'; ?>
         </div>
         <?php if (isset($titulo)): ?>
-                <h1 id="test"><?php echo $titulo ?></h1>
+                <h1 class="titulo"><?php echo $titulo ?></h1>
             <?php endif ?>
         <div id="inforev">
             
             <div id="taparevactual">
-                <img src="/images/index/tiempotapamarzo.png"/>
+                <img class="imgprueba" src="/images/index/tiempotapamarzo2013.png"/>
                 <?php if (isset($nombre_imagen)): ?>
                     <img src="/revista/<?php echo $nombre_imagen ?>"/>
             <?php endif ?>
@@ -26,7 +26,7 @@
                 <a id="revpdf" href="/revista/<?php echo $nombre_pdf ?>">Edición Impresa</a> <br/>
             <?php endif ?>
         </div>
-        <div style="float:left; width:522px; word-wrap: break-word;">
+        <div class="parrafo">
                 <?php if(isset($editorial)):?>
                     <?php echo nl2br($editorial); ?>
                 <?php endif ?>
