@@ -46,9 +46,9 @@ footer{background-color:#C32127; display:table; width:982px;}
 #login:hover{background-position: bottom;}
 
 
-
-#contenido1{display:table; width:783px; height:440px;  border-top:2px solid #c32127;
-            border-bottom:2px solid #c32127; clear:both; margin-top:15px; margin-bottom:20px;}
+#contenido{display:table; margin-top: 20px;margin-bottom: 20px;}
+#contenido1{display:table; width:783px; height:440px; margin-bottom:20px;
+            border-bottom:2px solid #c32127; clear:both;}
 aside{display:block; width:178px;}
 #anexo1{display:table; width:178px; height:240px; background-color:#03F; margin-top:15px; margin-left:21px;}
 
@@ -224,7 +224,8 @@ input:focus {
     float:left;
     width:261px;
 }
-#taparevactual{display:block; width:230px; height:300px; background-color:#ccc; margin-top: 15px;}
+#taparevactual{display:table; width:250px; height:360px; background-color:#ccc; margin-top: 15px;}
+.imgprueba {height:360px; width:250px;}
 /* log in style end */
 /* contenido1 formulario */
 #contenido1 #formulario {width: 500px;}
@@ -247,6 +248,6 @@ input:focus {
 #revpdf{font-size: 18px; font-weight: 700;color:#000;}
 #revpdf:hover{color:#ccc;}
 
-#contenido #contenido1 h1#test{font-size: 24px; font-weight: 700; background-color:;}
-
+.titulo{font-size: 28px; font-weight: 700;color:#666;}
+.parrafo{float:left; width:510px; word-wrap: break-word;margin-left: 10px; margin-top: 10px; }
 /* contenido1 formulario FIN */
