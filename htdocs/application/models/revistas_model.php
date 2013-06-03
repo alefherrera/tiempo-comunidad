@@ -74,6 +74,7 @@ class revistas_model extends CI_Model{
             $this->db->select('titulo');
             $this->db->select('mes');
             $this->db->select('año');
+            $this->db->select('editorial');
             $this->db->order_by('año', 'desc');
             $this->db->order_by('mes', 'desc');
             $this->db->limit(1);
