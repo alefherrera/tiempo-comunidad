@@ -4,7 +4,7 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <link href="/styles/style.css" rel="stylesheet" type="text/css"/>
         <!--webfontsgoogle-->
-        <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
         <!--webfontsgoogleEND-->
 
@@ -80,7 +80,7 @@
 
                     <div id="botonera" class="clearboth">
                         <nav>   <ul>
-                                <li><a href="/index.php/quienes">QUINES SOMOS</a> </li>
+                                <li><a href="/index.php/quienes">QUIENES SOMOS</a> </li>
                                 <li><a href="/index.php/revista">EDICIÓN IMPRESA</a> </li>
                                 <li><a href="/index.php/notas">NOTAS </a> </li>
                                 <li><a href="/index.php/utiles">ÚTILES </a> </li>

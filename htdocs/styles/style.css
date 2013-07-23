@@ -10,7 +10,7 @@ body{background-color:#E6E7E8;}
 #wrapper{margin:auto; display:table; background-color:#fff; width:1024px;}
 #wrapper2{margin:auto; display:table; width:982px; background-color:#fff;}
 
-footer{background-color:#C32127; display:table; width:982px;}
+footer{background-color:#C32127; display:table; width:982px; padding-bottom: 30px;}
 
 .floatleft{float:left;}
 .floatright{float:right;}
@@ -19,7 +19,7 @@ footer{background-color:#C32127; display:table; width:982px;}
 #banner{display:block;}
 
 #botonera nav ul li{float:left; margin-right:10px; margin-top:20px;}
-#botonera nav ul li a{display:block; background-color:#E6E7E8; color:#000; font-family:"Roboto Slab"; font-weight:400; font-size:16px; padding-left:10px; padding-right:10px; padding-top:4px; padding-bottom:5px; border-left:7px solid #C32127;}
+#botonera nav ul li a{display:block; background-color:#E6E7E8; color:#000; font-family:"Open Sans Condensed"; font-weight:700; letter-spacing: 0.05em;color:#666;  font-size:15px; padding-left:10px; padding-right:10px; padding-top:4px; padding-bottom:5px; border-left:7px solid #C32127;}
 #botonera nav ul li a:hover{color:#E6E7E8; background-color:#333;}
 
 #slogan{width:320px; height:72px;display:block; padding-top:10px; padding-left:15px; border-right:2px solid #C32127;}
@@ -245,9 +245,25 @@ input:focus {
               background-color:#E6E7E8; border:1px solid #666;
               border-radius:3px; -moz-border-radius:3px;}
 #botonconfrev:hover{background-color: #999; cursor: pointer;}
-#revpdf{font-size: 18px; font-weight: 700;color:#000;}
+#revpdf{font-size: 15px; font-weight: 700;color:#000;}
 #revpdf:hover{color:#ccc;}
 
 .titulo{font-size: 28px; font-weight: 700;color:#666;}
-.parrafo{float:left; width:510px; word-wrap: break-word;margin-left: 10px; margin-top: 10px; }
+.parrafo{float:left; width:510px; word-wrap: break-word;margin-left: 10px; margin-top: 10px; font-family: "Carrois Gothic"; font-size: 14px; letter-spacing: 0.02em; }
 /* contenido1 formulario FIN */
+
+/* footer inicio */
+
+.copyright{color:#FFF; font-size:12px ;clear:both; display:block; margin-left:20px;}
+
+#botonerafooter nav ul{margin-left: 15px;}
+#botonerafooter nav ul li{float:left; margin-right:10px; margin-top:20px;}
+#botonerafooter nav ul li a{display:block;font-family:"Open Sans Condensed"; font-weight:700; letter-spacing: 0.05em;color:#FFF;  font-size:12px; padding-left:5px; padding-right:5px; padding-top:4px; padding-bottom:5px;}
+#botonerafooter nav ul li a:hover{text-decoration: underline;}
+#botonerafooter nav ul li img{vertical-align: middle;}
+
+footer strong{ color:#FFF; font-size: 12px;}
+
+
+/* footer FIN */
+
