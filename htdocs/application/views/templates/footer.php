@@ -11,15 +11,16 @@
                                 <li><a href="/index.php/utiles">ÚTILES </a> </li>
                                 <li><a href="/index.php/anunciantes">ANUNCIANTES </a> </li>
                                 <li><a href="/index.php/contacto">CONTÁCTENOS </a> </li>
+                                <li> <div id="seguinos">Seguinos »</div></li>
+                                <li> <a id="facebook" href="#" class="floatleft" style="padding: 0;" >tiempo facebook </a>
+                                <a id="twitter" href="#" class="floatleft" style="padding:0;">tiempo twitter </a>
+                                </li>
+                                
                                 <!--<li><img src="/images/index/promo_prueba.gif"/></li>-->
                             </ul></nav>
                     </div>
     
-    <div id="socialesfooter"> 
-    
-    </div>
-    
-    <div class="copyright"> <strong> <?php echo date('Y'); ?></strong>	© Ramon Labs </div>
+    <div class="copyright">Director: Morán José María | info@revistatiempo.com.ar | Tel/Fax: (011) 4756 - 0385 | <strong> <?php echo date('Y'); ?></strong>	© Ramon Labs </div>
     
 </footer>
 </div> <!--fin wrapper2-->

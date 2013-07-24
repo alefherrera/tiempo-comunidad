@@ -22,7 +22,9 @@
             </div>
             <br/>
             <?php if (isset($nombre_pdf)): ?>
-                <a id="revpdf" href="/revista/<?php echo $nombre_pdf ?>">Edición Impresa</a> <br/>
+                <a id="revpdf" href="/revista/<?php echo $nombre_pdf ?>">EDICIÓN IMPRESA</a> 
+                
+                <br/><br/>
             <?php endif ?>
         </div>
         <div class="parrafo">
