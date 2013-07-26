@@ -20,7 +20,8 @@
                             </ul></nav>
                     </div>
     
-    <div class="copyright">Director: Morán José María | info@revistatiempo.com.ar | Tel/Fax: (011) 4756 - 0385 | <strong> <?php echo date('Y'); ?></strong>	© Ramon Labs </div>
+    <div class="copyright">Director: Morán José María | info@revistatiempo.com.ar | Tel/Fax: (011) 4756 - 0385 | 
+        <strong> <?php echo date('Y'); ?></strong>	© Ramon Labs </div>
     
 </footer>
 </div> <!--fin wrapper2-->

@@ -23,8 +23,12 @@
                             <a href="/index.php"> <img src="/images/index/bannerlogo.gif"/></a>
                         </div>
 
-                        <div id="slogan" class="floatleft">	<p>"El futuro es nuestro</p> 
-                            <p>por prepotencia de trabajo"<span> Roberto Arlt</span></p>
+                        <div id="slogan" class="floatleft">	
+                            <p>REVISTA MENSUAL</p>
+                            <p id="frase">"El futuro es nuestro por prepotencia de trabajo"</p> 
+                            <p><span> - Roberto Arlt</span></p>
+                            
+                        
                         </div>
 
                         <div id="clima" class="floatleft">
@@ -33,14 +37,14 @@
                         </div>
 
                         <div id="datosrevista" class="floatleft">
-                            <p>Director: Morán José María</p>
-                            <p>info@revistatiempo.com.ar</p>
-                            <p>Tel/Fax: (011) 4756 - 0385</p>
-                            <div id="sociales">
+                           
+                            <div id="sociales" class="floatleft">
+                                <p id="Seguinosheader">Seguinos</p>
                                 <a id="facebook" href="#" class="floatleft">tiempo facebook </a>
                                 <a id="twitter" href="#" class="floatleft">tiempo twitter </a>
 
                                 <div id="loginContainer" class="floatleft">
+                                  
                                     <a href="#" id="loginButton" class="<?php if($usuario != false) echo 'logueadoButton'; else echo 'nologueadoButton';?>"><span>Login</span><em></em></a>
                                     <div style="clear:both"></div>
                                     
@@ -80,12 +84,13 @@
 
                     <div id="botonera" class="clearboth">
                         <nav>   <ul>
-                                <li><a href="/index.php/quienes">QUIENES SOMOS</a> </li>
+                               
+                                <li><a id="borizq" href="/index.php/quienes">QUIENES SOMOS</a> </li>
                                 <li><a href="/index.php/revista">EDICIÓN IMPRESA</a> </li>
                                 <li><a href="/index.php/notas">NOTAS </a> </li>
                                 <li><a href="/index.php/utiles">ÚTILES </a> </li>
                                 <li><a href="/index.php/anunciantes">ANUNCIANTES </a> </li>
-                                <li><a href="/index.php/contacto">CONTÁCTENOS </a> </li>
+                                <li><a id="border" href="/index.php/contacto">CONTÁCTENOS </a> </li>
                                 <!--<li><img src="/images/index/promo_prueba.gif"/></li>-->
                             </ul></nav>
                     </div>

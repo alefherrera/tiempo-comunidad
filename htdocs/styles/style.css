@@ -18,19 +18,31 @@ footer{background-color:#C32127; display:table; width:982px; padding-bottom: 30p
 
 #banner{display:block;}
 
-#botonera nav ul li{float:left; margin-right:10px; margin-top:20px;}
-#botonera nav ul li a{display:block; background-color:#E6E7E8; color:#000; font-family:"Open Sans Condensed"; font-weight:700;color:#666;  font-size:15px; padding-left:10px; padding-right:10px; padding-top:4px; padding-bottom:5px; border-left:7px solid #C32127;}
+#botonera nav ul li{float:left; margin-right:0; margin-top:20px;}
+#botonera nav ul li a{display:block; font-family:"Open Sans Condensed"; font-weight:700;color:#666; 
+                        font-size:15px; padding-left:10px; padding-right:10px; padding-top:4px;
+                        padding-bottom:5px; border-left:1px solid #CCC;border-right:1px solid #CCC;}
+
+
 #botonera nav ul li a:hover{color:#E6E7E8; background-color:#333;}
+#botonera nav ul li a#borizq{border-left:2px solid #CCC;}
+#botonera nav ul li a#border{border-right:2px solid #CCC;}
 
 #slogan{width:320px; height:72px;display:block; padding-top:10px; padding-left:15px; border-right:2px solid #C32127;}
-#slogan p{font-size:22px; font-weight:700; color:#C32127;}
+#slogan p{font-size:17px; font-weight:700; color:#C32127;}
 #slogan p span{font-size:12px; font-weight:700;}
+#slogan p#frase{font-size: 15px;}
 
 #clima{display:block; width:150px; height:82px;border-right:2px solid #C32127;}
 
 #TT_tCq1k11EE88cWcGUKfqjjjDDztlU1Yc2bYkYEZyIKkj{margin:auto; padding-top:3px;}
 
-#datosrevista p{font-size:11px; font-weight:700; color:#ccc; padding-left:10px; padding-top:1px;}
+#datosrevista{margin-top: 10px;}
+#seguinosheader{font-size: 13px; font-weight: 700; color:#ccc; padding-bottom: 2px;
+          display:block;
+          background-image: url('/images/index/flechita5.png');
+          background-repeat: no-repeat; background-position: center;
+         }
 #sociales{margin-left:10px; margin-top:5px;}
 #facebook{margin-left:0px; height:29px; width:29px; display:block;
 	background: url('/images/index/facebook_logo.gif') top;
@@ -49,6 +61,8 @@ footer{background-color:#C32127; display:table; width:982px; padding-bottom: 30p
 #contenido{display:table; margin-top: 20px;margin-bottom: 20px;}
 #contenido1{display:table; width:783px; height:440px; margin-bottom:20px;
             border-bottom:2px solid #c32127; clear:both;}
+#tiempomes{display:table; background-color: #e6e6e7; width:783px; }
+
 aside{display:block; width:178px;}
 #anexo1{display:table; width:178px; height:240px; background-color:#03F; margin-top:15px; margin-left:21px;}
 
@@ -220,11 +234,11 @@ input:focus {
     outline:none;
 }
 
-#inforev {
+#inforev {display:table; margin-top: 30px;margin-left: 30px;
     float:left;
     width:261px;
 }
-#taparevactual{display:table; width:250px; height:360px; background-color:#ccc; margin-top: 15px;}
+#taparevactual{display:table; width:250px; height:360px; background-color:#ccc;}
 .imgprueba {height:360px; width:250px;}
 /* log in style end */
 /* contenido1 formulario */
@@ -252,13 +266,16 @@ input:focus {
 }
 #revpdf:hover{color:#ccc;background-position: bottom left;}
 
-.titulo{font-size: 28px; font-weight: 700;color:#666;}
-.parrafo{float:left; width:510px; word-wrap: break-word;margin-left: 10px; margin-top: 10px; font-family: "Carrois Gothic"; font-size: 14px; letter-spacing: 0.02em; }
+.numeroaño{font-size:12px; font-weight:700; color:#000;}
+.titulo{font-size: 38px; font-weight: 700;color:#666; padding-bottom: 15px;}
+.parrafo{float:left; width:410px; margin-left: 20px; margin-top: 30px; }
+#contenido1 article{word-wrap: break-word;font-family: "Carrois Gothic"; font-size: 15px; letter-spacing: 0.02em;}
+
 /* contenido1 formulario FIN */
 
 /* footer inicio */
 
-.copyright{color:#FFF; font-size:12px ;clear:both; display:block; margin-left:20px; margin-top:10px;}
+.copyright{color:#FFF; font-size:13px ;clear:both; display:block; margin-left:20px; margin-top:10px;}
 
 #botonerafooter nav ul{margin-left: 15px; display:table;}
 #botonerafooter nav ul li{float:left; margin-right:10px; margin-top:20px;}
@@ -266,7 +283,7 @@ input:focus {
 #botonerafooter nav ul li a:hover{text-decoration: underline;}
 li #seguinos{display:block; color:#FFF; font-weight:700;font-family:"Open Sans Condensed"; font-size:12px; padding-top: 4px; padding-bottom: 5px;padding-left:5px; padding-right:5px; }
 .padding0 {padding:0;}
-footer strong{ color:#FFF; font-size: 12px;}
+footer strong{ color:#FFF; font-size: 13px;}
 
 
 /* footer FIN */

@@ -6,13 +6,13 @@
 <div id="contenido">
 
     <div id="contenido1" class="floatleft">
-        
+        <div id="tiempomes">
+            
+            
         <div class="success">
             <?php if(isset($success) && $success == true) echo 'Subido con éxito!'; ?>
         </div>
-        <?php if (isset($titulo)): ?>
-                <h1 class="titulo"><?php echo $titulo ?></h1>
-            <?php endif ?>
+       
         <div id="inforev">
             
             <div id="taparevactual">
@@ -28,9 +28,18 @@
             <?php endif ?>
         </div>
         <div class="parrafo">
+            
+            <h4 class="numeroaño">n°rev - Mes Año</h4>
+            
+             <?php if (isset($titulo)): ?>
+                <h1 class="titulo"><?php echo $titulo ?></h1>
+            <?php endif ?>
+                
+                <article>
                 <?php if(isset($editorial)):?>
                     <?php echo nl2br($editorial); ?>
                 <?php endif ?>
+                </article>
         </div>
         <div class="clearboth"></div>
         <?php if (isset($error_upload)): ?>
@@ -77,9 +86,16 @@
                 </div>
                 <input id="botonconfrev" type="submit" onclick="return verificar_revista()" value="Confirmar" />
                 </form>
+                
+       
             </div>
         <?php endif ?>
-    </div>
+           
+    
+        </div><!-- tiempomes fin -->
+        </div><!--contenido1 fin-->
+        
+       
 
     <div id="aside" class="floatleft">
         <div id="anexo1"> <img src="/images/index/20anos.png"/>
