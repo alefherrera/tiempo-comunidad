@@ -5,12 +5,14 @@
 	font-family:'Open Sans Condensed', Arial, Helvetica; font-size: 18px; font-weight:300; letter-spacing:0.00em;
 	list-style:none; text-decoration:none;}/* CSS Document */
 
-body{background-color:#E6E7E8;}
+body{background-color:#fff;}
+#top{background-color: #000;}
+#topinfo{width:1100px; margin: auto; display: table; color:#fff;}
 
-#wrapper{margin:auto; display:table; background-color:#fff; width:1024px;}
-#wrapper2{margin:auto; display:table; width:982px; background-color:#fff;}
+#wrapper{margin:auto; display:table; background-color:#fff; width:1100px;}
 
-footer{background-color:#C32127; display:table; width:982px; padding-bottom: 30px;}
+
+footer{background-color:#C32127; display:table; width:1100px; padding-bottom: 30px;}
 
 .floatleft{float:left;}
 .floatright{float:right;}
@@ -21,23 +23,15 @@ footer{background-color:#C32127; display:table; width:982px; padding-bottom: 30p
 #botonera nav ul li{float:left; margin-right:0; margin-top:20px;}
 #botonera nav ul li a{display:block; font-family:"Open Sans Condensed"; font-weight:700;color:#666; 
                         font-size:15px; padding-left:10px; padding-right:10px; padding-top:4px;
-                        padding-bottom:5px; border-left:1px solid #CCC;border-right:1px solid #CCC;}
+                        padding-bottom:5px;border-right:1px solid #CCC;}
 
 
 #botonera nav ul li a:hover{color:#E6E7E8; background-color:#333;}
-#botonera nav ul li a#borizq{border-left:2px solid #CCC;}
-#botonera nav ul li a#border{border-right:2px solid #CCC;}
+#botonera nav ul li a#borizq{border-left:1px solid #CCC;}
+#botonera nav ul li a#border{border-right:1px solid #CCC;}
 
-#slogan{width:320px; height:72px;display:block; padding-top:10px; padding-left:15px; border-right:2px solid #C32127;}
-#slogan p{font-size:17px; font-weight:700; color:#C32127;}
-#slogan p span{font-size:12px; font-weight:700;}
-#slogan p#frase{font-size: 15px;}
 
-#clima{display:block; width:150px; height:82px;border-right:2px solid #C32127;}
 
-#TT_tCq1k11EE88cWcGUKfqjjjDDztlU1Yc2bYkYEZyIKkj{margin:auto; padding-top:3px;}
-
-#datosrevista{margin-top: 10px;}
 #seguinosheader{font-size: 13px; font-weight: 700; color:#ccc; padding-bottom: 2px;
           display:block;
           background-image: url('/images/index/flechita5.png');
@@ -64,7 +58,7 @@ footer{background-color:#C32127; display:table; width:982px; padding-bottom: 30p
 #tiempomes{display:table; background-color: #e6e6e7; width:783px; }
 
 aside{display:block; width:178px;}
-#anexo1{display:table; width:178px; height:240px; background-color:#03F; margin-top:15px; margin-left:21px;}
+#anexo1{display:table; width:178px; height:240px; background-color:#03F; margin-top:0; margin-left:21px;}
 
 /* log in style */
 /* Login Container (default to float:right) */
@@ -269,7 +263,7 @@ input:focus {
 .numeroaño{font-size:12px; font-weight:700; color:#000;}
 .titulo{font-size: 38px; font-weight: 700;color:#666; padding-bottom: 15px;}
 .parrafo{float:left; width:410px; margin-left: 20px; margin-top: 30px; }
-#contenido1 article{word-wrap: break-word;font-family: "Carrois Gothic"; font-size: 15px; letter-spacing: 0.02em;}
+#contenido1 article{word-wrap: break-word;font-family: "Arial",hevetica, sans-serif; font-size: 15px; letter-spacing: 0.02em;}
 
 /* contenido1 formulario FIN */
 

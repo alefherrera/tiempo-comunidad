@@ -4,7 +4,7 @@
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
         <link href="/styles/style.css" rel="stylesheet" type="text/css"/>
         <!--webfontsgoogle-->
-        <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic' rel='stylesheet' type='text/css'>
+        
         <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic' rel='stylesheet' type='text/css'>
         <!--webfontsgoogleEND-->
 
@@ -15,30 +15,11 @@
 
     </head>
     <body>
-        <div id="wrapper">
-            <div id="wrapper2">
-                <header>
-                    <div id="principal">
-                        <div id="logo" class="floatleft">
-                            <a href="/index.php"> <img src="/images/index/bannerlogo.gif"/></a>
-                        </div>
-
-                        <div id="slogan" class="floatleft">	
-                            <p>REVISTA MENSUAL</p>
-                            <p id="frase">"El futuro es nuestro por prepotencia de trabajo"</p> 
-                            <p><span> - Roberto Arlt</span></p>
-                            
-                        
-                        </div>
-
-                        <div id="clima" class="floatleft">
-                            <div id="TT_tCq1k11EE88cWcGUKfqjjjDDztlU1Yc2bYkYEZyIKkj"><h2><a href="http://www.tutiempo.net">Clima en el mundo</a></h2></div>
-                            <script type="text/javascript" src="http://www.tutiempo.net/widget/eltiempo_tCq1k11EE88cWcGUKfqjjjDDztlU1Yc2bYkYEZyIKkj"></script>
-                        </div>
-
-                        <div id="datosrevista" class="floatleft">
-                           
-                            <div id="sociales" class="floatleft">
+        
+        <div id="top">
+            <div id="topinfo">
+            <h5>"El futuro es nuestro por prepotencia de trabajo"</h5>
+            <div id="sociales" class="floatleft">
                                 <p id="Seguinosheader">Seguinos</p>
                                 <a id="facebook" href="#" class="floatleft">tiempo facebook </a>
                                 <a id="twitter" href="#" class="floatleft">tiempo twitter </a>
@@ -79,6 +60,26 @@
                                     </div>
                                 </div>
                             </div>
+        
+        
+        
+        
+            </div><!--top info end-->
+        </div> <!--TOP END-->
+        
+        
+        <div id="wrapper">
+           
+                <header>
+                    <div id="principal">
+                        <div id="logo" class="floatleft">
+                            <a href="/index.php"> <img src="/images/index/tiempologochico2.png"/></a>
+                        </div>
+                   
+
+                        <div id="datosrevista" class="floatleft">
+                           
+                            
                         </div>
                     </div>
 
