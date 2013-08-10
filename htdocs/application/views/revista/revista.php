@@ -44,6 +44,8 @@
                     <?php echo nl2br($editorial); ?>
                 <?php endif ?>
                 </article>
+                <a href="#" class="floatright" id="leermas">Leer Más +</a>
+                
         </div>
         <div class="clearboth"></div>
         <?php if (isset($error_upload)): ?>
