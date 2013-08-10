@@ -50,7 +50,7 @@
         <div class="clearboth"></div>
 
         <?php if ($usuario != false && $usuario['idnivel'] == 1): ?>
-            <p id="nueva">NUEVA REVISTA</p>
+            <p id="nueva">*NUEVA REVISTA</p>
             <div id="formulario">
                 <?php if (isset($error_upload)): ?>
                     <div class="error"><?php echo $error_upload ?></div>
