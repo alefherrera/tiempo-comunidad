@@ -257,7 +257,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 
 #revpdf{font-size: 14px; font-weight: 400;color:#666; font-family: Arial, helvetica,sans-serif;
 }
-#revpdf:hover{color:#ccc;background-position: bottom left;}
+#revpdf:hover{color:#999;background-position: bottom left;}
 
 .numeroaño{font-size:12px; font-weight:700; color:#000;}
 .titulo{font-size: 38px; font-weight: 700;color:#666; padding-bottom: 15px;}
