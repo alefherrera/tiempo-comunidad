@@ -247,9 +247,23 @@ input:focus {
 
 /* contenido formulario */
 #contenido div#formulario{display: block; margin-left: 30px; margin-bottom: 20px;}
-#contenido input{margin-bottom: 15px;}
-#contenido select{margin-bottom: 15px;}
-#contenido textArea{margin-bottom: 15px; width: 500px; height: 300px; display: table;}
+#contenido input{margin-bottom: 15px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+                border: 1px solid #ccc;}
+#inputtitulo{width:400px;}
+
+#contenido select{margin-bottom: 15px;
+                -moz-border-radius: 3px;
+                border-radius: 3px;
+                border: 1px solid #ccc;
+
+                    }
+#contenido textArea{margin-bottom: 15px; width: 500px; height: 300px; display: table;
+                   -moz-border-radius: 3px;
+                   border-radius: 3px;
+                   border: 1px solid #ccc;    
+                    }
 
 
 #contenido select:hover{cursor:pointer;}
