@@ -169,7 +169,9 @@
                         });
 
                         $('#nueva').mouseup(function() {
-                            formulario.slideToggle();
+                            formulario.slideToggle("slow", function() {
+                                $(document).scrollTop( $("#nueva").offset().top );  
+                            });
                         });
 
                     });
