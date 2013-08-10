@@ -11,6 +11,7 @@
         <!--log in script-->
         <script type="text/javascript" src="/scripts/jquery-1.9.1.min.js"></script>
         <script src="/scripts/login.js"></script>
+        <link rel="shortcut icon" href="/images/index/icon.png">
         <!--log in script END-->
 
     </head>
@@ -18,13 +19,15 @@
         
         <div id="top">
             <div id="topinfo">
-            <h5>"El futuro es nuestro por prepotencia de trabajo"</h5>
-            <div id="sociales" class="floatleft">
-                                <p id="Seguinosheader">Seguinos</p>
-                                <a id="facebook" href="#" class="floatleft">tiempo facebook </a>
-                                <a id="twitter" href="#" class="floatleft">tiempo twitter </a>
-
-                                <div id="loginContainer" class="floatleft">
+            <h5 id="mensual">TIEMPO DE LA COMUNIDAD || Revista Mensual</h5>
+            
+            <div id="toplinks" class="floatright">
+            <div id="sociales" class="floatright">
+                               
+                                <a id="facebook" class="paddingsociales" href="#"><img src="/images/index/light-facebook.png"/></a>
+                                <a id="twitter" class="paddingsociales"  href="#" ><img src="/images/index/light-twitter.png"/></a>
+            </div>
+                                <div id="loginContainer">
                                   
                                     <a href="#" id="loginButton" class="<?php if($usuario != false) echo 'logueadoButton'; else echo 'nologueadoButton';?>"><span>Login</span><em></em></a>
                                     <div style="clear:both"></div>
@@ -59,8 +62,8 @@
                                         <?php endif ?>
                                     </div>
                                 </div>
-                            </div>
-        
+                            
+            </div>
         
         
         
@@ -72,30 +75,27 @@
            
                 <header>
                     <div id="principal">
-                        <div id="logo" class="floatleft">
-                            <a href="/index.php"> <img src="/images/index/tiempologochico2.png"/></a>
-                        </div>
+                            <div id="logo" class="floatleft">
+                                <a href="/index.php"> <img src="/images/index/tiempologochico2.png"/></a>
+                            </div>
                    
+                            <div id="botonera" class="clearboth">
+                                <nav>   <ul>
 
-                        <div id="datosrevista" class="floatleft">
-                           
-                            
-                        </div>
+                                        <li><a id="borizq" href="/index.php/quienes">QUIENES SOMOS</a> </li>
+                                        <li><a href="/index.php/revista">EDICIÓN IMPRESA</a> </li>
+                                        <li><a href="/index.php/notas">NOTAS </a> </li>
+                                        <li><a href="/index.php/utiles">ÚTILES </a> </li>
+                                        <li><a href="/index.php/anunciantes">ANUNCIANTES </a> </li>
+                                        <li><a id="border" href="/index.php/contacto">CONTÁCTENOS </a> </li>
+                                        <!--<li><img src="/images/index/promo_prueba.gif"/></li>-->
+                                    </ul></nav>
+                            </div>
+                       
                     </div>
 
-                    <div id="botonera" class="clearboth">
-                        <nav>   <ul>
-                               
-                                <li><a id="borizq" href="/index.php/quienes">QUIENES SOMOS</a> </li>
-                                <li><a href="/index.php/revista">EDICIÓN IMPRESA</a> </li>
-                                <li><a href="/index.php/notas">NOTAS </a> </li>
-                                <li><a href="/index.php/utiles">ÚTILES </a> </li>
-                                <li><a href="/index.php/anunciantes">ANUNCIANTES </a> </li>
-                                <li><a id="border" href="/index.php/contacto">CONTÁCTENOS </a> </li>
-                                <!--<li><img src="/images/index/promo_prueba.gif"/></li>-->
-                            </ul></nav>
-                    </div>
-                    <div class="clearboth"/>
+                   
+                    <div class="clearboth"><div/>
                 </header>
                 
 

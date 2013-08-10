@@ -2,12 +2,19 @@
 /* CSS Document */
 
 * { border:0; margin:0; padding:0;
-	font-family:'Open Sans Condensed', Arial, Helvetica; font-size: 18px; font-weight:300; letter-spacing:0.00em;
+	font-family:Arial, Helvetica; font-size: 14px; font-weight:300; letter-spacing:0.00em;
 	list-style:none; text-decoration:none;}/* CSS Document */
 
 body{background-color:#fff;}
 #top{background-color: #000;}
-#topinfo{width:1100px; margin: auto; display: table; color:#fff;}
+#topinfo{width:1100px; margin: auto; display: table;}
+#topinfo h5{color:#ccc; font-size: 12px; padding-top: 5px; padding-bottom:5px; }
+#toplinks{display: block; float:right;}
+#sociales{display: block;}
+.paddingsociales{padding-left: 3px; padding-right: 3px; display: block; float: left;}
+
+
+#mensual{display: block; float: left;}
 
 #wrapper{margin:auto; display:table; background-color:#fff; width:1100px;}
 
@@ -20,49 +27,32 @@ footer{background-color:#C32127; display:table; width:1100px; padding-bottom: 30
 
 #banner{display:block;}
 
+#principal{position: relative;}
+#botonera{position: absolute; left: 300px;top:10px;}
 #botonera nav ul li{float:left; margin-right:0; margin-top:20px;}
 #botonera nav ul li a{display:block; font-family:"Open Sans Condensed"; font-weight:700;color:#666; 
                         font-size:15px; padding-left:10px; padding-right:10px; padding-top:4px;
                         padding-bottom:5px;border-right:1px solid #CCC;}
 
 
-#botonera nav ul li a:hover{color:#E6E7E8; background-color:#333;}
+#botonera nav ul li a:hover{color:#000; text-decoration: underline;}
 #botonera nav ul li a#borizq{border-left:1px solid #CCC;}
 #botonera nav ul li a#border{border-right:1px solid #CCC;}
 
 
 
-#seguinosheader{font-size: 13px; font-weight: 700; color:#ccc; padding-bottom: 2px;
-          display:block;
-          background-image: url('/images/index/flechita5.png');
-          background-repeat: no-repeat; background-position: center;
-         }
-#sociales{margin-left:10px; margin-top:5px;}
-#facebook{margin-left:0px; height:29px; width:29px; display:block;
-	background: url('/images/index/facebook_logo.gif') top;
-	text-indent: -99999px;}
-#facebook:hover{background-position: bottom;}
-#twitter{margin-left:10px; height:29px; width:29px; display:block;
-	background: url('/images/index/twitter_logo.gif') top;
-	text-indent: -99999px;}
-#twitter:hover{background-position: bottom;}
-#login{margin-left:10px; height:29px; width:29px; display:block;
-	background: url('/images/index/login_logo.gif') top;
-	text-indent: -99999px;}
-#login:hover{background-position: bottom;}
 
 
-#contenido{display:table; margin-top: 20px;margin-bottom: 20px;}
-#contenido1{display:table; width:783px; height:440px; margin-bottom:20px;
-            border-bottom:2px solid #c32127; clear:both;}
-#tiempomes{display:table; background-color: #e6e6e7; width:783px; }
 
-aside{display:block; width:178px;}
-#anexo1{display:table; width:178px; height:240px; background-color:#03F; margin-top:0; margin-left:21px;}
+#contenido{display:table; margin-top: 20px;margin-bottom: 20px; border-bottom: 1px solid #ccc;}
+
+#tiempomes{display:table; background-color: #e6e6e7; width:1100px; }
+
+
 
 /* log in style */
 /* Login Container (default to float:right) */
-#loginContainer {
+#loginContainer {float: right;
     position:relative;
     font-size:12px;
 }
@@ -74,7 +64,7 @@ aside{display:block; width:178px;}
 #loginButton { 
     display:block;
     float:left;
-	margin-left:10px; height:29px; width:29px;
+    height:29px; width:29px;
     position:relative;
     cursor:pointer;
 }
@@ -253,10 +243,7 @@ input:focus {
               background-color:#E6E7E8; border:1px solid #666;
               border-radius:3px; -moz-border-radius:3px;}
 #botonconfrev:hover{background-color: #999; cursor: pointer;}
-#revpdf{font-size: 14px; font-weight: 400;color:#666; font-family: "Carrois Gothic";
-        margin-left:0px; height:20px; width: 120px; display:block;
-	background: url('/images/index/flecha_bajar3.png') top left no-repeat; 
-	padding-left:32px;
+#revpdf{font-size: 14px; font-weight: 400;color:#666; font-family: Arial, helvetica,sans-serif;
 }
 #revpdf:hover{color:#ccc;background-position: bottom left;}
 

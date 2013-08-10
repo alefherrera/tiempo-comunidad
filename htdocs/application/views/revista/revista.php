@@ -5,7 +5,7 @@
 
 <div id="contenido">
 
-    <div id="contenido1" class="floatleft">
+    
         <div id="tiempomes">
             
             
@@ -93,17 +93,9 @@
            
     
         </div><!-- tiempomes fin -->
-        </div><!--contenido1 fin-->
         
-       
-
-    <div id="aside" class="floatleft">
-        <div id="anexo1"> <img src="/images/index/20anos.png"/>
-        </div>
-
-        <div id="anexo2">
-        </div>
-    </div>          
+        
+              
 </div>
 
 
