@@ -45,7 +45,10 @@ footer{background-color:#C32127; display:table; width:1100px; padding-bottom: 30
 
 
 
-#contenido{display:table; margin-top: 20px;margin-bottom: 20px; border-bottom: 1px solid #ccc;}
+#contenido{display:table; margin-top: 20px;margin-bottom: 20px; 
+           
+           border-bottom: 1px solid #ccc;}
+
 
 #tiempomes{display:table; background-color: #e6e6e7; width:1100px; }
 
@@ -221,13 +224,23 @@ input:focus {
     outline:none;
 }
 
-#inforev {display:table; margin-top: 30px;margin-left: 30px;
-    float:left;
-    width:261px;
-}
-#taparevactual{display:table; width:239px; height:342px; background-color:#ccc;}
-
 /* log in style end */
+
+#inforev {display:table;
+    float:left;
+    width:239px;
+    
+}
+#rayas{padding-top: 30px; padding-left: 30px;
+       width:239px; height:342px;
+       background: url(/images/index/rayas.png)}
+
+
+#taparevactual{display:block; width:239px; height:342px; background-color:#ccc;
+              
+                }
+
+
 /* contenido formulario */
 #contenido div#formulario{display: block; margin-left: 30px; margin-bottom: 20px;}
 #contenido input{margin-bottom: 15px;}
@@ -255,14 +268,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 
 /* contenido formulario end */
 
-#revpdf{font-size: 14px; font-weight: 400;color:#666; font-family: Arial, helvetica,sans-serif;
+#revpdf{font-size: 14px; font-weight: 400;color:#666; 
+        margin-left: 30px;
+        font-family: Arial, helvetica,sans-serif;
 }
 #revpdf:hover{color:#999;background-position: bottom left;}
 
 .numeroaño{font-size:12px; font-weight:700; color:#000;}
-.titulo{font-size: 38px; font-weight: 700;color:#666; padding-bottom: 15px;}
-.parrafo{float:left; width:410px; margin-left: 20px; margin-top: 30px; }
-#contenido1 article{word-wrap: break-word;font-family: "Arial",hevetica, sans-serif; font-size: 15px; letter-spacing: 0.02em;}
+.titulo{font-size: 42px; font-weight: 700;color:#666; padding-bottom: 15px;}
+.parrafo{float:left; width:410px; margin-left: 30px; margin-top: 30px; }
+#contenido div#tiempomes article{font-size: 18px; font-family: "open sans condensed";
+        font-weight:700; color:#959595; }
+
 
 /* contenido1 formulario FIN */
 
