@@ -20,13 +20,12 @@ class Common {
     public function select_mes($name = 'mes')
     {
         setlocale(LC_ALL, 'es_AR.utf8');
-        $selected = date('m');
-        
+        $selected = date('m') + 1;
         $select = '<select id="ddlMes" name="' . $name . '" />';
         for( $i = 1; $i <= 12; $i++)
         {
             $select .= '<option value="' . $i . '"';
-            if($selected == ('0' . $i) || $selected == $i)
+            if($selected == $i)
                 $select .= 'selected="selected"';
             $select .= '>' . constant($i) .'</option>';
         }
