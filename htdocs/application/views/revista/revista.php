@@ -169,7 +169,7 @@
                         });
 
                         $('#nueva').mouseup(function() {
-                            formulario.toggle();
+                            formulario.slideToggle();
                         });
 
                     });
