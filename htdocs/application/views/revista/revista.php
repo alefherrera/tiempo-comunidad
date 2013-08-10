@@ -4,6 +4,8 @@
 
 
 <div id="contenido">
+    
+    
 
     
         <div id="tiempomes">
@@ -15,10 +17,12 @@
        
         <div id="inforev">
             
-            <div id="taparevactual">
-                <?php if (isset($nombre_imagen)): ?>
-                    <img class="imgprueba" src="/revista/<?php echo $nombre_imagen ?>"/>
-            <?php endif ?>
+            <div id="rayas">
+                    <div id="taparevactual">
+                        <?php if (isset($nombre_imagen)): ?>
+                            <img class="imgprueba" src="/revista/<?php echo $nombre_imagen ?>"/>
+                    <?php endif ?>
+                </div>
             </div>
             <br/>
             <?php if (isset($nombre_pdf)): ?>
