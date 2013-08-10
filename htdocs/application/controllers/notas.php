@@ -62,9 +62,8 @@ class notas extends MY_Controller {
 
     public function ajax_view($pagina = 0)
     {
-        //$this->data['notas'] = $this->notas_model->notas($pagina, $cant_pagina);
-        //echo json_encode($this->data);
-        echo "hola";
+        $this->data['notas'] = $this->notas_model->notas($pagina, notas::$cant_pagina);
+        echo json_encode($this->data);
     }
 
 
