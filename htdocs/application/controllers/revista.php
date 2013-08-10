@@ -50,7 +50,9 @@ class revista extends MY_Controller{
         $this->data['editorial_form'] = $this->input->post('editorial');
         $this->data['titulo_form'] = $this->input->post('titulo');
         $this->data['editorial_form'] = $this->input->post('editorial');
-
+        $this->data['mes_form'] = $this->input->post('mes');
+        $this->data['ano_form'] = $this->input->post('ano');
+        
         $config['upload_path'] = './revista/';
         $config['allowed_types'] = 'gif|jpg|png|pdf';
         $config['max_size'] = '5000';
