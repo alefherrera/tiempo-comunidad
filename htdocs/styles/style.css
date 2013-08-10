@@ -9,6 +9,7 @@ body{background-color:#fff;}
 #top{background-color: #000;}
 #topinfo{width:1100px; margin: auto; display: table;}
 #topinfo h5{color:#ccc; font-size: 12px; padding-top: 5px; padding-bottom:5px; }
+#topinfo h5 span{font-size: 12px; font-weight: 700;}
 #toplinks{display: block; float:right;}
 #sociales{display: block;}
 .paddingsociales{padding-right: 10px; display: block; padding-top: 6px; float: left;}
@@ -223,13 +224,13 @@ input:focus {
     width:261px;
 }
 #taparevactual{display:table; width:250px; height:360px; background-color:#ccc;}
-.imgprueba {height:360px; width:250px;}
+
 /* log in style end */
 /* contenido formulario */
 #contenido div#formulario{display: block; margin-left: 30px; margin-bottom: 20px;}
 #contenido input{margin-bottom: 15px;}
 #contenido select{margin-bottom: 15px;}
-#contenido textArea{margin-bottom: 15px;}
+#contenido textArea{margin-bottom: 15px; width: 500px; height: 300px; display: table;}
 
 
 #contenido select:hover{cursor:pointer;}
