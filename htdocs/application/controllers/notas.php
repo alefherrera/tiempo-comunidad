@@ -2,6 +2,9 @@
 
 class notas extends MY_Controller {
 
+    private static $cant_pagina = 5;
+    private static $paginas_mostrar_max = 5;
+    
     function __construct() {
         parent::__construct();
 
@@ -11,23 +14,13 @@ class notas extends MY_Controller {
     }
 
     public function view($pagina = 1) {
-//        if($mes == '')
-//            $mes = date('m');
-//        if($año == '')
-//            $año = date('Y');
-
+        $cant_pagina = notas::$cant_pagina;
+        $paginas_mostrar_max = notas::$paginas_mostrar_max;
         $this->data['title'] = 'Notas';
-        //$revista = $this->revistas_model->revista($mes, $año);
-        //$this->data['nombre_imagen'] = $revista['nombre_imagen'];
-        //$this->data['nombre_pdf'] = $revista['nombre_pdf'];
-        //$this->data['titulo'] = $revista['titulo'];
         $this->data['cantidad'] = $this->notas_model->cantidad_notas();
-        $cant_pagina = 5;
+        
         if ($this->data['cantidad'] != 0)
-            $this->data['notas'] = $this->notas_model->notas($pagina, $cant_pagina);
-//        echo ceil($this->data['cantidad']/5);
-
-        $paginas_mostrar_max = 5;
+            $this->data['notas'] = $this->notas_model->notas($pagina, notas::$cant_pagina);
 
         if (ceil($this->data['cantidad'] / $cant_pagina) <= $paginas_mostrar_max)
             $paginas_mostrar_max = ceil($this->data['cantidad'] / $cant_pagina);
@@ -66,6 +59,14 @@ class notas extends MY_Controller {
         $this->data['nota'] = $nota;
         $this->load->template('/notas/nota.php', $this->data);
     }
+
+    public function ajax_view($pagina = 0)
+    {
+        //$this->data['notas'] = $this->notas_model->notas($pagina, $cant_pagina);
+        //echo json_encode($this->data);
+        echo "hola";
+    }
+
 
     public function nueva_nota() {
         if (!($this->data['usuario']['idnivel'] <= constant(Contribuidor))) {
@@ -106,10 +107,10 @@ class notas extends MY_Controller {
                 $imagen = $this->upload->data();
             }
         }
-        
+
         $idnota = $this->notas_model->nueva_nota($imagen['file_name']);
-        
-        if ($idnota > 0){
+
+        if ($idnota > 0) {
             $this->data['redireccion'] = '/index.php/nota/' . $idnota;
             $this->load->template('/success.php', $this->data);
         }

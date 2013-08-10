@@ -45,6 +45,8 @@ $route['404_override'] = '';
 $route['notas'] = '/notas/view';
 $route['notas/(:any)'] = 'notas/view/$1';
 $route['nueva_nota'] = 'notas/nueva_nota';
+$route['notas/ajax/(:any)'] = 'notas/ajax_view/$1';
+
 //Nota
 $route['nota/(:any)'] = 'notas/nota_view/$1';
 
