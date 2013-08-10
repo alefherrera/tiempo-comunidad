@@ -155,16 +155,16 @@
 
                         if (parrafo.text().length > 600)
                         {
-                            texto = parrafo.text();
-                            parrafo.text(parrafo.text().substring(0, 600));
-                            parrafo.text(parrafo.text() + '...');
+                            texto = parrafo.html();
+                            parrafo.html(parrafo.html().substring(0, 600));
+                            parrafo.html(parrafo.html() + '...');
                             leermas.toggle();
                         }
 
                         leermas.mouseup(function() {
                             leermas.removeAttr('href');
                             leermas.toggle();
-                            parrafo.text(texto);
+                            parrafo.html(texto);
                             tiempomes.css("margin-bottom", "20");
                         });
 
