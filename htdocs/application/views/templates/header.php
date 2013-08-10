@@ -26,7 +26,6 @@
                                
                                 <a id="facebook" class="paddingsociales" href="#"><img src="/images/index/light-facebook.png"/></a>
                                 <a id="twitter" class="paddingsociales"  href="#" ><img src="/images/index/light-twitter.png"/></a>
-            </div>
                                 <div id="loginContainer">
                                   
                                     <a href="#" id="loginButton" class="<?php if($usuario != false) echo 'logueadoButton'; else echo 'nologueadoButton';?>"><span>Login</span><em></em></a>
@@ -62,11 +61,9 @@
                                         <?php endif ?>
                                     </div>
                                 </div>
-                            
+                                   </div>
+     
             </div>
-        
-        
-        
             </div><!--top info end-->
         </div> <!--TOP END-->
         
