@@ -28,7 +28,7 @@
                                 <a id="twitter" class="paddingsociales"  href="#" ><img src="/images/index/light-twitter.png"/></a>
                                 <div id="loginContainer">
                                   
-                                    <a href="#" id="loginButton" class="<?php if($usuario != false) echo 'logueadoButton'; else echo 'nologueadoButton';?>"><span>Login</span><em></em></a>
+                                    <a href="#" id="loginButton" class="<?php if($usuario != false) echo 'logueadoButton'; else echo 'nologueadoButton';?>"></a>
                                     <div style="clear:both"></div>
                                     
                                     <div id="loginBox" <?php if(isset($error_login)) echo 'style="display:inline"'; ?>>     

@@ -13,7 +13,7 @@ $(function() {
         return false;
     });
     $(this).mouseup(function(login) {
-        if(!($(login.target).parent('#loginButton').length > 0)) {
+        if($(login.target).attr('id') !== 'loginButton'){
             button.removeClass('active');
             box.hide();
         }
