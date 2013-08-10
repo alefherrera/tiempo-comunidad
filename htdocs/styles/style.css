@@ -11,7 +11,7 @@ body{background-color:#fff;}
 #topinfo h5{color:#ccc; font-size: 12px; padding-top: 5px; padding-bottom:5px; }
 #toplinks{display: block; float:right;}
 #sociales{display: block;}
-.paddingsociales{padding-left: 3px; padding-right: 3px; display: block; float: left;}
+.paddingsociales{padding-right: 10px; display: block; padding-top: 6px; float: left;}
 
 
 #mensual{display: block; float: left;}
@@ -225,24 +225,33 @@ input:focus {
 #taparevactual{display:table; width:250px; height:360px; background-color:#ccc;}
 .imgprueba {height:360px; width:250px;}
 /* log in style end */
-/* contenido1 formulario */
-#contenido1 #formulario {width: 500px;}
-#contenido1 label{font-size:18px; font-weight: 0;}
-#contenido1 input{font-size:16px; border:1px solid #666;
-              border-radius:3px; -moz-border-radius:3px;}
-#contenido1 textarea{font-size:16px; border:1px solid #666;
-              border-radius:3px; -moz-border-radius:3px;}
-#contenido1 select{font-size:18px; 
-              border-left:1px solid #666;
-              border-radius:3px; 
-              -moz-border-radius:3px;}
+/* contenido formulario */
+#contenido div#formulario{display: block; margin-left: 30px; margin-bottom: 20px;}
+#contenido input{margin-bottom: 15px;}
+#contenido select{margin-bottom: 15px;}
+#contenido textArea{margin-bottom: 15px;}
 
-#contenido1 select:hover{cursor:pointer;}
+
+#contenido select:hover{cursor:pointer;}
+
 
 #botonconfrev{padding-left:10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;
               background-color:#E6E7E8; border:1px solid #666;
-              border-radius:3px; -moz-border-radius:3px;}
+              border-radius:3px; -moz-border-radius:3px;
+background: #f2f5f6; /* Old browsers */
+background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+
+               }
 #botonconfrev:hover{background-color: #999; cursor: pointer;}
+
+/* contenido formulario end */
+
 #revpdf{font-size: 14px; font-weight: 400;color:#666; font-family: Arial, helvetica,sans-serif;
 }
 #revpdf:hover{color:#ccc;background-position: bottom left;}
