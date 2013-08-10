@@ -234,9 +234,10 @@ input:focus {
     width:239px;
     
 }
-#rayas{padding-top: 30px; padding-left: 30px;
+#rayas{padding:15px; margin-top: 15px;
        width:239px; height:342px;
-       background: url(/images/index/rayas.png)}
+       background: url(/images/index/rayas5.png)
+        }
 
 
 #taparevactual{display:block; width:239px; height:342px; background-color:#ccc;
@@ -272,17 +273,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 /* contenido formulario end */
 
 #revpdf{font-size: 14px; font-weight: 400;color:#666; 
-        margin-left: 30px;
+        margin-left: 15px;
         font-family: Arial, helvetica,sans-serif;
 }
 #revpdf:hover{color:#999;background-position: bottom left;}
 
 .numeroaño{font-size:12px; font-weight:700; color:#000;}
 .titulo{font-size: 42px; font-weight: 700;color:#666; padding-bottom: 15px;}
-.parrafo{float:left; width:410px; margin-left: 30px; margin-top: 30px; }
+.parrafo{float:left; width:410px; margin-left: 40px; margin-top: 15px; }
 #contenido div#tiempomes article{font-size: 18px; font-family: "open sans condensed";
         font-weight:700; color:#959595; }
-#leermas{font-size: 12px; font-weight: 700; color: #000; padding-right: 20px;}
+#leermas{font-size: 12px; font-weight: 700; color: #000; padding-right: 20px;
+         padding-bottom: 20px; padding-top: 5px;
+        }
 #leermas:hover{color:#999;}
 /* contenido1 formulario FIN */
 
