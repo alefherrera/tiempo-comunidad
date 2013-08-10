@@ -6,7 +6,7 @@
 	list-style:none; text-decoration:none;}/* CSS Document */
 
 body{background-color:#fff;}
-#top{background-color: #000;}
+#top{background-color: #333;}
 #topinfo{width:1100px; margin: auto; display: table;}
 #topinfo h5{color:#ccc; font-size: 12px; padding-top: 5px; padding-bottom:5px; }
 #topinfo h5 span{font-size: 12px; font-weight: 700;}
@@ -268,7 +268,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 
 /* footer inicio */
 
-.copyright{color:#FFF; font-size:13px ;clear:both; display:block; margin-left:20px; margin-top:10px;}
+.copyright{color:#fff; font-size:11px ;clear:both; display:block; margin-left:20px; margin-top:10px;}
 
 #botonerafooter nav ul{margin-left: 15px; display:table;}
 #botonerafooter nav ul li{float:left; margin-right:10px; margin-top:20px;}
