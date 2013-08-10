@@ -12,6 +12,11 @@
  */
 
 class Common {
+    public static function mes($numero_mes)
+    {
+        setlocale(LC_ALL, 'es_AR.utf8');
+        return constant($numero_mes);
+    }
     public function select_mes($name = 'mes')
     {
         setlocale(LC_ALL, 'es_AR.utf8');

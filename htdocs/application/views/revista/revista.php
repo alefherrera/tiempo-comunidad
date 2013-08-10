@@ -29,7 +29,7 @@
         </div>
         <div class="parrafo">
             
-            <h4 class="numeroaño">n°rev - Mes Año</h4>
+            <h4 class="numeroaño"><?php echo $mes.' '.$año ?></h4>
             
              <?php if (isset($titulo)): ?>
                 <h1 class="titulo"><?php echo $titulo ?></h1>
