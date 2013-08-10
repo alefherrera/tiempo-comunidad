@@ -19,7 +19,7 @@
         
         <div id="top">
             <div id="topinfo">
-            <h5 id="mensual">TIEMPO DE LA COMUNIDAD || Revista Mensual</h5>
+            <h5 id="mensual">TIEMPO DE LA COMUNIDAD ||<span> "El futuro es nuestro por prepotencia de trabajo"- Roberto Arlt</span> || Revista Mensual</h5>
             
             <div id="toplinks" class="floatright">
             <div id="sociales" class="floatright">
