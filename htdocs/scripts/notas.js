@@ -1,7 +1,7 @@
 function cargar_notas(pagina, result)
 {
     $.get("/index.php/notas/ajax/" + pagina ,function (r) { 
-        result(JSON.parse(r));
+        result($.parseJSON(r));
     }
     );
 }
@@ -29,8 +29,8 @@ function set_trigger()
             var nuevo = $("<div id='nuevo'>").html(contenido.join(""));
             $("<div id='numeros'>").appendTo(nuevo);
             nuevo.prependTo($("#contenido"));
-            var viejo = $("#tabla").hide("bind");
-            nuevo.show("bind");
+            var viejo = $("#tabla").hide("fade");
+            nuevo.show("fade");
             viejo.attr("id","viejo");
             nuevo.attr("id","tabla");
             $("#tabla #numeros").html(armar_numeros(respuesta.pagina,respuesta.numeros,respuesta.ultima_pagina));
