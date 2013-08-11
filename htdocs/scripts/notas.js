@@ -26,7 +26,6 @@ function set_trigger()
             {
                 contenido.push(armar_nota(respuesta.notas[nota]));               
             } 
-            debugger;
             var nuevo = $("<div id='nuevo'>").html(contenido.join(""));
             $("<div id='numeros'>").appendTo(nuevo);
             nuevo.prependTo($("#contenido"));
