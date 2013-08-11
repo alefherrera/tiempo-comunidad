@@ -278,3 +278,12 @@ footer strong{ color:#FFF; font-size: 13px;}
 
 /* footer FIN */
 
+.col_izquierda{
+    width:70%;
+    float:left;
+}
+.col_derecha{
+    width:30%;
+    float:left;
+}
+
