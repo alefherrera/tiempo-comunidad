@@ -42,8 +42,8 @@ function set_trigger()
 
 function armar_nota(nota)
 {    
-    return "<div><p><a href='/index.php/nota/'"
-    + nota.idnota + ">" + nota.titulo
+    return "<div><p><a href='/index.php/nota/"
+    + nota.idnota + "'>" + nota.titulo
     + "</a> por " + nota.autor
     + " - " + nota.fecha_alta
     + "</p><p>"
