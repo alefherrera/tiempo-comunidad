@@ -20,20 +20,21 @@ function set_trigger()
         var pagina = url.substring(todo+1);
         location.href = "#" + pagina;
         cargar_notas(pagina,function (respuesta){ 
+            $("#viejo").remove();
             var contenido = new Array();
             for (nota in respuesta.notas)
             {
                 contenido.push(armar_nota(respuesta.notas[nota]));               
-            }      
-            var contenidonuevo = $("<div id='contenidonuevo'>").html(contenido.join(""));
-            $("<div id='numeros'>").appendTo(contenidonuevo);
-            contenidonuevo.appendTo($("#contenido"));
-            $("#contenido1").remove();
-            $("#contenido1").hide("bind", function () {
-                contenidonuevo.show("bind");
-            });
-            contenidonuevo.attr("id","contenido1");
-            $("#numeros").html(armar_numeros(respuesta.pagina,respuesta.numeros,respuesta.ultima_pagina));
+            } 
+            debugger;
+            var nuevo = $("<div id='nuevo'>").html(contenido.join(""));
+            $("<div id='numeros'>").appendTo(nuevo);
+            nuevo.appendTo($("#contenido"));
+            var viejo = $("#tabla").hide("bind");
+            nuevo.show("bind");
+            viejo.attr("id","viejo");
+            nuevo.attr("id","tabla");
+            $("#tabla #numeros").html(armar_numeros(respuesta.pagina,respuesta.numeros,respuesta.ultima_pagina));
             set_trigger();
         });
     }
