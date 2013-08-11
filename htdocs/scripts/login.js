@@ -5,7 +5,7 @@ $(function() {
     var box = $('#loginBox');
     var form = $('#loginForm');
     button.removeAttr('href');
-    button.mouseup(function(login) {
+    button.mouseup(function() {
         box.toggle();
         button.toggleClass('active');
     });
