@@ -5,20 +5,20 @@
 </div>
 <div id="numeros">
     <ul>
-        <li class="numero_tabla" style="float:left; margin-right: 10px;">
+        <li class="flecha_tabla" style="float:left; margin-right: 10px;">
             <<
         </li>
-        <li class="numero_tabla" style="float:left; margin-right: 10px;">
+        <li class="flecha_tabla" style="float:left; margin-right: 10px;">
             <
         </li>
         <li class="numero_tabla" style="float:left; margin-right: 10px;">
             <a href="#">1</a>
         </li>
        
-        <li class="numero_tabla" style="float:left; margin-right: 10px;">
+        <li class="flecha_tabla" style="float:left; margin-right: 10px;">
             >
         </li>
-        <li class="numero_tabla" style="float:left; margin-right: 10px;">
+        <li class="flecha_tabla" style="float:left; margin-right: 10px;">
             >>
         </li>
     </ul>
