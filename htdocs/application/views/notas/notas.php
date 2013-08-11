@@ -1,7 +1,7 @@
 <script src="/scripts/notas.js"></script>
 
 <div id="contenido">
-    <div id="tabla" class="floatleft" style="word-wrap: break-word;">
+    <div id="tabla" style="word-wrap: break-word;">
         <?php if ($cantidad == 0 || sizeof($notas) == 0 || $notas == false): ?>
             <p> No hay datos para mostrar </p>
             <?php
@@ -98,11 +98,11 @@
 <?php endif ?>
     </div>
 
-    <div id="aside" class="floatleft">
-        <div id="anexo1">
+    <div id="aside" class="col_derecha" class="floatleft">
+        <div class="anexo">
         </div>
 
-        <div id="anexo2">
+        <div class="anexo">
         </div>
     </div>      
 <div class="clearboth"></div>
