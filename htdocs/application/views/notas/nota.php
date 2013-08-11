@@ -18,10 +18,10 @@
     </div>
 
     <div id="aside" class="floatleft">
-        <div id="anexo1">
+        <div class="anexo">
         </div>
 
-        <div id="anexo2">
+        <div class="anexo">
         </div>
     </div>      
     <div class="clearboth"></div>
