@@ -18,21 +18,21 @@
                 <ul>
                     <li style="float:left; margin-right: 10px;">
                         <?php if ($pagina != 1): ?>
-                            <a href='/index.php/notas/1' style="text-decoration:underline"><<</a>
+                            <a href='#1' style="text-decoration:underline"><<</a>
                         <?php else: ?>
                             <<
                         <?php endif ?>
                     </li>
                     <li style="float:left; margin-right: 10px;">
                         <?php if ($pagina != 1): ?>
-                            <a href='/index.php/notas/<?php echo ($pagina - 1) ?>' style="text-decoration:underline"> < </a>
+                            <a href='#<?php echo ($pagina - 1) ?>' style="text-decoration:underline"> < </a>
                         <?php else: ?>
                             <
                         <?php endif ?>
                     </li>
                     <?php for ($i = 0; $i < sizeof($numeros); $i++): ?>
                         <li style="float:left; margin-right: 10px;">
-                            <a href='/index.php/notas/<?php echo $numeros[$i] + 1 ?>' style="text-decoration:underline; <?php
+                            <a href='#<?php echo $numeros[$i] + 1 ?>' style="text-decoration:underline; <?php
                 if ($i == $pagina - 1) {
                     echo 'background-color:red';
                 }
@@ -41,14 +41,14 @@
                     <?php endfor ?>
                     <li style="float:left; margin-right: 10px;">
                         <?php if ($pagina != $ultima_pagina): ?>
-                            <a href='/index.php/notas/<?php echo ($pagina + 1) ?>' style="text-decoration:underline;">></a>
+                            <a href='#<?php echo ($pagina + 1) ?>' style="text-decoration:underline;">></a>
                         <?php else: ?>
                             >
                         <?php endif ?>
                     </li>
                     <li style="float:left; margin-right: 10px;">
                         <?php if ($pagina != $ultima_pagina): ?>
-                            <a href='/index.php/notas/<?php echo $ultima_pagina ?>' style="text-decoration:underline">>></a>
+                            <a href='#<?php echo $ultima_pagina ?>' style="text-decoration:underline">>></a>
                         <?php else: ?>
                             >>
                         <?php endif ?>

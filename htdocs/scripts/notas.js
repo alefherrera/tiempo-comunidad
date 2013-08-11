@@ -16,8 +16,8 @@ function set_trigger()
     {
         e.preventDefault();
         var url = $(this).attr("href");
-        var todo = url.split("/");
-        var pagina = todo[todo.length-1];
+        var todo = url.indexOf("#");
+        var pagina = url.substring(todo+1);
         location.href = "#" + pagina;
         cargar_notas(pagina,function (respuesta){ 
             var contenido = new Array();
@@ -25,10 +25,16 @@ function set_trigger()
             {
                 contenido.push(armar_nota(respuesta.notas[nota]));               
             }      
-            $("#contenido1").html(contenido.join(""));
-            $("<div id='numeros'>").appendTo($("#contenido1"));
+            var contenidonuevo = $("<div id='contenidonuevo'>").html(contenido.join(""));
+            $("<div id='numeros'>").appendTo(contenidonuevo);
+            contenidonuevo.appendTo($("#contenido"));
+            $("#contenido1").remove();
+            $("#contenido1").hide("bind", function () {
+                contenidonuevo.show("bind");
+            });
+            contenidonuevo.attr("id","contenido1");
             $("#numeros").html(armar_numeros(respuesta.pagina,respuesta.numeros,respuesta.ultima_pagina));
-             set_trigger();
+            set_trigger();
         });
     }
     );
@@ -69,7 +75,7 @@ function armar_numeros(pagina, numeros, ultima_pagina)
     + "</li>"
     + li
     + (pagina != ultima_pagina ? "<a href='#" + ultima_pagina + "' style='text-decoration:underline'>>></a>" : ">");
-    + "</li>"
+    + "</li>";
     return r;
 
 }
