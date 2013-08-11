@@ -26,18 +26,17 @@ function set_trigger()
             {
                 contenido.push(armar_nota(respuesta.notas[nota]));               
             } 
-            var nuevo = $("<div id='nuevo'>").html(contenido.join(""));
+            var nuevo = $("<div id='nuevo'>").html("<div class='tabla'>" + contenido.join("") + "</div>");
             $("<div id='numeros'>").prependTo(nuevo);
-            nuevo.prependTo($("#contenido"));
+            nuevo.prependTo($("#principal"));
             nuevo.toggle();
-            var viejo = $("#tabla").hide("fade");
+            var viejo = $("#tabla_notas").hide("fade");
             viejo.attr("id","viejo");
-            nuevo.attr("class","col_izquierda");
-            nuevo.attr("id","tabla");
-            nuevo.attr("class","col_izquierda");
+            nuevo.attr("id","tabla_notas");
             nuevo.show("fade");
 
-            $("#tabla #numeros").html(armar_numeros(respuesta.pagina,respuesta.numeros,respuesta.ultima_pagina));
+            $("#tabla_notas #numeros").html(armar_numeros(respuesta.pagina,respuesta.numeros,respuesta.ultima_pagina));
+            $("#tabla_notas #numeros").html($("#tabla_notas #numeros").html() + "<div class='clearboth'></div>");
             set_trigger();
         });
     }
@@ -56,9 +55,9 @@ function armar_nota(nota)
 
 function armar_numeros(pagina, numeros, ultima_pagina)
 {
-    var r = "";
+    var r = "<ul>";
     var li = "<li style='float:left; margin-right: 10px;'>";
-    r = li
+    r += li
     + (pagina != 1 ? "<a href='#1' style='text-decoration:underline'><<</a>" : "<<")
     + "</li>"
     + li
@@ -79,7 +78,7 @@ function armar_numeros(pagina, numeros, ultima_pagina)
     + "</li>"
     + li
     + (pagina != ultima_pagina ? "<a href='#" + ultima_pagina + "' style='text-decoration:underline'>>></a>" : ">");
-    + "</li>";
+    + "</li></ul>";
     return r;
 
 }

@@ -287,3 +287,7 @@ footer strong{ color:#FFF; font-size: 13px;}
     float:left;
 }
 
+/*TABLA*/
+#tabla_notas{
+    height:256px;
+}
