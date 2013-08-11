@@ -39,11 +39,11 @@
                 <h1 class="titulo"><?php echo $titulo ?></h1>
             <?php endif ?>
 
-            <article>
+            <p>
                 <?php if (isset($editorial)): ?>
                     <?php echo nl2br($editorial); ?>
                 <?php endif ?>
-            </article>
+            </p>
             <a href="#" class="floatright" id="leermas">Leer Más +</a>
 
         </div>
@@ -143,7 +143,7 @@
                     }
                     var texto;
                     $(function() {
-                        var parrafo = $('.parrafo').find("article");
+                        var parrafo = $('.parrafo p');
                         var leermas = $('#leermas');
                         var inforev = $('#inforev');
                         var tiempomes = $('#tiempomes');
@@ -152,7 +152,7 @@
                         leermas.toggle();
                         if (!$('#formulario .error').text() > 0)
                             formulario.toggle();
-
+                        
                         if (parrafo.text().length > 600)
                         {
                             texto = parrafo.html();
