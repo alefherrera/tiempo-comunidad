@@ -66,12 +66,10 @@ function armar_numeros(pagina, numeros, ultima_pagina)
     for (numero in numeros)
     {
         var num = numeros[numero];
-        if (num > 0)
-        {
+        num += 1;
             r += li
             + "<a href='#" + (num) + "' style='text-decoration:underline;" + (pagina == num ? "background-color:red" : "") + "'>" + num
             + "</a></li>";
-        }
     }
     r += li
     + (pagina != ultima_pagina ? "<a href='#" + (parseInt(pagina) + 1) + "' style='text-decoration:underline'>></a>" : ">")
