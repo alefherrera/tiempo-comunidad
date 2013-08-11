@@ -1,7 +1,7 @@
 
 
 <div id="contenido">
-    <div id="contenido1" class="floatleft" style="word-wrap: break-word;">
+    <div id="nota" class="floatleft" style="word-wrap: break-word;">
         <h1>
             <?php echo $nota['titulo'] ?>
         </h1>
@@ -24,5 +24,5 @@
         <div id="anexo2">
         </div>
     </div>      
-
+    <div class="clearboth"></div>
 </div>
