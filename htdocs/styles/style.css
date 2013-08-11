@@ -8,35 +8,35 @@
     color:red;
 }
 body{background-color:#fff;}
-header{background-color: #f9f9f9; border-bottom: 1px solid #ccc;}
-#top{background-color: #333;}
-#topinfo{width:1100px; margin: auto; display: table;}
+#header{background-color: #f9f9f9; border-bottom: 1px solid #ccc;}
+#top{background-color: #333; }
+#topinfo{width:1100px; margin: 0 auto; }
 #topinfo h5{color:#ccc; font-size: 12px; padding-top: 5px; padding-bottom:5px; }
 #topinfo h5 span{font-size: 12px; font-weight: 700;}
-#toplinks{display: block; float:right;}
-#sociales{display: block;}
-.paddingsociales{padding-right: 10px; display: block; padding-top: 6px; float: left;}
+#toplinks{}
+#sociales{}
+.paddingsociales{float:left; padding-right: 10px; padding-top: 6px; }
 
 
-#mensual{display: block; float: left;}
+#mensual{}
 
-#wrapper{margin:auto; display:table; background-color:#fff; width:1100px;
+#wrapper{margin:auto; background-color:#fff; width:1100px;
          border-left:1px solid #CCC;;border-right:1px solid #CCC;;
         }
 
 
-footer{background-color:#C32127; display:table; width:1100px; padding-bottom: 30px;}
+#footer{background-color:#C32127;  width:1100px; padding-bottom: 30px;}
 
 .floatleft{float:left;}
 .floatright{float:right;}
 .clearboth{clear:both;}
 
-#banner{display:block;}
+#banner{}
 
 #principal{position: relative;}
-#botonera{position: absolute; left: 300px;top:10px;}
+#botonera{float:left; margin-left:32px; margin-top:10px;}
 #botonera nav ul li{float:left; margin-right:0; margin-top:20px;}
-#botonera nav ul li a{display:block; font-family:"Open Sans Condensed"; font-weight:700;color:#666; 
+#botonera nav ul li a{ font-family:"Open Sans Condensed"; font-weight:700;color:#666; 
                         font-size:15px; padding-left:10px; padding-right:10px; padding-top:4px;
                         padding-bottom:5px;border-right:1px solid #CCC;}
 
@@ -50,18 +50,18 @@ footer{background-color:#C32127; display:table; width:1100px; padding-bottom: 30
 
 
 
-#contenido{display:table; margin-top: 20px;margin-bottom: 20px; 
+#contenido{ margin-top: 20px;margin-bottom: 20px; 
            
            border-bottom: 1px solid #ccc;}
 
 
-#tiempomes{display:table; background-color:; width:1100px;}
+#tiempomes{ width:1100px;}
 
 
 
 /* log in style */
 /* Login Container (default to float:right) */
-#loginContainer {float: right;
+#loginContainer {
     position:relative;
     font-size:12px;
 }
@@ -101,7 +101,6 @@ footer{background-color:#C32127; display:table; width:1100px; padding-bottom: 30
     position:absolute;
     top:34px;
     right:0;
-    display:none;
     z-index:29;
 }
 
