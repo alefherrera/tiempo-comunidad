@@ -31,9 +31,12 @@ function set_trigger()
             nuevo.prependTo($("#contenido"));
             nuevo.toggle();
             var viejo = $("#tabla").hide("fade");
-            nuevo.show("fade");
             viejo.attr("id","viejo");
+            nuevo.attr("class","col_izquierda");
             nuevo.attr("id","tabla");
+            nuevo.attr("class","col_izquierda");
+            nuevo.show("fade");
+
             $("#tabla #numeros").html(armar_numeros(respuesta.pagina,respuesta.numeros,respuesta.ultima_pagina));
             set_trigger();
         });
