@@ -29,6 +29,7 @@ function set_trigger()
             var nuevo = $("<div id='nuevo'>").html(contenido.join(""));
             $("<div id='numeros'>").appendTo(nuevo);
             nuevo.prependTo($("#contenido"));
+            nuevo.toggle();
             var viejo = $("#tabla").hide("fade");
             nuevo.show("fade");
             viejo.attr("id","viejo");
