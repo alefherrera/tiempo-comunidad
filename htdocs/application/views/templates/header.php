@@ -24,8 +24,11 @@
                             <div id="toplinks" class="floatright">
                                 <a id="facebook" class="paddingsociales" href="https://www.facebook.com/tiempodelacomunidad"><img src="/images/index/light-facebook.png"/></a>
                                 <a id="twitter" class="paddingsociales"  href="https://twitter.com/tiempodelacomun" ><img src="/images/index/light-twitter.png"/></a>
-                                <a href="#" id="loginButton" class="<?php if ($usuario != false) echo 'logueadoButton';
-else echo 'nologueadoButton'; ?>"></a>                                                
+                                <a href="#" id="loginButton" class="<?php if ($usuario != false)
+    echo 'logueadoButton';
+else
+    echo 'nologueadoButton';
+?>"></a>                                                
                                 <div id="loginContainer">
                                     <div id="loginBox" <?php if (isset($error_login)) echo 'style="display:inline"'; ?>>     
                                         <?php
@@ -38,7 +41,8 @@ else echo 'nologueadoButton'; ?>"></a>
                                             <?php echo form_open('revista/logout'); ?>
                                                 <input type="submit" id="login3" name="submit" value="Desloguear"/>
                                             </fieldset>
-                                            <?php else:
+                                            <?php
+                                            else:
                                                 echo form_open('revista/login', $atributos)
                                                 ?>
                                             <fieldset id="body">
@@ -54,7 +58,11 @@ else echo 'nologueadoButton'; ?>"></a>
                                                     <input type="password" name="password" />
                                                 </fieldset>
                                                 <input type="submit" name="submit" id="login2" value="Ingresar" />
-                                                <label for="checkbox"><input type="checkbox" id="checkbox" name="recordar"/>Recuérdame</label>
+
+                                                <div id="recuerdame">
+                                                    <input type="checkbox" id="checkbox" name="recordar"/>
+                                                    <label for="checkbox">Recuérdame</label>
+                                                </div>
                                             </fieldset>
 <?php endif ?>
                                         </form>
