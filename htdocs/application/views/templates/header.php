@@ -78,7 +78,6 @@ else
                     <div id="wrapper">
 
                         <div id="header">
-                            <div id="principal">
                                 <div id="logo" class="floatleft">
                                     <a href="/index.php"> <img src="/images/index/tiempologochico2.png"/></a>
                                 </div>
@@ -95,10 +94,6 @@ else
                                             <!--<li><img src="/images/index/promo_prueba.gif"/></li>-->
                                         </ul></nav>
                                 </div>
-
-                            </div>
-
-
                             <div class="clearboth"></div>
                         </div>
 

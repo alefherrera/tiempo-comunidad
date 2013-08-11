@@ -4,13 +4,7 @@
 
 
 <div id="contenido">
-
-
-
-
     <div id="tiempomes">
-
-
         <div class="success">
             <?php if (isset($success) && $success == true) echo 'Subido con éxito!'; ?>
         </div>

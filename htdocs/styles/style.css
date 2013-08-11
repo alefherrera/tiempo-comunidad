@@ -9,31 +9,8 @@
 }
 body{background-color:#fff;}
 #header{background-color: #f9f9f9; border-bottom: 1px solid #ccc;}
-#top{background-color: #333; }
-#topinfo{width:1100px; margin: 0 auto; }
-#topinfo h5{color:#ccc; font-size: 12px; padding-top: 5px; padding-bottom:5px; }
-#topinfo h5 span{font-size: 12px; font-weight: 700;}
-#toplinks{}
-#sociales{}
-.paddingsociales{float:left; padding-right: 10px; padding-top: 6px; }
 
 
-#mensual{}
-
-#wrapper{margin:auto; background-color:#fff; width:1100px;
-         border-left:1px solid #CCC;;border-right:1px solid #CCC;;
-        }
-
-
-#footer{background-color:#C32127;  width:1100px; padding-bottom: 30px;}
-
-.floatleft{float:left;}
-.floatright{float:right;}
-.clearboth{clear:both;}
-
-#banner{}
-
-#principal{position: relative;}
 #botonera{float:left; margin-left:32px; margin-top:10px;}
 #botonera nav ul li{float:left; margin-right:0; margin-top:20px;}
 #botonera nav ul li a{ font-family:"Open Sans Condensed"; font-weight:700;color:#666; 
@@ -44,6 +21,28 @@ body{background-color:#fff;}
 #botonera nav ul li a:hover{color:#000; text-decoration: underline;}
 #botonera nav ul li a#borizq{border-left:1px solid #CCC;}
 #botonera nav ul li a#border{border-right:1px solid #CCC;}
+
+
+
+#top{background-color: #333; }
+#topinfo{width:1100px; margin: 0 auto; }
+#topinfo h5{color:#ccc; font-size: 12px; padding-top: 5px; padding-bottom:5px; }
+#topinfo h5 span{font-size: 12px; font-weight: 700;}
+
+.paddingsociales{float:left; padding-right: 10px; padding-top: 6px; }
+
+
+
+#wrapper{margin:auto; background-color:#fff; width:1100px;
+         border-left:1px solid #CCC;;border-right:1px solid #CCC;;
+}
+
+
+#footer{background-color:#C32127;  width:1100px; padding-bottom: 30px;}
+
+.floatleft{float:left;}
+.floatright{float:right;}
+.clearboth{clear:both;}
 
 
 
@@ -58,18 +57,12 @@ body{background-color:#fff;}
 #tiempomes{ width:1100px;}
 
 
-
-/* log in style */
-/* Login Container (default to float:right) */
+/*LOGIN*/
 #loginContainer {
     position:relative;
     font-size:12px;
     z-index:50;
 }
-
-/* Login Button */
-
-
 
 #loginButton { 
     display:block;
@@ -78,13 +71,6 @@ body{background-color:#fff;}
     position:relative;
     cursor:pointer;
 }
-
-/* Login Button Text */
-#loginButton span {
-    display:block;
-	text-indent: -99999px;
-	}
-
 .nologueadoButton {
     background:url(../images/index/login_logo2.gif) no-repeat;
 }
@@ -92,34 +78,27 @@ body{background-color:#fff;}
     background:url(../images/index/login_logo_verde2.gif) no-repeat;  
 }
 
-
 #loginButton:hover {
     background-position: bottom;
 }
-
-/* Login Box */
 #loginBox {
     display: none;
     position:absolute;
     top:34px;
     right:0;
 }
-
-/* Login Form */
 #loginForm {
     width:248px; 
     margin-top:-1px;
     background:#333333;
     padding:6px;
 }
-
 #loginForm fieldset {
     margin:0 0 12px 0;
     display:block;
     border:0;
     padding:0;
 }
-
 fieldset#body {
     background:#fff;
     padding:10px 13px;
@@ -195,12 +174,6 @@ fieldset#body {
     *padding:7px 2px 8px 2px; /* IE7 Fix */
 }
 
-/* Recuerdame */
-#loginForm span {
-    text-align:center;
-    display:block;
-    padding:7px 0 4px 0;
-}
 
 #loginForm span a {
     color:#3a454d;
@@ -212,7 +185,7 @@ input:focus {
     outline:none;
 }
 
-/* log in style end */
+/* Fin Login */
 
 #inforev {
     float:left;
@@ -299,7 +272,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 #botonerafooter nav ul li{float:left; margin-right:10px; margin-top:20px;}
 #botonerafooter nav ul li a{display:block;font-family:"Open Sans Condensed"; font-weight:700;color:#FFF;  font-size:12px; padding-left:5px; padding-right:5px; padding-top:4px; padding-bottom:5px;}
 #botonerafooter nav ul li a:hover{text-decoration: underline;}
-li #seguinos{display:block; color:#FFF; font-weight:700;font-family:"Open Sans Condensed"; font-size:12px; padding-top: 4px; padding-bottom: 5px;padding-left:5px; padding-right:5px; }
 .padding0 {padding:0;}
 footer strong{ color:#FFF; font-size: 13px;}
 
