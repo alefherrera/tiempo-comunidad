@@ -29,7 +29,7 @@ function set_trigger()
             debugger;
             var nuevo = $("<div id='nuevo'>").html(contenido.join(""));
             $("<div id='numeros'>").appendTo(nuevo);
-            nuevo.appendTo($("#contenido"));
+            nuevo.prependTo($("#contenido"));
             var viejo = $("#tabla").hide("bind");
             nuevo.show("bind");
             viejo.attr("id","viejo");
