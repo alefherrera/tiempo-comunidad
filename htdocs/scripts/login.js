@@ -18,3 +18,17 @@ $(function() {
     });
 });
 
+$(function () {
+    FixFooter();
+    window.onresize = function () {
+        FixFooter();
+    }
+});
+
+function FixFooter() {
+    $("#contenido").css("min-height",
+        ($(window).height() - (
+            $("#top").height() + $("#header").height() + $("#footer").height())
+            ) 
+        + "px");
+}
