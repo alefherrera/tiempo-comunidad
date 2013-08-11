@@ -105,5 +105,5 @@
         <div id="anexo2">
         </div>
     </div>      
-
+<div class="clearboth"></div>
 </div>
