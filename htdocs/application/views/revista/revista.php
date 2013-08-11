@@ -157,14 +157,16 @@
                         {
                             texto = parrafo.html();
                             parrafo.html(parrafo.html().substring(0, 600));
-                            parrafo.html(parrafo.html() + '...');
+                            parrafo.html(parrafo.html() + '<div class="puntos">...</div><div class="mas"></div>');                            
                             leermas.toggle();
                         }
 
                         leermas.mouseup(function() {
                             leermas.removeAttr('href');
                             leermas.toggle();
-                            parrafo.html(texto);
+                            var mas = parrafo.find(".mas");       
+                            $(".puntos").hide();
+                            mas.hide().html(texto.substring(600,texto.length)).slideDown('slow');
                             tiempomes.css("margin-bottom", "20");
                         });
 
