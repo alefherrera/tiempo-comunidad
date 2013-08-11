@@ -27,7 +27,7 @@ function set_trigger()
                 contenido.push(armar_nota(respuesta.notas[nota]));               
             } 
             var nuevo = $("<div id='nuevo'>").html(contenido.join(""));
-            $("<div id='numeros'>").appendTo(nuevo);
+            $("<div id='numeros'>").prependTo(nuevo);
             nuevo.prependTo($("#contenido"));
             nuevo.toggle();
             var viejo = $("#tabla").hide("fade");
