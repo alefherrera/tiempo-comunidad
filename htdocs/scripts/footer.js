@@ -1,20 +1,19 @@
-$(function () {
+$(window).load(function () {
     FixFooter();
     window.onresize = function () {
         FixFooter();
-    }
+    };
 });
 
 function FixFooter() {
     $("#contenido").css("min-height",
         ($(window).height() - (
-            $("#header").height()
-            + $("#top").height()
-            + $("#footer").height()
-            + parseInt($("#footer").css("padding-bottom"))
+            $("#header").outerHeight()
+            + $("#top").outerHeight()
+            + $("#footer").outerHeight()
             + parseInt($("#contenido").css("margin-top"))
             + parseInt($("#contenido").css("margin-bottom"))
-            + 2
+            + 1
             )
         + "px"));
 }
