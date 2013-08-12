@@ -23,5 +23,6 @@
 </div>
 
 </div>    <!--fin wrapper-->
+ <script src="/scripts/footer.js"></script>
 </body>
 </html>
