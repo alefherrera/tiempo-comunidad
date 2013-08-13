@@ -14,15 +14,16 @@ class notas extends MY_Controller {
     }
 
     public function view($pagina = 1) {
-        $this->pages($pagina);
+        $this->data['title'] = 'Notas';
         $this->load->template('/notas/notas.php', $this->data);
     }
 
     public function pages($pagina = 1) {
         $cant_pagina = notas::$cant_pagina;
         $paginas_mostrar_max = notas::$paginas_mostrar_max;
-        $this->data['title'] = 'Notas';
+        
         $this->data['cantidad'] = $this->notas_model->cantidad_notas();
+
 
         if ($this->data['cantidad'] != 0)
             $this->data['notas'] = $this->notas_model->notas($pagina, notas::$cant_pagina);
@@ -63,7 +64,7 @@ class notas extends MY_Controller {
         $this->load->template('/notas/nota.php', $this->data);
     }
 
-    public function ajax_view($pagina = 1) {
+    public function ajax_table($pagina = 1) {
         $this->pages($pagina);
         echo json_encode($this->data);
     }

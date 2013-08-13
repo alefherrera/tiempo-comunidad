@@ -288,7 +288,7 @@ footer strong{ color:#FFF; font-size: 13px;}
 }
 
 /*TABLA*/
-.borde{
+.posicion_notas{
     border-style: solid;
     border-width: 1px;
     height: 256px;
