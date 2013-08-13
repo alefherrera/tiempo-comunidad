@@ -40,7 +40,7 @@ class revista extends MY_Controller{
         echo $revista['titulo'];
     }
     
-    public function do_upload()
+    public function nueva_revista()
     {
         if(!($this->data['usuario']['idnivel'] <= constant(Administrador))){
             show_404();

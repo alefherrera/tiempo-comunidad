@@ -52,9 +52,9 @@ $route['nota/(:any)'] = 'notas/nota_view/$1';
 
 //Revista
 $route['revista'] = 'revista/view';
-$route['verificar_revista/(:any)'] = 'revista/ajax_verificar_existente/$1/$2';
+$route['revista/verificar_revista/(:any)'] = 'revista/ajax_verificar_existente/$1/$2';
 $route['revista/(:any)'] = 'revista/view/$1/$2';
-$route['do_upload'] = 'revista/do_upload';
+$route['revista/nueva_revista'] = 'revista/nueva_revista';
 
 //General
 $route['revista/login'] = 'revista/login';
