@@ -66,7 +66,8 @@ class notas extends MY_Controller {
 
     public function ajax_table($pagina = 1) {
         $this->pages($pagina);
-        echo json_encode($this->data);
+        $this->load->view('notas/tabla.php', $this->data);
+        //echo json_encode($this->data);
     }
 
     public function nueva_nota() {
