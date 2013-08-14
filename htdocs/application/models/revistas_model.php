@@ -58,6 +58,18 @@ class revistas_model extends CI_Model{
         return $query->row_array();
     }
     
+    public function arbol()
+    {
+        $this->db->select('titulo');
+        $this->db->select('mes');
+        $this->db->select('año');
+        $this->db->select('idrevistas');
+        $this->db->order_by('año desc, mes desc');
+        $query = $this->db->get_where('revistas', array('activo' => true));
+
+        return $query->result_array();
+    }
+    
     public function revista($mes, $año)
     {
         $this->db->select('nombre_pdf');

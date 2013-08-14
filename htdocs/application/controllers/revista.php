@@ -16,6 +16,8 @@ class revista extends MY_Controller{
         if($año == '')
             $año = date('Y');
         $this->data['title'] = 'Revista Tiempo';
+        
+        //Cargo Revista
         $revista = $this->revistas_model->revista($mes, $año);
         $this->data['año'] = $revista['año'];
         
@@ -25,6 +27,10 @@ class revista extends MY_Controller{
         $this->data['nombre_pdf'] = $revista['nombre_pdf'];
         $this->data['titulo'] = $revista['titulo'];
         $this->data['editorial'] = $revista['editorial'];
+        
+        //Cargo Arbol
+        $arbol = $this->revistas_model->arbol();
+        $this->data['arbol'] = $arbol;
         
         $this->load->template('revista/revista.php', $this->data);
     }
@@ -42,7 +48,7 @@ class revista extends MY_Controller{
     
     public function nueva_revista()
     {
-        if(!($this->data['usuario']['idnivel'] <= constant(Administrador))){
+        if(!($this->data['usuario']['idnivel'] <= Administrador)){
             show_404();
             return;
         }

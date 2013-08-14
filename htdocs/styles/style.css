@@ -187,12 +187,12 @@ input:focus {
 
 /* Fin Login */
 
-#inforev {
+#izquierda_revista {
     float:left;
+    width:269px;
 }
 #rayas{
-    padding:15px; margin-top: 15px;
-    width:239px; height:342px;
+    padding:15px; margin-top: 15px; height:342px;
     background: url(/images/index/rayas5.png)
 }
 
@@ -255,9 +255,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 
 .numeroaño{font-size:12px; font-weight:700; color:#000;}
 .titulo{font-size: 42px; font-weight: 700;color:#666; padding-bottom: 15px;}
-.parrafo{float:left; width:410px; margin-left: 40px; margin-top: 15px; }
+
+#central_revista{
+    float:left;
+    width:410px;
+}
+.parrafo{margin-left: 40px; margin-top: 15px; }
 .parrafo p{font-size: 18px; font-family: "open sans condensed";
         font-weight:700; color:#959595; }
+
+#derecha_revista{
+    float:left;
+    width : 421px;
+}
+
+#arbol_revista{
+    margin-top: 30px;
+    margin-left: 205px;
+    margin-right: 15px;
+}
 #leermas{font-size: 12px; font-weight: 700; color: #000; padding-right: 20px;
          padding-bottom: 20px; padding-top: 5px;
         }

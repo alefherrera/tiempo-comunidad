@@ -71,7 +71,7 @@ class notas extends MY_Controller {
     }
 
     public function nueva_nota() {
-        if (!($this->data['usuario']['idnivel'] <= constant(Contribuidor))) {
+        if (!($this->data['usuario']['idnivel'] <= Contribuidor)) {
             show_404();
             return;
         }
