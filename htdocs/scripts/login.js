@@ -20,12 +20,9 @@ $(function() {
 
 function bordes(){
     return    ($(window).height() - (
-            $("#header").outerHeight()
-            + $("#top").outerHeight()
-            + $("#footer").outerHeight()
-            + parseInt($("#contenido").css("margin-top"))
-            + parseInt($("#contenido").css("margin-bottom"))
-            + ($("#contenido").outerHeight() - $("#contenido").height())
+            $("#header").height()
+            + $("#top").height()
+            + $("#footer").height()
             ));
 
 }

@@ -24,11 +24,12 @@
                             <div id="toplinks" class="floatright">
                                 <a id="facebook" class="paddingsociales" href="https://www.facebook.com/tiempodelacomunidad"><img src="/images/index/light-facebook.png"/></a>
                                 <a id="twitter" class="paddingsociales"  href="https://twitter.com/tiempodelacomun" ><img src="/images/index/light-twitter.png"/></a>
-                                <a href="#" id="loginButton" class="<?php if ($usuario != false)
-    echo 'logueadoButton';
-else
-    echo 'nologueadoButton';
-?>"></a>                                                
+                                <a href="#" id="loginButton" class="<?php
+                                if ($usuario != false)
+                                    echo 'logueadoButton';
+                                else
+                                    echo 'nologueadoButton';
+                                ?>"></a>                                                
                                 <div id="loginContainer">
                                     <div id="loginBox" <?php if (isset($error_login)) echo 'style="display:inline"'; ?>>     
                                         <?php
@@ -36,19 +37,19 @@ else
                                         if ($usuario != false):
                                             echo form_open('revista/logout', $atributos);
                                             ?>
-                                            <fieldset id="body">
+                                            <fieldset id="loginBody">
                                                 <div id="usuariologueado" class="floatleft"> <?php echo $usuario['nombre_usuario']; ?></div>
-                                            <?php echo form_open('revista/logout'); ?>
-                                                <input type="submit" id="login3" name="submit" value="Desloguear"/>
+                                                <?php echo form_open('revista/logout'); ?>
+                                                <input type="submit" class="loginButton" name="submit" value="Desloguear"/>
                                             </fieldset>
                                             <?php
-                                            else:
-                                                echo form_open('revista/login', $atributos)
-                                                ?>
-                                            <fieldset id="body">
-    <?php if (isset($error_login)): ?>
+                                        else:
+                                            echo form_open('revista/login', $atributos)
+                                            ?>
+                                            <fieldset id="loginBody">
+                                                <?php if (isset($error_login)): ?>
                                                     <div class="error"> <?php echo $error_login ?> </div>
-    <?php endif ?>
+                                                <?php endif ?>
                                                 <fieldset>
                                                     <label for="usuario">Usuario</label> 
                                                     <input type="input" value="<?php echo $this->input->post('usuario') ?>"  name="usuario" id="usuario" />
@@ -57,14 +58,14 @@ else
                                                     <label for="password">Contraseña</label>
                                                     <input type="password" name="password" />
                                                 </fieldset>
-                                                <input type="submit" name="submit" id="login2" value="Ingresar" />
+                                                <input type="submit" name="submit" class="loginButton" value="Ingresar" />
 
                                                 <div id="recuerdame">
                                                     <input type="checkbox" id="checkbox" name="recordar"/>
                                                     <label for="checkbox">Recuérdame</label>
                                                 </div>
                                             </fieldset>
-<?php endif ?>
+                                        <?php endif ?>
                                         </form>
 
                                     </div>
@@ -78,10 +79,8 @@ else
                     <div id="wrapper">
 
                         <div id="header">
-                                <div id="logo" class="floatleft">
-                                    <a href="/index.php"> <img src="/images/index/tiempologochico2.png"/></a>
-                                </div>
-
+                            <div class='contenido'>
+                                <a  href="/index.php"> <img class="floatleft" src="/images/index/tiempologochico2.png"/></a>
                                 <div id="botonera">
                                     <nav>   <ul>
 
@@ -94,6 +93,7 @@ else
                                             <!--<li><img src="/images/index/promo_prueba.gif"/></li>-->
                                         </ul></nav>
                                 </div>
-                            <div class="clearboth"></div>
+                                <div class="clearboth"></div>
+                            </div>
                         </div>
-
+                        <div id='body'>

@@ -12,15 +12,14 @@
         $ano_anterior = $revista['año'];
         ?>
 
-        <li class='arbol_año'>
-            <a href='<?php echo '#' . $revista['año'] ?>'> <?php echo $revista['año'] ?></a>
+        <li>
+            <a class='arbol_ano <?php if ($revista['año'] == $año) echo "seleccionado_ano" ?>' href='<?php echo '#' . $revista['año'] ?>'> <?php echo $revista['año'] ?></a>
             <ul>
             <?php } ?>
-            <li class='arbol_mes'>
-                <a href='/index.php/revista/<?php echo $revista['mes'] . '/' . $revista['año'] ?>'><?php echo $revista['mes'] . ' - ' . $revista['titulo'] ?></a>
+            <li>
+                <a  class='arbol_mes <?php if (Common::mes($revista['mes']) == $mes && $revista['año'] == $año) echo "seleccionado_mes" ?>' href='/index.php/revista/<?php echo $revista['mes'] . '/' . $revista['año'] ?>'><?php echo Common::mes($revista['mes']) . ' - ' . $revista['titulo'] ?></a>
             </li>
             <?php
         }
         ?>
     </ul>
-

@@ -1,6 +1,6 @@
 
 
-<div id="contenido">
+<div class="contenido">
     <div id="nota" class="col_izquierda" style="word-wrap: break-word;">
         <h1>
             <?php echo $nota['titulo'] ?>

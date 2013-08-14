@@ -3,7 +3,7 @@
 
 
 
-<div id="contenido">
+<div class="contenido">
     <div id="tiempomes">
         <div class="success">
             <?php if (isset($success) && $success == true) echo 'Subido con éxito!'; ?>
@@ -26,21 +26,23 @@
             <?php endif ?>
         </div>
         <div id="central_revista">
-            <div class="parrafo">
+            <div id='borde_separador'>
+                <div class="parrafo">
 
-                <h4 class="numeroaño"><?php echo $mes . ' ' . $año ?></h4>
+                    <h4 class="numeroaño"><?php echo $mes . ' ' . $año ?></h4>
 
-                <?php if (isset($titulo)): ?>
-                    <h1 class="titulo"><?php echo $titulo ?></h1>
-                <?php endif ?>
-
-                <p>
-                    <?php if (isset($editorial)): ?>
-                        <?php echo nl2br($editorial); ?>
+                    <?php if (isset($titulo)): ?>
+                        <h1 class="titulo"><?php echo $titulo ?></h1>
                     <?php endif ?>
-                </p>
-                <a href="#" class="floatright" id="leermas">Leer Más +</a>
 
+                    <p>
+                        <?php if (isset($editorial)): ?>
+                            <?php echo nl2br($editorial); ?>
+                        <?php endif ?>
+                    </p>
+                    <a href="#" class="floatright" id="leermas">Leer Más +</a>
+                    <div class="clearboth"></div>
+                </div>
             </div>
         </div>
         <div id="derecha_revista">
@@ -48,75 +50,75 @@
                 <?php include 'arbol.php' ?>
             </div>
         </div>
-             <div class="clearboth"></div>
+        <div class="clearboth"></div>
 
-            <?php if ($usuario != false && $usuario['idnivel'] == 1): ?>
-                <p id="nueva">*NUEVA REVISTA</p>
-                <div id="formulario">
-                    <?php if (isset($error_upload)): ?>
-                        <div class="error"><?php echo $error_upload ?></div>
-                    <?php endif ?>
-                    <?php echo form_open_multipart('revista/nueva_revista') ?>
-                    <div>
-                        <label for="titulo">Titulo</label>
-                    </div>
-                    <div>
-                        <input id="inputtitulo" type="text" name="titulo" maxlength="45" value="<?php if (isset($titulo_form)) echo $titulo_form ?>"/>
-                    </div>
-                    <div>
-                        <label for="imagen">Portada (Imágen)</label>
-                    </div>
-                    <div>
-                        <input type="file" name="imagen" size="45" />
-                    </div>
-                    <div>
-                        <label for="pdf">Revista (PDF)</label>
-                    </div>
-                    <div>
-                        <input type="file" name="pdf" size="45" />
-                    </div>
-                    <div>
-
-                        <label for="ano">Año</label>
-                    </div>
-                    <div>
-                        <?php
-                        if (!isset($ano_form)) {
-                            echo $this->common->select_año();
-                        } else {
-                            echo $this->common->select_año($ano_form);
-                        }
-                        ?>
-                    </div>
-                    <div>
-                        <label for="mes">Mes</label>
-                    </div>
-                    <div>
-                        <?php
-                        if (!isset($mes_form)) {
-                            echo $this->common->select_mes();
-                        } else {
-                            echo $this->common->select_mes($mes_form);
-                        }
-                        ?>
-                    </div>
-                    <div>
-                        <label for="editorial">Editorial On-Line (Maximo 1000 caracteres)</label>
-                    </div>
-                    <div>
-                        <textarea name="editorial" maxlength="1000" rows="10"><?php if (isset($editorial_form)) echo $editorial_form; ?></textarea>
-                    </div>
-                    <input id="botonconfrev" type="submit" onclick="return verificar_revista()" value="Confirmar" />
-                    </form>
-
-
+        <?php if ($usuario != false && $usuario['idnivel'] == 1): ?>
+            <p id="nueva">*NUEVA REVISTA</p>
+            <div id="formulario">
+                <?php if (isset($error_upload)): ?>
+                    <div class="error"><?php echo $error_upload ?></div>
+                <?php endif ?>
+                <?php echo form_open_multipart('revista/nueva_revista') ?>
+                <div>
+                    <label for="titulo">Titulo</label>
                 </div>
-            <?php endif ?>
+                <div>
+                    <input id="inputtitulo" type="text" name="titulo" maxlength="45" value="<?php if (isset($titulo_form)) echo $titulo_form ?>"/>
+                </div>
+                <div>
+                    <label for="imagen">Portada (Imágen)</label>
+                </div>
+                <div>
+                    <input type="file" name="imagen" size="45" />
+                </div>
+                <div>
+                    <label for="pdf">Revista (PDF)</label>
+                </div>
+                <div>
+                    <input type="file" name="pdf" size="45" />
+                </div>
+                <div>
+
+                    <label for="ano">Año</label>
+                </div>
+                <div>
+                    <?php
+                    if (!isset($ano_form)) {
+                        echo $this->common->select_año();
+                    } else {
+                        echo $this->common->select_año($ano_form);
+                    }
+                    ?>
+                </div>
+                <div>
+                    <label for="mes">Mes</label>
+                </div>
+                <div>
+                    <?php
+                    if (!isset($mes_form)) {
+                        echo $this->common->select_mes();
+                    } else {
+                        echo $this->common->select_mes($mes_form);
+                    }
+                    ?>
+                </div>
+                <div>
+                    <label for="editorial">Editorial On-Line (Maximo 1000 caracteres)</label>
+                </div>
+                <div>
+                    <textarea name="editorial" maxlength="1000" rows="10"><?php if (isset($editorial_form)) echo $editorial_form; ?></textarea>
+                </div>
+                <input id="botonconfrev" type="submit" onclick="return verificar_revista()" value="Confirmar" />
+                </form>
 
 
-        </div><!-- tiempomes fin -->
+            </div>
+        <?php endif ?>
+
+
+    </div><!-- tiempomes fin -->
 
 
 
-    </div>
-    <script src="/scripts/revista.js"></script>
+</div>
+<script src="/scripts/revista.js"></script>

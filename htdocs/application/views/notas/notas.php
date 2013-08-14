@@ -1,6 +1,6 @@
 <script src="/scripts/notas.js"></script>
 
-<div id="contenido">
+<div class="contenido">
 
     <div id="principal" class="col_izquierda">
         <div id="posicion_notas">

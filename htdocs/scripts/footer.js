@@ -6,5 +6,7 @@ $(window).load(function () {
 });
 
 function fix_footer() {
-    $("#contenido").css("min-height",  bordes() + "px");
+    $("#body").css("min-height",  bordes() + "px");
+    console.log("Ventana " + $(window).height());
+    console.log("Bordes " + bordes());
 }
