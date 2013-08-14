@@ -23,8 +23,7 @@ function crear_tabla(url)
 {    
     var todo = url.indexOf("#");
     var pagina = todo < 0 ? 1 : url.substring(todo+1);    
-    cargar_notas(pagina,function (respuesta){ 
-        debugger;
+    cargar_notas(pagina,function (respuesta){
         $("#posicion_notas").html(respuesta);
         set_trigger();
     });
