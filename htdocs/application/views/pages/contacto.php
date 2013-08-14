@@ -6,6 +6,6 @@
  */
 ?>
 
-<div id="contenedor">
+<div class="contenedor">
     INFORMACIÓN DE CONTACTO
 </div>
