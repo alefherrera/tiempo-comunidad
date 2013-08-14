@@ -15,7 +15,7 @@ class revista extends MY_Controller{
             $mes = date('m');
         if($año == '')
             $año = date('Y');
-        $this->data['title'] = 'Tiempo de la Comunidad';
+        $this->data['title'] = 'Revista Tiempo';
         $revista = $this->revistas_model->revista($mes, $año);
         $this->data['año'] = $revista['año'];
         
