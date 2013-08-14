@@ -17,3 +17,14 @@ $(function() {
         }
     });
 });
+
+function bordes(){
+    return    ($(window).height() - (
+            $("#header").outerHeight()
+            + $("#top").outerHeight()
+            + $("#footer").outerHeight()
+            + parseInt($("#contenido").css("margin-top"))
+            + parseInt($("#contenido").css("margin-bottom"))
+            + 1
+            ));
+}

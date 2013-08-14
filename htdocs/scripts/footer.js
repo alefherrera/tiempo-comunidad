@@ -1,19 +1,10 @@
 $(window).load(function () {
-    FixFooter();
+    fix_footer();
     window.onresize = function () {
-        FixFooter();
+        fix_footer();
     };
 });
 
-function FixFooter() {
-    $("#contenido").css("min-height",
-        ($(window).height() - (
-            $("#header").outerHeight()
-            + $("#top").outerHeight()
-            + $("#footer").outerHeight()
-            + parseInt($("#contenido").css("margin-top"))
-            + parseInt($("#contenido").css("margin-bottom"))
-            + 1
-            )
-        + "px"));
+function fix_footer() {
+    $("#contenido").css("min-height",  bordes() + "px");
 }

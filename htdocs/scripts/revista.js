@@ -19,7 +19,7 @@ function verificar_revista()
     return window.confirm("Ya existe una revista en el mes y año seleccionado: " + revista + " ¿Continuar?");
 }
 var texto;
-$(function() {
+$(window).load(function() {
     var parrafo = $('.parrafo p');
     var leermas = $('#leermas');
     var inforev = $('#inforev');
@@ -30,7 +30,7 @@ $(function() {
     if (!$('#formulario .error').text() > 0)
         formulario.toggle();
 
-    if (parrafo.text().length > 600)
+    if (parrafo.text().length > 600 && parrafo.height() > bordes())
     {
         texto = parrafo.html();
         parrafo.html(parrafo.html().substring(0, 600));
