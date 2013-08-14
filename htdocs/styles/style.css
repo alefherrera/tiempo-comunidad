@@ -58,7 +58,8 @@ body{background-color:#fff;}
 #body{ width:1100px; }
 
 #body .contenido{
-
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 #tiempomes{ width:1100px;}
 
