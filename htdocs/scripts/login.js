@@ -25,6 +25,7 @@ function bordes(){
             + $("#footer").outerHeight()
             + parseInt($("#contenido").css("margin-top"))
             + parseInt($("#contenido").css("margin-bottom"))
-            + 1
+            + ($("#contenido").outerHeight() - $("#contenido").height())
             ));
+
 }
