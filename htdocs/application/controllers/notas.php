@@ -14,7 +14,7 @@ class notas extends MY_Controller {
     }
 
     public function view($pagina = 1) {
-        $this->data['title'] = 'Notas';
+        $this->data['title'] = 'Revista Tiempo - Notas';
         $this->load->template('/notas/notas.php', $this->data);
     }
 
