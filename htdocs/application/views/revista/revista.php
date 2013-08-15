@@ -8,44 +8,10 @@
         <div class="success">
             <?php if (isset($success) && $success == true) echo 'Subido con éxito!'; ?>
         </div>
-
-        <div id="izquierda_revista">
-
-            <div id="rayas">
-                <div id="taparevactual">
-                    <?php if (isset($nombre_imagen)): ?>
-                        <img class="imgprueba" src="/revista/<?php echo $nombre_imagen ?>"/>
-                    <?php endif ?>
-                </div>
-            </div>
-            <br/>
-            <?php if (isset($nombre_pdf)): ?>
-                <a id="revpdf" href="/revista/<?php echo $nombre_pdf ?>">EDICIÓN IMPRESA</a> 
-
-                <br/><br/>
-            <?php endif ?>
+        <div class="col_izquierda">
+           <?php include 'mes_revista.php' ?>
         </div>
-        <div id="central_revista">
-            <div id='borde_separador'>
-                <div class="parrafo">
-
-                    <h4 class="numeroaño"><?php echo $mes . ' ' . $año ?></h4>
-
-                    <?php if (isset($titulo)): ?>
-                        <h1 class="titulo"><?php echo $titulo ?></h1>
-                    <?php endif ?>
-
-                    <p>
-                        <?php if (isset($editorial)): ?>
-                            <?php echo nl2br($editorial); ?>
-                        <?php endif ?>
-                    </p>
-                    <a href="#" class="floatright" id="leermas">Leer Más +</a>
-                    <div class="clearboth"></div>
-                </div>
-            </div>
-        </div>
-        <div id="derecha_revista">
+        <div class="col_derecha">
             <div id="arbol_revista">
                 <?php include 'arbol.php' ?>
             </div>

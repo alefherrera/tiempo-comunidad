@@ -247,19 +247,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 
 #central_revista{
     float:left;
-    width:531px;    
+    width: 450px;
 }
 #borde_separador{
     border-right: 1px solid #e5e5e5;
-    padding-right: 100px;
 }
 .parrafo{margin-left: 40px; margin-top: 15px; }
 .parrafo p{font-size: 14px;  font-family: arial, helvetica, 'sans serif';
         font-weight:400; color:#666;}
 
 #derecha_revista{
-    float:left;
-    width : 300px;
 }
 
 #arbol_revista{
