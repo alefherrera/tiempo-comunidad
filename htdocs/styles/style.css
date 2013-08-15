@@ -254,8 +254,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
     padding-right: 100px;
 }
 .parrafo{margin-left: 40px; margin-top: 15px; }
-.parrafo p{font-size: 18px; font-family: "open sans condensed";
-        font-weight:700; color:#959595; }
+.parrafo p{font-size: 14px;  font-family: arial, helvetica, 'sans serif';
+        font-weight:400; color:#666;}
 
 #derecha_revista{
     float:left;
