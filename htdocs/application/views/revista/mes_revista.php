@@ -16,6 +16,7 @@
         <?php endif ?>
     </div>
     <div id="central_revista">
+        <?php if(isset($titulo)): ?>
         <div class="parrafo">
 
             <h4 class="numeroaño"><?php echo $mes . ' ' . $año ?></h4>
@@ -31,6 +32,7 @@
             </p>
             <a href="#" class="floatright" id="leermas">Leer Más +</a>
         </div>
+    <?php endif ?>
     </div>
     <div class="clearboth"></div>
 </div>

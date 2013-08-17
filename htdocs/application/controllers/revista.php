@@ -19,19 +19,20 @@ class revista extends MY_Controller{
         
         //Cargo Revista
         $revista = $this->revistas_model->revista($mes, $año);
-        $this->data['año'] = $revista['año'];
-        
-        $this->data['mes'] = Common::mes($revista['mes']);
-        $this->data['numero_revista'] = '';
-        $this->data['nombre_imagen'] = $revista['nombre_imagen'];
-        $this->data['nombre_pdf'] = $revista['nombre_pdf'];
-        $this->data['titulo'] = $revista['titulo'];
-        $this->data['editorial'] = $revista['editorial'];
-        
+        if(sizeof($revista) != 0)
+        {
+            $this->data['año'] = $revista['año'];
+
+            $this->data['mes'] = Common::mes($revista['mes']);
+            $this->data['numero_revista'] = '';
+            $this->data['nombre_imagen'] = $revista['nombre_imagen'];
+            $this->data['nombre_pdf'] = $revista['nombre_pdf'];
+            $this->data['titulo'] = $revista['titulo'];
+            $this->data['editorial'] = $revista['editorial'];
+        }
         //Cargo Arbol
-        $arbol = $this->revistas_model->arbol();
-        $this->data['arbol'] = $arbol;
-        
+         $arbol = $this->revistas_model->arbol();
+         $this->data['arbol'] = $arbol;
         $this->load->template('revista/revista.php', $this->data);
     }
     
