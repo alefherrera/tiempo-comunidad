@@ -209,7 +209,7 @@ input:focus {
                 border: 1px solid #ccc;
 
                     }
-.contenido textArea{margin-bottom: 15px; width: 500px; height: 300px;
+.contenido textarea{margin-bottom: 15px; width: 500px; 
                    -moz-border-radius: 3px;
                    border-radius: 3px;
                    border: 1px solid #ccc;    
@@ -323,5 +323,4 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 #posicion_notas{
     border-style: solid;
     border-width: 1px;
-    height: 256px;
 }

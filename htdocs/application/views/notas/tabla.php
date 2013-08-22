@@ -47,13 +47,18 @@
         <div class="tabla">
             <?php
             foreach ($notas as $nota) {
+                
                 ?>
-                <div>
+                <div style="width:33.33%; float:left;    -webkit-box-shadow:inset 0px 0px 0px 10px #f00;
+    -moz-box-shadow:inset 0px 0px 0px 10px #f00;
+    box-shadow:inset 0px 0px 0px 1px #f00; ">
                     <p><a href='/index.php/nota/<?php echo $nota['idnota'] ?>'><?php echo $nota['titulo'] ?></a> por <?php echo $nota['autor']; ?> - <?php echo $nota['fecha_alta']; ?></p> 
-                    <p><?php echo $nota['contenido'] ?></p>
+                    <p><?php echo $nota['bajada'] ?></p>
                 </div>
-
+                
             <?php } ?>
+            <div class="clearboth">
+            </div>
         </div>
     <?php endif ?>
     <div class="clearboth"></div>

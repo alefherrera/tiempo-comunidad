@@ -29,7 +29,7 @@ class notas_model extends CI_Model{
         if($pagina <= 0)
             return false;
         
-        $campos = "idnota, titulo, idusuario, autor, fecha_alta fecha, CONCAT(LEFT(contenido, 200),'...') contenido, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta";
+        $campos = "idnota, titulo, idusuario, autor, fecha_alta fecha, bajada, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta";
         $this->db->select($campos, false);
         $this->db->order_by('fecha','desc');
         $query = $this->db->get('notas', $cant_pag, ($pagina-1)*$cant_pag);
@@ -40,7 +40,7 @@ class notas_model extends CI_Model{
         if($idnota == 0)
             return false;
         
-        $campos = "idnota, titulo, idusuario, autor, contenido, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta, imagen";
+        $campos = "idnota, titulo, idusuario, autor, bajada, contenido, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta, imagen";
         $this->db->select($campos, false);
         $query = $this->db->get_where('notas', array('idnota' => $idnota, 'activo' => true));
         return $query->row_array();
@@ -53,6 +53,7 @@ class notas_model extends CI_Model{
         $insert['idusuario'] = $this->session->userdata('usuario')['idusuarios'];
         $insert['activo'] = true;
         $insert['autor'] = $this->input->post('autor');
+        $insert['bajada'] = $this->input->post('bajada');
         
         $this->db->insert('notas', $insert);
         

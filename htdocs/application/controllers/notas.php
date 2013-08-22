@@ -80,8 +80,10 @@ class notas extends MY_Controller {
 
         $this->form_validation->set_rules('titulo', "Titulo", 'required');
         $this->form_validation->set_rules('contenido', "Contenido", 'required');
+        $this->form_validation->set_rules('bajada', "Bajada", 'required');
         if ($this->form_validation->run() === FALSE) {
             $this->data['titulo_form'] = $this->input->post('titulo');
+            $this->data['bajada_form'] = $this->input->post('bajada');
             $this->data['contenido_form'] = $this->input->post('contenido');
             $this->data['autor_form'] = $this->input->post('autor');
             $this->data['imagen'] = $_FILES['imagen']['name'];
@@ -100,6 +102,7 @@ class notas extends MY_Controller {
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('imagen')) {
                 $this->data['titulo_form'] = $this->input->post('titulo');
+                $this->data['bajada'] = $this->input->post('bajada');
                 $this->data['contenido_form'] = $this->input->post('contenido');
                 $this->data['autor_form'] = $this->input->post('autor');
                 $this->data['error_nota'] = $this->upload->display_errors();

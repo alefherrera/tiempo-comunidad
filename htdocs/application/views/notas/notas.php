@@ -34,10 +34,19 @@
                     ?>"/>
                 </div>
                 <div>
+                    <label for="bajada">Bajada *</label>
+                </div>
+                <div>
+                    <textarea name="bajada" maxlength="65000" rows="4"><?php
+                   if (isset($bajada_form))
+                       echo $bajada_form
+                    ?></textarea>
+                </div>
+                <div>
                     <label for="contenido">Contenido *</label>
                 </div>
                 <div>
-                    <textarea name="contenido" maxlength="65000" rows="10"><?php
+                    <textarea name="contenido" maxlength="65000" rows="15"><?php
                    if (isset($contenido_form))
                        echo $contenido_form
                     ?></textarea>
@@ -59,5 +68,4 @@
         </div>
     </div>      
     <div class="clearboth"></div>
-    <img src="http://31.media.tumblr.com/b0da13191054cc13bf2f92031510b73c/tumblr_ml2xp64tun1r827vgo1_400.gif"/>
 </div>
