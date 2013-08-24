@@ -2,8 +2,8 @@
 /* CSS Document */
 
 * { border:0; margin:0; padding:0;
-	font-family:Arial, Helvetica; font-size: 14px; font-weight:300; letter-spacing:0.00em;
-	list-style:none; text-decoration:none;}/* CSS Document */
+    font-family:Arial, Helvetica; font-size: 14px; font-weight:300; letter-spacing:0.00em;
+    list-style:none; text-decoration:none;}/* CSS Document */
 .error{
     color:red;
 }
@@ -16,13 +16,12 @@ body{background-color:#fff;}
 #botonera{float:left; margin-left:32px; margin-top:10px;}
 #botonera nav ul li{float:left; margin-right:0; margin-top:20px;}
 #botonera nav ul li a{ font-family:"Open Sans Condensed"; font-weight:700;color:#666; 
-                        font-size:15px; padding-left:10px; padding-right:10px; padding-top:4px;
-                        padding-bottom:5px;border-right:1px solid #CCC;}
+                       font-size:15px; padding-left:10px; padding-right:10px; padding-top:4px;
+                       padding-bottom:5px;border-right:1px solid #CCC;}
 
 
 #botonera nav ul li a:hover{color:#000; text-decoration: underline;}
-#botonera nav ul li a#borizq{border-left:1px solid #CCC;}
-#botonera nav ul li a#border{border-right:1px solid #CCC;}
+#botonera nav ul li a.borizq{border-left:1px solid #CCC;}
 
 
 
@@ -42,7 +41,7 @@ body{background-color:#fff;}
 
 #footer{background-color:#C32127;  width:1100px;}
 #footer .contenido{ padding-bottom: 30px;
-    border-top: 1px solid #ccc;
+                    border-top: 1px solid #ccc;
 
 }
 
@@ -181,39 +180,39 @@ input:focus {
     width:269px;
 }
 #rayas{
-    padding:15px; margin-top: 15px; height:342px;
+    padding:15px; margin-top: 30px; height:342px;
     background: url(/images/index/rayas5.png)
 }
 
 
 #taparevactual{display:block; width:239px; height:342px; background-color:#ccc;
-              
-                }
+
+}
 .imgprueba{width:239px; height:342px; display: block;}
 
 /* contenido formulario */
 
 #nueva{margin-left: 30px; font-weight:700; margin-bottom: 15px; display: block;
-        width:120px; margin-top: 20px;}
+       width:120px; margin-top: 20px;}
 #nueva:hover{text-decoration: underline;cursor:pointer;}
 .contenido div#formulario{display: block; margin-left: 30px; margin-bottom: 20px;}
 .contenido input{margin-bottom: 15px;
-                -moz-border-radius: 3px;
-                border-radius: 3px;
-                border: 1px solid #ccc;}
+                 -moz-border-radius: 3px;
+                 border-radius: 3px;
+                 border: 1px solid #ccc;}
 #inputtitulo{width:400px;}
 
 .contenido select{margin-bottom: 15px;
-                -moz-border-radius: 3px;
-                border-radius: 3px;
-                border: 1px solid #ccc;
+                  -moz-border-radius: 3px;
+                  border-radius: 3px;
+                  border: 1px solid #ccc;
 
-                    }
+}
 .contenido textarea{margin-bottom: 15px; width: 500px; 
-                   -moz-border-radius: 3px;
-                   border-radius: 3px;
-                   border: 1px solid #ccc;    
-                    }
+                    -moz-border-radius: 3px;
+                    border-radius: 3px;
+                    border: 1px solid #ccc;    
+}
 
 
 .contenido select:hover{cursor:pointer;}
@@ -222,16 +221,16 @@ input:focus {
 #botonconfrev{padding-left:10px; padding-right: 10px; padding-top: 5px; padding-bottom: 5px;
               background-color:#E6E7E8; border:1px solid #666;
               border-radius:3px; -moz-border-radius:3px;
-background: #f2f5f6; /* Old browsers */
-background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+              background: #f2f5f6; /* Old browsers */
+              background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* FF3.6+ */
+              background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* Chrome,Safari4+ */
+              background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Chrome10+,Safari5.1+ */
+              background: -o-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Opera 11.10+ */
+              background: -ms-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* IE10+ */
+              background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* W3C */
+              filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
 
-               }
+}
 #botonconfrev:hover{background-color: #999; cursor: pointer;}
 
 /* contenido formulario end */
@@ -252,9 +251,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 #borde_separador{
     border-right: 1px solid #e5e5e5;
 }
-.parrafo{margin-left: 40px; margin-top: 15px; }
+.parrafo{padding-left: 40px; margin-top: 30px; }
 .parrafo p{font-size: 14px;  font-family: arial, helvetica, 'sans serif';
-        font-weight:400; color:#666;}
+           font-weight:400; color:#666;}
 
 #derecha_revista{
 }
@@ -288,12 +287,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 }
 
 .arbol_mes{
-    
+
 }
 
 #leermas{font-size: 12px; font-weight: 700; color: #000; padding-right: 20px;
          padding-bottom: 20px; padding-top: 5px;
-        }
+}
 #leermas:hover{color:#999;}
 /* contenido1 formulario FIN */
 
@@ -310,11 +309,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 
 /* footer FIN */
 
-.col_izquierda{
+.float70{
     width:70%;
     float:left;
 }
-.col_derecha{
+.float30{
     width:30%;
     float:left;
 }
@@ -323,4 +322,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', end
 #posicion_notas{
     border-style: solid;
     border-width: 1px;
+}
+
+#columnadirector, #columnaconsultenos{
+    margin-top:30px;
+}
+#columnadirector *, #columnaconsultenos *{
+    font-weight:bold;
+}
+#columnadirector span, #columnaconsultenos span{
+    color:grey;
+}
+#columnadirector{
+    margin-left:30px;
+
+}
+#columnaconsultenos{
+    margin-left:50px;
 }

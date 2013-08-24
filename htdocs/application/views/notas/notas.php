@@ -2,7 +2,7 @@
 
 <div class="contenido">
 
-    <div id="principal" class="col_izquierda">
+    <div id="principal" class="float70">
         <div id="posicion_notas">
             
         </div>
@@ -60,7 +60,7 @@
         <?php endif ?>
     </div>
 
-    <div id="aside" class="col_derecha" class="floatleft">
+    <div id="aside" class="float30" class="floatleft">
         <div class="anexo">
         </div>
 

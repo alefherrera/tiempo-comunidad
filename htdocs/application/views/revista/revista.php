@@ -8,10 +8,10 @@
         <div class="success">
             <?php if (isset($success) && $success == true) echo 'Subido con éxito!'; ?>
         </div>
-        <div class="col_izquierda">
+        <div class="float70">
            <?php include 'mes_revista.php' ?>
         </div>
-        <div class="col_derecha">
+        <div class="float30">
             <div id="arbol_revista">
                 <?php include 'arbol.php' ?>
             </div>

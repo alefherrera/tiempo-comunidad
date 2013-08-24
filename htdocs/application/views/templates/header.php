@@ -84,12 +84,12 @@
                                 <div id="botonera">
                                     <nav>   <ul>
 
-                                            <li><a id="borizq" href="/index.php/quienes">QUIENES SOMOS</a> </li>
+                                            <li><a class="borizq" href="/index.php/quienes">QUIENES SOMOS</a> </li>
                                             <li><a href="/index.php/revista">EDICIÓN IMPRESA</a> </li>
                                             <li><a href="/index.php/notas">NOTAS </a> </li>
                                             <li><a href="/index.php/utiles">ÚTILES </a> </li>
                                             <li><a href="/index.php/anunciantes">ANUNCIANTES </a> </li>
-                                            <li><a id="border" href="/index.php/contacto">CONTÁCTENOS </a> </li>
+                                            <li><a href="/index.php/contacto">CONTÁCTENOS </a> </li>
                                             <!--<li><img src="/images/index/promo_prueba.gif"/></li>-->
                                         </ul></nav>
                                 </div>
