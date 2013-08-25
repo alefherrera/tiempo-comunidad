@@ -22,6 +22,7 @@
                             <h5 id="mensual" class="floatleft">TIEMPO DE LA COMUNIDAD ||<span> "El futuro es nuestro por prepotencia de trabajo"- Roberto Arlt</span> || Revista Mensual</h5>
 
                             <div id="toplinks" class="floatright">
+                                <h5 id="fecha" class="paddingsociales"></h5>
                                 <a id="facebook" class="paddingsociales" href="https://www.facebook.com/tiempodelacomunidad"><img src="/images/index/light-facebook.png"/></a>
                                 <a id="twitter" class="paddingsociales"  href="https://twitter.com/tiempodelacomun" ><img src="/images/index/light-twitter.png"/></a>
                                 <a href="#" id="loginButton" class="<?php
