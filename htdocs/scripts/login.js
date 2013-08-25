@@ -1,6 +1,6 @@
 // Login Form
 
-$(function() {
+$(window).load(function() {
    
     fecha();
    
@@ -19,6 +19,12 @@ $(function() {
             box.hide();
         }
     });
+    
+    $("#botonera a").each(function () { 
+        if (location.href.indexOf($(this).attr("href")) > 0)
+            $(this).toggleClass("seleccionado"); 
+    });
+    
 });
 function fecha(){
    dows = new Array("Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado");

@@ -391,3 +391,8 @@ input:focus {
 .contactoinfo img{
     vertical-align: middle;
 }
+
+#botonera .seleccionado{
+        background-color:#C32127;
+        color:white;
+}
