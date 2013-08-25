@@ -309,13 +309,21 @@ input:focus {
 
 /* footer FIN */
 
-.float70{
+.float70, .float30, .float60, .float40{
     width:70%;
     float:left;
 }
+.float70{
+    width:70%;
+}
 .float30{
     width:30%;
-    float:left;
+}
+.float60{
+    width:60%;
+}
+.float40{
+    width:40%;
 }
 
 /*TABLA*/
@@ -327,16 +335,24 @@ input:focus {
 #columnadirector, #columnaconsultenos{
     margin-top:30px;
 }
+
 #columnadirector *, #columnaconsultenos *{
     font-weight:bold;
 }
+
 #columnadirector span, #columnaconsultenos span{
     color:grey;
 }
 #columnadirector{
-    margin-left:30px;
-
+    margin-left: 30px;
 }
-#columnaconsultenos{
-    margin-left:50px;
+.contacto{
+    margin-top: 10px;
+}
+.contactoinfo{
+    margin-left: 10px;
+}
+
+.contactoinfo img{
+    vertical-align: middle;
 }
