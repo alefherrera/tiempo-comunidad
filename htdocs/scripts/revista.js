@@ -57,9 +57,24 @@ $(window).load(function() {
         $(".arbol_ano").toggleClass("seleccionado_ano");
         arbol_meses();
     });
+    
+    $(".arbol_mes").mouseup(function(){
+        //cargar_revista($(this).attr("href"));
+    });
+    
 });
 
 function arbol_meses()
 {
     $(".arbol_ano").not(".seleccionado_ano").parent().find("ul").hide();    
+}
+
+function cargar_revista(url)
+{
+    var todo = url.indexOf("#");
+    var fecha = todo < 0 ? 1 : url.substring(todo + 1);
+      $.get("/index.php/revista/ajax/" + fecha, function(r) {
+        $("#borde_separador").html(r);
+    }
+    );    
 }
