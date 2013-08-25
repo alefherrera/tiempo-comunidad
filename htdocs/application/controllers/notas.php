@@ -111,17 +111,25 @@ class notas extends MY_Controller {
                 return;
             } else {
                 $imagen = $this->upload->data();
+                
+                //Hago el Thumb
+                if(!file_exists('images/notas/thumb')){
+                    mkdir('images/notas/thumb');
+                }
+                $resize = new Resize('images/notas/'.$imagen['file_name']);
+                $resize->resizeImage(207, 0);
+                $resize->saveImage('images/notas/thumb/' . $imagen['file_name']);
             }
         }
 
         $idnota = $this->notas_model->nueva_nota($imagen['file_name']);
 
-        if ($idnota > 0) {
-            $this->data['redireccion'] = '/index.php/nota/' . $idnota;
-            $this->load->template('/success.php', $this->data);
-        }
-        else
-            show_404();
+//        if ($idnota > 0) {
+//            $this->data['redireccion'] = '/index.php/nota/' . $idnota;
+//            $this->load->template('/success.php', $this->data);
+//        }
+//        else
+//            show_404();
     }
 
 }
