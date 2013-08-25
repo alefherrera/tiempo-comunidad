@@ -50,7 +50,7 @@
                 ?>
                 <div class="nota">
                     <div class="nota_formato" >
-                        <h5><?php echo $nota['fecha_alta']; ?> - Por <span><?php echo $nota['autor']; ?></span></h5>
+                        <h5><?php echo $nota['fecha_alta']; ?> - Por <span><?php echo $nota['autor']==''?'Anónimo':$nota['autor']; ?></span></h5>
                         <a href='/index.php/nota/<?php echo $nota['idnota'] ?>'><h1><?php echo $nota['titulo']; ?></h1></a>
                         <?php if ($nota['imagen'] != '' && file_exists('images/notas/thumb/' . $nota['imagen'])) { ?>
                             <img src='/images/notas/thumb/<?php echo $nota['imagen']; ?>' width="207px" height="

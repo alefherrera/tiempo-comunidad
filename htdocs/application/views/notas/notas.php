@@ -25,7 +25,7 @@
                     <input type="file" name="imagen" size="45" />
                 </div>
                 <div>
-                    <label for="ano">Autor</label>
+                    <label for="ano">Autor (si no se completa el autor será "Anónimo")</label>
                 </div>
                 <div>
                     <input type="text" name="autor" maxlength="45" value="<?php
