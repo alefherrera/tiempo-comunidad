@@ -8,6 +8,9 @@ function cargar_notas(pagina, result)
 }
 $(function() {
     crear_tabla(location.href);
+    window.onresize = function() {
+        masonry();
+    };
 });
 
 
@@ -15,10 +18,14 @@ function masonry() {
     var $container = $('#tabla');
     // initialize
     $container.masonry({
-        columnWidth: 246,
-        gutter: 10,
-        itemSelector: '.nota'
+        columnWidth: 256,
+        itemSelector: '.nota',
+        transitionDuration: 0
     });
+    $(".nota").each(function() {
+        $(this).css({left: $(this).position().left - 1 - Math.ceil($(this).position().left / 256)});
+    });
+
 }
 
 function set_trigger()
@@ -28,7 +35,7 @@ function set_trigger()
         crear_tabla($(this).attr("href"));
     });
 
-    
+
 }
 
 function crear_tabla(url)

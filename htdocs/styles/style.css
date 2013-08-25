@@ -328,16 +328,17 @@ input:focus {
 
 /*TABLA*/
 #posicion_notas{
-    margin-left: 10px;
+    /*margin-left: 10px;*/
 }
 .nota{
-    width:246px;
-    margin-top: 10px;
+    width:256px;
 }
 .nota_formato{
     padding: 20px;
     padding-top: 10px;
-    border: solid 1px #ccc;
+    border-left: solid 1px #ccc;
+    border-right: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
 }
 .nota_formato *{
     
