@@ -50,5 +50,16 @@ $(window).load(function() {
             $(document).scrollTop($("#nueva").offset().top);
         });
     });
-
+    arbol_meses();
+    
+    $(".arbol_ano").click(function() {
+        $(this).parent().find("ul").show();
+        $(".arbol_ano").toggleClass("seleccionado_ano");
+        arbol_meses();
+    });
 });
+
+function arbol_meses()
+{
+    $(".arbol_ano").not(".seleccionado_ano").parent().find("ul").hide();    
+}
