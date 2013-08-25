@@ -48,7 +48,7 @@ $route['notas/(:any)'] = 'notas/view/$1';
 $route['nueva_nota'] = 'notas/nueva_nota';
 
 //Nota
-$route['nota/(:any)'] = 'notas/nota_view/$1';
+$route['notas/(:any)'] = 'notas/nota_view/$1';
 
 //Revista
 $route['revista'] = 'revista/view';
