@@ -2,7 +2,7 @@
 
 class notas extends MY_Controller {
 
-    private static $cant_pagina = 5;
+    private static $cant_pagina = 9;
     private static $paginas_mostrar_max = 5;
 
     function __construct() {

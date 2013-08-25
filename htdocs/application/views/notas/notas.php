@@ -1,5 +1,5 @@
+<script src="/scripts/masonry.js"></script>
 <script src="/scripts/notas.js"></script>
-
 <div class="contenido">
 
     <div id="principal" class="float70">

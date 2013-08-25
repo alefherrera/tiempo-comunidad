@@ -328,10 +328,42 @@ input:focus {
 
 /*TABLA*/
 #posicion_notas{
-    border-style: solid;
-    border-width: 1px;
+    margin-left: 10px;
+}
+.nota{
+    width:246px;
+    margin-top: 10px;
+}
+.nota_formato{
+    padding: 20px;
+    padding-top: 10px;
+    border: solid 1px #ccc;
+}
+.nota_formato *{
+    
 }
 
+.nota_formato h5{
+    font-size:10px;
+}
+.nota_formato h5 span{
+    font-weight:bold;
+    font-size:10px;
+}
+
+.nota_formato h1{
+    font-weight: bold;
+    color: #C32127;
+    font-size: 24px;
+    font-family:'open sans condensed';
+    line-height: 25px;
+}
+.nota_formato p{
+    margin-top: 8px;
+}
+.nota_formato img{
+    margin-top: 8px;
+}
 #columnadirector, #columnaconsultenos{
     margin-top:30px;
 }

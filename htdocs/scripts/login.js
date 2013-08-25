@@ -34,9 +34,9 @@ function fecha(){
    $("#fecha").text(dows[dow]+" "+d+" de "+months[m]+" de "+y);
 }
 function bordes() {
-    console.log($("#header").height());
-    console.log($("#top").height());
-    console.log($("#footer").height());
+//    console.log($("#header").height());
+//    console.log($("#top").height());
+//    console.log($("#footer").height());
     return    ($(window).height() - (
             $("#header").height()
             + $("#top").height()

@@ -29,7 +29,7 @@ class notas_model extends CI_Model{
         if($pagina <= 0)
             return false;
         
-        $campos = "idnota, titulo, idusuario, autor, fecha_alta fecha, bajada, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta";
+        $campos = "idnota, titulo, idusuario, autor, fecha_alta fecha, bajada, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta, imagen";
         $this->db->select($campos, false);
         $this->db->order_by('fecha','desc');
         $query = $this->db->get('notas', $cant_pag, ($pagina-1)*$cant_pag);
