@@ -13,7 +13,7 @@
         ?>
 
         <li>
-            <a class='arbol_ano <?php if ($revista['año'] == $año) echo "seleccionado_ano" ?>' href='<?php echo '#' . $revista['año'] ?>'> <?php echo $revista['año'] ?></a>
+            <a class='arbol_ano <?php if ($revista['año'] == $año) echo "seleccionado_ano" ?>' href='<?php echo '#' . $revista['año'] ?>'><span>•</span> <?php echo $revista['año'] ?></a>
             <ul>
             <?php } ?>
             <li>

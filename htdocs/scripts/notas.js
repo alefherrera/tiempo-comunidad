@@ -18,9 +18,12 @@ function masonry() {
     var $container = $('#tabla');
     // initialize
     $container.masonry({
-        columnWidth: 256,
+        singleMode: true,
+        columnWidth: 0,
         itemSelector: '.nota',
-        transitionDuration: 0
+        transitionDuration: 0,
+        isFitWidth: true,
+        isRTL: false
     });
     $(".nota").each(function() {
         $(this).css({left: $(this).position().left - 1 - Math.ceil($(this).position().left / 256)});

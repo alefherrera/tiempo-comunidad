@@ -270,15 +270,13 @@ input:focus {
 #arbol_revista > ul > li{
     margin-top: 15px;
 }
-.arbol_ano{
-    padding-left: 15px;
-    background:url(/images/varios/rombo_gris.png) no-repeat;
-    background-position-y:3px;
+
+.arbol_ano span{
+    font-size: 15px;
 }
 
-.seleccionado_ano{
-    background:url(/images/varios/rombo_negro.png) no-repeat;
-    background-position-y:3px;
+.arbol_ano, .seleccionado_ano{
+    background-position: left 3px;
 }
 
 .seleccionado_ano, .seleccionado_mes{
@@ -341,7 +339,7 @@ input:focus {
     border-bottom: solid 1px #ccc;
 }
 .nota_formato *{
-    
+
 }
 
 .nota_formato h5{
