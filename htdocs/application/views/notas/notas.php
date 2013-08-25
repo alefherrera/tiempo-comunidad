@@ -6,6 +6,7 @@
         <div id="posicion_notas">
             
         </div>
+        <p id="nueva">*NUEVA NOTA</p>
         <?php if ($usuario != false && $usuario['idnivel'] < 2): ?>
             <div id="formulario" >
                 <?php echo form_open_multipart('nueva_nota') ?>
