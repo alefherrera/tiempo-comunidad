@@ -25,8 +25,8 @@ body{background-color:#fff;}
 
 
 
-#top{background-color: #333; }
-#topinfo{width:1100px; margin: 0 auto; }
+#top{ background-color: #333; }
+#topinfo{width:1100px; margin: 0 auto; background-color: #333; }
 #topinfo h5{color:#ccc; font-size: 12px; padding-top: 5px; padding-bottom:5px; }
 #topinfo h5 span{font-size: 12px; font-weight: 700;}
 
