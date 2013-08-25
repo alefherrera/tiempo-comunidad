@@ -27,6 +27,7 @@ class notas extends MY_Controller {
 
         if ($this->data['cantidad'] != 0)
             $this->data['notas'] = $this->notas_model->notas($pagina, notas::$cant_pagina);
+           
 
         if (ceil($this->data['cantidad'] / $cant_pagina) <= $paginas_mostrar_max)
             $paginas_mostrar_max = ceil($this->data['cantidad'] / $cant_pagina);

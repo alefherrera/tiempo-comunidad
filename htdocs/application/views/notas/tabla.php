@@ -52,8 +52,12 @@
                     <div class="nota_formato" >
                         <h5><?php echo $nota['fecha_alta']; ?> - Por <span><?php echo $nota['autor']; ?></span></h5>
                         <a href='/index.php/nota/<?php echo $nota['idnota'] ?>'><h1><?php echo $nota['titulo']; ?></h1></a>
-                        <?php if($nota['imagen'] != ''){ ?>
-                        <img src='/images/notas/<?php echo $nota['imagen']; ?>' width="207px"/>
+                        <?php if ($nota['imagen'] != '') { ?>
+                            <img src='/images/notas/<?php echo $nota['imagen']; ?>' width="207px" height="<?php
+                            $size = getimagesize('images/notas/' . $nota['imagen']);
+                            echo 207 * $size[1] / $size[0] . 'px';
+                            ?>"/>
+
                         <?php } ?>
                         <p><?php echo $nota['bajada'] ?></p>
                     </div>
@@ -67,9 +71,9 @@
     <?php endif ?>
     <div class="clearboth"></div>
     <div class="error"><?php
-    if (isset($error_nota))
-        echo $error_nota
-        ?></div>
+        if (isset($error_nota))
+            echo $error_nota
+            ?></div>
 </div>
 
 

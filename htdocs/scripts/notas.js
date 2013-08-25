@@ -28,9 +28,7 @@ function set_trigger()
         crear_tabla($(this).attr("href"));
     });
 
-    $('#tabla img').load(function() {
-        masonry();
-    });
+    
 }
 
 function crear_tabla(url)
@@ -40,5 +38,6 @@ function crear_tabla(url)
     cargar_notas(pagina, function(respuesta) {
         $("#posicion_notas").html(respuesta);
         set_trigger();
+        masonry();
     });
 }
