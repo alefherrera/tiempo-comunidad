@@ -53,9 +53,8 @@ $(window).load(function() {
     arbol_meses();
     
     $(".arbol_ano").click(function() {
-        $(this).parent().find("ul").show();
-        $(".arbol_ano").toggleClass("seleccionado_ano");
-        arbol_meses();
+        $(this).parent().find("ul").toggle("bind");    
+        //$(".arbol_ano").toggleClass("seleccionado_ano");
     });
     
     $(".arbol_mes").mouseup(function(){
