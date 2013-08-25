@@ -53,6 +53,7 @@ $route['nota/(:any)'] = 'notas/nota_view/$1';
 //Revista
 $route['revista'] = 'revista/view';
 $route['revista/verificar_revista/(:any)'] = 'revista/ajax_verificar_existente/$1/$2';
+$route['revista/ajax/(:any)'] = 'revista/ajax_view/$1/$2';
 $route['revista/(:any)'] = 'revista/view/$1/$2';
 $route['revista/nueva_revista'] = 'revista/nueva_revista';
 

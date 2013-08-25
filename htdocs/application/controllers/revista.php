@@ -8,8 +8,7 @@ class revista extends MY_Controller{
         $this->load->model('revistas_model');
         $this->load->library('common');
     }
-    
-    public function view($mes = '', $año = '')
+    public function revista($mes, $año)
     {
         if($mes == '')
             $mes = date('m');
@@ -30,10 +29,20 @@ class revista extends MY_Controller{
             $this->data['titulo'] = $revista['titulo'];
             $this->data['editorial'] = $revista['editorial'];
         }
+    }
+    public function view($mes = '', $año = '')
+    {
+        $this->revista($mes, $año);
         //Cargo Arbol
-         $arbol = $this->revistas_model->arbol();
-         $this->data['arbol'] = $arbol;
+        $arbol = $this->revistas_model->arbol();
+        $this->data['arbol'] = $arbol;
         $this->load->template('revista/revista.php', $this->data);
+    }
+    
+    public function ajax_view($mes = '', $año = '')
+    {
+        $this->revista($mes, $año);
+        $this->load->view('revista/revista.php', $this->data);
     }
     
     public function ajax_verificar_existente($mes, $ano)
