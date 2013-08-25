@@ -124,12 +124,12 @@ class notas extends MY_Controller {
 
         $idnota = $this->notas_model->nueva_nota($imagen['file_name']);
 
-//        if ($idnota > 0) {
-//            $this->data['redireccion'] = '/index.php/nota/' . $idnota;
-//            $this->load->template('/success.php', $this->data);
-//        }
-//        else
-//            show_404();
+        if ($idnota > 0) {
+            $this->data['redireccion'] = '/index.php/nota/' . $idnota;
+            $this->load->template('/success.php', $this->data);
+        }
+        else
+            show_404();
     }
 
 }
