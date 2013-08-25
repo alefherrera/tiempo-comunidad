@@ -343,6 +343,10 @@ input:focus {
 #columnadirector span, #columnaconsultenos span{
     color:grey;
 }
+#columnaconsultenos ul{
+    position: relative;
+    top: -6px;
+}
 #columnadirector{
     margin-left: 30px;
 }
