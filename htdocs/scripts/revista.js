@@ -54,6 +54,7 @@ $(window).load(function() {
     
     $(".arbol_ano").click(function() {
         $(this).parent().find("ul").toggle("bind");    
+        return false;
         //$(".arbol_ano").toggleClass("seleccionado_ano");
     });
     
