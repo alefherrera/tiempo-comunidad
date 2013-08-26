@@ -4,13 +4,13 @@
         <div id="rayas">
             <div id="taparevactual">
                 <?php if (isset($nombre_imagen)): ?>
-                    <img class="imgprueba" src="/revista/<?php echo $nombre_imagen ?>"/>
+                    <img class="imgprueba" src="/revistas/<?php echo $nombre_imagen ?>"/>
                 <?php endif ?>
             </div>
         </div>
         <br/>
         <?php if (isset($nombre_pdf)): ?>
-            <a id="revpdf" href="/revista/<?php echo $nombre_pdf ?>">EDICIÓN IMPRESA</a> 
+            <a id="revpdf" href="/revistas/<?php echo $nombre_pdf ?>">EDICIÓN IMPRESA</a> 
 
             <br/><br/>
         <?php endif ?>

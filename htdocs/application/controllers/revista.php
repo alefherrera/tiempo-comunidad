@@ -69,7 +69,7 @@ class revista extends MY_Controller{
         $this->data['mes_form'] = $this->input->post('mes');
         $this->data['ano_form'] = $this->input->post('ano');
         
-        $config['upload_path'] = './revista/';
+        $config['upload_path'] = './revistas/';
         $config['allowed_types'] = 'gif|jpg|png|pdf';
         $config['max_size'] = '5000';
         $config['remove_spaces'] = TRUE;
@@ -122,14 +122,14 @@ class revista extends MY_Controller{
         if($ferror){
 
             if($imagen != '')
-                unlink('./revista/'.$this->data['imagen']['upload_data']['file_name']);
+                unlink('./revistas/'.$this->data['imagen']['upload_data']['file_name']);
             if($pdf != '')
-                unlink('./revista/'.$this->data['pdf']['upload_data']['file_name']);
+                unlink('./revistas/'.$this->data['pdf']['upload_data']['file_name']);
             $this->view();
         }
         else{
             $this->revistas_model->upload($imagen, $pdf);
-            $this->data['redireccion'] = '/index.php/revista';
+            $this->data['redireccion'] = '/revista';
             $this->load->template('/success.php', $this->data);
         }
     }

@@ -17,7 +17,7 @@
             <ul>
             <?php } ?>
             <li>
-                <a id="<?php echo $revista['mes']?>" class='arbol_mes <?php if (Common::mes($revista['mes']) == $mes && $revista['año'] == $año) echo "seleccionado_mes" ?>' href='/index.php/revista/<?php echo $revista['mes'] . '/' . $revista['año'] ?>'><?php echo Common::mes($revista['mes']) . ' - ' . $revista['titulo'] ?></a>
+                <a id="<?php echo $revista['mes']?>" class='arbol_mes <?php if (Common::mes($revista['mes']) == $mes && $revista['año'] == $año) echo "seleccionado_mes" ?>' href='/revista/<?php echo $revista['mes'] . '/' . $revista['año'] ?>'><?php echo Common::mes($revista['mes']) . ' - ' . $revista['titulo'] ?></a>
             </li>
             <?php
         }
