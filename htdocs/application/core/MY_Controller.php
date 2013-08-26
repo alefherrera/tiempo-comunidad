@@ -27,6 +27,7 @@ class MY_Controller extends CI_Controller{
             $this->session->set_userdata('usuario', $query);
             $this->data['usuario'] = $this->session->userdata('usuario');
         }
+  
         
     }
     

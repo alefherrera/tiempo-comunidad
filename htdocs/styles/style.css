@@ -334,10 +334,13 @@ input:focus {
 .nota_formato{
     padding: 20px;
     padding-top: 10px;
-    border-left: solid 1px #ccc;
     border-right: solid 1px #ccc;
+}
+.nota .nota_formato{
+    border-left: solid 1px #ccc;
     border-bottom: solid 1px #ccc;
 }
+
 .nota_formato *{
 
 }
@@ -362,6 +365,10 @@ input:focus {
 }
 .nota_formato img{
     margin-top: 8px;
+}
+
+#nota .nota_formato{
+    border-bottom: none;
 }
 #columnadirector, #columnaconsultenos{
     margin-top:30px;
@@ -393,6 +400,6 @@ input:focus {
 }
 
 #botonera .seleccionado{
-        background-color:#C32127;
-        color:white;
+    background-color:#C32127;
+    color:white;
 }

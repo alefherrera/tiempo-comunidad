@@ -60,7 +60,7 @@
                             ?>"/>
 
                         <?php } ?>
-                        <p><?php echo $nota['bajada'] ?></p>
+                        <p><?php echo nl2br($nota['bajada']) ?></p>
                     </div>
                 </div>
 
