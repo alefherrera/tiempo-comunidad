@@ -267,8 +267,8 @@ input:focus {
     font-size: 13px;
     color:#959595;
 }
-#arbol_revista > ul > li{
-    margin-top: 15px;
+#arbol_revista > ul > li > ul{
+    padding-bottom: 15px;
 }
 
 .arbol_ano span{
