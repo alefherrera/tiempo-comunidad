@@ -362,6 +362,7 @@ input:focus {
 }
 .nota_formato p{
     margin-top: 8px;
+    color: #666;
 }
 .nota_formato img{
     margin-top: 8px;
@@ -369,6 +370,18 @@ input:focus {
 
 #nota .nota_formato{
     border-bottom: none;
+}
+#nota .nota_formato h1{
+    font-size: 38px;
+    padding-bottom: 10px;
+}
+#nota .nota_formato h5{
+    padding-bottom: 10px;
+}
+#nota .nota_formato p{
+    font-size: 15px;
+    color: #666;
+    line-height: 1.5;
 }
 #columnadirector, #columnaconsultenos{
     margin-top:30px;

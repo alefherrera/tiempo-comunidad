@@ -2,7 +2,7 @@
 
 <div class="contenido">
 
-    <div id="nota" class="float70">
+    <div id="nota" class="float60">
         <div class="nota_formato">
             <h5><?php echo $nota['fecha_alta']; ?> - Por <span><?php echo $nota['autor'] == '' ? 'Anónimo' : $nota['autor']; ?></span></h5>
             <h1>

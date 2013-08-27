@@ -3,7 +3,6 @@ $(window).load(function () {
 
     window.onresize = function () {
         fix_footer();
-        masonry();
     };
     
 });
