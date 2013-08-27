@@ -8,6 +8,9 @@ $(function() {
         if (location.href.indexOf($(this).attr("href")) > 0)
             $(this).toggleClass("seleccionado");
     });
+    if ($(".seleccionado").attr("href") === undefined)
+        $("#botonera").find("[href='" + "/revista" + "']").toggleClass("seleccionado");
+    
     var button = $('#loginButton');
     var box = $('#loginBox');
     var form = $('#loginForm');

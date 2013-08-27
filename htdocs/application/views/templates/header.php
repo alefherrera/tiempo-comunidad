@@ -81,7 +81,7 @@
 
                         <div id="header">
                             <div class='contenido'>
-                                <a  href="/index.php"> <img class="floatleft" src="/images/index/tiempologochico2.png"/></a>
+                                <a  href="/revista"> <img class="floatleft" src="/images/index/tiempologochico2.png"/></a>
                                 <div id="botonera">
                                     <nav>   <ul>
 
