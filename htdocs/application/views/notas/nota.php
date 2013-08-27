@@ -15,7 +15,7 @@
                 <img style="width:100%" src="/images/notas/<?php echo $nota['imagen'] ?>"/>
             <?php endif ?>
 
-            <p>
+            <p class="texto">
                 <?php echo nl2br($nota['contenido']) ?>
             </p>
         </div>

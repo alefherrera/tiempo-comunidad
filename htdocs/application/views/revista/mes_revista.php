@@ -25,7 +25,7 @@
                 <h1 class="titulo"><?php echo $titulo ?></h1>
             <?php endif ?>
 
-            <p>
+            <p class="texto">
                 <?php if (isset($editorial)): ?>
                     <?php echo nl2br($editorial); ?>
                 <?php endif ?>
