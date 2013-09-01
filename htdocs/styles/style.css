@@ -268,6 +268,7 @@ input:focus {
 }
 #arbol_revista > ul > li > ul{
     padding-bottom: 15px;
+    padding-left: 8px;
 }
 
 .arbol_ano span{
@@ -327,6 +328,30 @@ input:focus {
 #posicion_notas{
     /*margin-left: 10px;*/
 }
+#numeros{
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+#numeros li{
+    float:left; 
+    padding-right: 4px;
+    padding-left: 4px;
+}
+#numeros a{
+    font-size: 14px;
+    color: #666;
+    font-weight: 700;
+}
+#numeros a img{
+    position:relative;
+    top: 1px;
+}
+#numeros .selected{
+    background-color: #C32127;
+}
+#numeros .selected a{
+    color: white;
+}
 .nota{
     width:256px;
 }
@@ -346,6 +371,7 @@ input:focus {
 
 .nota_formato h5{
     font-size:10px;
+    padding-bottom: 2px;
 }
 .nota_formato h5 span{
     font-weight:bold;
@@ -360,7 +386,7 @@ input:focus {
     line-height: 25px;
 }
 .nota_formato p{
-    
+
     margin-top: 8px;
 }
 
@@ -371,7 +397,28 @@ input:focus {
     line-height: 1.2;
     color: #666;
 }
-
+#compartir{
+    padding-left:20px;
+    padding-top:20px;
+    padding-bottom: 20px;
+}
+#compartir h1{
+    font-weight: 700;
+    color: #666;
+    font-size:15px;
+}
+#compartirsociales{
+    padding-left:5px;
+}
+#compartirsociales .paddingsociales{
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-right: 0px;
+}
+#nota .texto{
+    border-bottom: #CCC 1px solid;
+    padding-bottom: 20px;
+}
 .texto{
     font-size: 15px;
     line-height: 1.5;
@@ -382,7 +429,7 @@ input:focus {
 }
 
 #nota .nota_formato{
-    border-bottom: none;
+    padding-bottom: 0px;
 }
 #nota .nota_formato h1{
     font-size: 38px;
