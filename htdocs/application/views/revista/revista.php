@@ -18,7 +18,7 @@
         </div>
         <div class="clearboth"></div>
 
-        <?php if ($usuario != false && $usuario['idnivel'] == 1): ?>
+        <?php if ($usuario != false && $usuario['idnivel'] <= Administrador): ?>
             <p id="nueva">*NUEVA REVISTA</p>
             <div id="formulario">
                 <?php if (isset($error_upload)): ?>

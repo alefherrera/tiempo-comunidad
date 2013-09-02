@@ -1,7 +1,7 @@
 
 function cargar_notas(pagina, result)
 {
-    $.get("/notas/ajax/" + pagina, function(r) {
+    $.get("/notas/ajax/tabla/" + pagina, function(r) {
         result(r);
     }
     );

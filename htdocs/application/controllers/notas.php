@@ -70,7 +70,22 @@ class notas extends MY_Controller {
         $this->load->view('notas/tabla.php', $this->data);
         //echo json_encode($this->data);
     }
-
+    
+    public function ajax_editar($idnota = 0){
+        if (!($this->data['usuario']['idnivel'] <= Administrador)) {
+            return false;
+        }
+        if($idnota == 0){
+            return false;
+        }
+        $nota = $this->notas_model->nota($idnota);
+        if (sizeof($nota) == 0 || $nota == false) {
+            return false;
+        }
+        $this->data['nota'] = $nota;
+        echo json_encode($this->data);
+    }
+    
     public function nueva_nota() {
         if (!($this->data['usuario']['idnivel'] <= Contribuidor)) {
             show_404();
@@ -131,7 +146,7 @@ class notas extends MY_Controller {
         else
             show_404();
     }
-
+   
 }
 
 ?>

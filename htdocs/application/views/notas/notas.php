@@ -6,7 +6,7 @@
         <div id="posicion_notas">
 
         </div>
-        <?php if ($usuario != false && $usuario['idnivel'] < 2): ?>
+        <?php if ($usuario != false && $usuario['idnivel'] <= Contribuidor): ?>
             <p id="nueva">*NUEVA NOTA</p>
 
             <div id="formulario" >
