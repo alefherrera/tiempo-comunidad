@@ -33,7 +33,7 @@ class notas extends MY_Controller {
             $paginas_mostrar_max = ceil($this->data['cantidad'] / $cant_pagina);
 
         $medio = round($paginas_mostrar_max / 2, 0, PHP_ROUND_HALF_UP);
-
+        $numeros = null;
         for ($i = 0; $i <= $paginas_mostrar_max - 1; $i++) {
             if ($pagina <= $medio || $paginas_mostrar_max >= ceil($this->data['cantidad'] / $cant_pagina)) {
                 $numeros[$i] = $i;

@@ -5,7 +5,7 @@ $(function() {
     fecha();
 
     $("#botonera a").each(function() {
-        if (location.href.indexOf($(this).attr("href")) > 0)
+        if (location.pathname.indexOf($(this).attr("href")) == 0)
             $(this).toggleClass("seleccionado");
     });
     if ($(".seleccionado").attr("href") === undefined)
