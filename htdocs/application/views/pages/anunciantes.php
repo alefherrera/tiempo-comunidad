@@ -6,5 +6,4 @@
 ?>
 
 <div class="contenido">
-    <img src="http://i.qkme.me/3qvbqk.jpg"/>
 </div>

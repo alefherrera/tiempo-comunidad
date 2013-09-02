@@ -6,5 +6,4 @@
 ?>
 
 <div class="contenido">
-   <img src="http://stream1.gifsoup.com/view/29043/batman-bomb-run-o.gif"/>
 </div>
