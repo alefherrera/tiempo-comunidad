@@ -16,7 +16,7 @@
                 </ul></nav>
         </div>
 
-        <div class="copyright">Director: Morán José María | info@revistatiempo.com.ar | Tel/Fax: (011) 4756 - 0385 | 
+        <div class="copyright">Director: Anabela Tamagna | info@revistatiempo.com.ar | Tel/Fax: (011) 4756 - 0385 | 
             <strong> <?php echo date('Y'); ?></strong>	© Ramon Labs </div>
     </div>
 </div>

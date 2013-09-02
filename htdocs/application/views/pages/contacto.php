@@ -12,7 +12,7 @@
                 <div class="contacto">
                     <span class="floatleft">DIRECTOR</span>
                     <div class="floatleft contactoinfo">
-                        José Maria Morán
+                        Anabela Tamagna
                     </div>
                     <div class="clearboth"></div>
                 </div>
