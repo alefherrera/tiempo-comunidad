@@ -21,13 +21,13 @@ class notas extends MY_Controller {
     public function pages($pagina = 1) {
         $cant_pagina = notas::$cant_pagina;
         $paginas_mostrar_max = notas::$paginas_mostrar_max;
-        
+
         $this->data['cantidad'] = $this->notas_model->cantidad_notas();
 
 
         if ($this->data['cantidad'] != 0)
             $this->data['notas'] = $this->notas_model->notas($pagina, notas::$cant_pagina);
-           
+
 
         if (ceil($this->data['cantidad'] / $cant_pagina) <= $paginas_mostrar_max)
             $paginas_mostrar_max = ceil($this->data['cantidad'] / $cant_pagina);
@@ -70,12 +70,11 @@ class notas extends MY_Controller {
         $this->load->view('notas/tabla.php', $this->data);
         //echo json_encode($this->data);
     }
-    
-    public function ajax_editar($idnota = 0){
+    public function ajax_editar($idnota = 0) {
         if (!($this->data['usuario']['idnivel'] <= Administrador)) {
             return false;
         }
-        if($idnota == 0){
+        if ($idnota == 0) {
             return false;
         }
         $nota = $this->notas_model->nota($idnota);
@@ -85,7 +84,7 @@ class notas extends MY_Controller {
         $this->data['nota'] = $nota;
         echo json_encode($this->data);
     }
-    
+
     public function nueva_nota() {
         if (!($this->data['usuario']['idnivel'] <= Contribuidor)) {
             show_404();
@@ -126,12 +125,12 @@ class notas extends MY_Controller {
                 return;
             } else {
                 $imagen = $this->upload->data();
-                
+
                 //Hago el Thumb
-                if(!file_exists('images/notas/thumb')){
+                if (!file_exists('images/notas/thumb')) {
                     mkdir('images/notas/thumb');
                 }
-                $resize = new Resize('images/notas/'.$imagen['file_name']);
+                $resize = new Resize('images/notas/' . $imagen['file_name']);
                 $resize->resizeImage(207, 0);
                 $resize->saveImage('images/notas/thumb/' . $imagen['file_name']);
             }
@@ -146,7 +145,19 @@ class notas extends MY_Controller {
         else
             show_404();
     }
-   
+    
+    public function eliminar($idnota = 0){
+        if ($idnota == 0) {
+            show_404();
+            return;
+        }
+        if (!($this->data['usuario']['idnivel'] <= Administrador)) {
+            show_404();
+            return;
+        }
+        $this->notas_model->eliminar($idnota);
+        $this->view();
+    }
 }
 
 ?>

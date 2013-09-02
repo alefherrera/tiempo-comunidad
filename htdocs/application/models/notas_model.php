@@ -17,6 +17,7 @@ class notas_model extends CI_Model{
     }
     
     public function cantidad_notas(){
+        $this->db->where('activo', true);
         $cantidad = $this->db->count_all_results('notas');
         if($cantidad == 0){
             return false;
@@ -31,7 +32,9 @@ class notas_model extends CI_Model{
         
         $campos = "idnota, titulo, idusuario, autor, fecha_alta fecha, bajada, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta, imagen";
         $this->db->select($campos, false);
+        $this->db->where('activo', true);
         $this->db->order_by('fecha','desc');
+        
         $query = $this->db->get('notas', $cant_pag, ($pagina-1)*$cant_pag);
         return $query->result_array();
     }
@@ -58,6 +61,15 @@ class notas_model extends CI_Model{
         $this->db->insert('notas', $insert);
         
         return $this->db->insert_id();
+    }
+    
+    public function eliminar($idnota)
+    {
+        $update['activo'] = false;
+        
+        $this->db->where('activo', true);
+        $this->db->where('idnota', $idnota);
+        $this->db->update('notas', $update);
     }
 }
 

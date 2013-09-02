@@ -43,6 +43,11 @@ $route['404_override'] = '';
 
 //Notas
 $route['notas'] = '/notas/view';
+//Submit del eliminar y editar
+$route['notas/eliminar/(:any)'] = 'notas/eliminar/$1';
+$route['notas/editar/(:any)'] = 'notas/eliminar/$1';
+
+//Carga los datos al formulario
 $route['notas/ajax/editar/(:any)'] = 'notas/ajax_editar/$1';
 $route['notas/ajax/tabla/(:any)'] = 'notas/ajax_table/$1';
 $route['notas/(:any)'] = 'notas/view/$1';

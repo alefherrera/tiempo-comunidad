@@ -63,7 +63,7 @@
                         <h5><?php echo $nota['fecha_alta']; ?> - Por <span><?php echo $nota['autor'] == '' ? 'Anónimo' : $nota['autor']; ?></span></h5>
                         <?php if ($usuario != false && $usuario['idnivel'] <= Administrador): ?>
                             <div class="floatright">
-                                <a href="#<?php echo $nota['idnota']?>">Editar</a> -  <a href="#<?php echo $nota['idnota']?>">Eliminar</a>
+                                <a href="#<?php echo $nota['idnota']?>">Editar</a> -  <a href="/notas/eliminar/<?php echo $nota['idnota']?>" onclick="return (window.confirm('¿Esta seguro que quiere eliminar esta nota?'))">Eliminar</a>
                             </div>
                         <?php endif ?>
                         <a href='/notas/<?php echo $nota['idnota'] ?>'><h1><?php echo $nota['titulo']; ?></h1></a>
