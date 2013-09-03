@@ -70,8 +70,9 @@ class notas extends MY_Controller {
         $this->load->view('notas/tabla.php', $this->data);
         //echo json_encode($this->data);
     }
+
     public function ajax_editar($idnota = 0) {
-        if (!($this->data['usuario']['idnivel'] <= Administrador)) {
+        if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
             return false;
         }
         if ($idnota == 0) {
@@ -86,7 +87,7 @@ class notas extends MY_Controller {
     }
 
     public function nueva_nota() {
-        if (!($this->data['usuario']['idnivel'] <= Contribuidor)) {
+        if (!($this->data['usuario']['idnivel'] <= Contribuidor) || $this->data['usuario'] == null) {
             show_404();
             return;
         }
@@ -145,19 +146,20 @@ class notas extends MY_Controller {
         else
             show_404();
     }
-    
-    public function eliminar($idnota = 0){
+
+    public function eliminar($idnota = 0) {
         if ($idnota == 0) {
             show_404();
             return;
         }
-        if (!($this->data['usuario']['idnivel'] <= Administrador)) {
+        if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
             show_404();
             return;
         }
         $this->notas_model->eliminar($idnota);
         $this->view();
     }
+
 }
 
 ?>

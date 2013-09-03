@@ -58,7 +58,7 @@ class revista extends MY_Controller{
     
     public function nueva_revista()
     {
-        if(!($this->data['usuario']['idnivel'] <= Administrador)){
+        if(!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null){
             show_404();
             return;
         }
