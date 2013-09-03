@@ -61,17 +61,29 @@
                 <div class="nota">
                     <div class="nota_formato" >
                         <h5><?php echo $nota['fecha_alta']; ?> - Por <span><?php echo $nota['autor'] == '' ? 'Anónimo' : $nota['autor']; ?></span></h5>
+
+                        <a class="float70" href='/notas/<?php echo $nota['idnota'] ?>'><h1><?php echo $nota['titulo']; ?></h1></a>
                         <?php if ($usuario != false && $usuario['idnivel'] <= Administrador): ?>
-                            <div class="floatright">
-                                <a href="#<?php echo $nota['idnota']?>">Editar</a> -  <a href="/notas/eliminar/<?php echo $nota['idnota']?>" onclick="return (window.confirm('¿Esta seguro que quiere eliminar esta nota?'))">Eliminar</a>
+                            <div class="float30">
+                                <ul class="floatright">
+                                    <li class="floatleft">
+                                        <a class="icono editar" href="#<?php echo $nota['idnota'] ?>">Editar</a>
+                                    </li>
+                                    <li class="floatleft">
+                                        <a class="icono eliminar" href="/notas/eliminar/<?php echo $nota['idnota'] ?>" onclick="return (window.confirm('¿Esta seguro que quiere eliminar esta nota?'));">
+                                        Eliminar
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         <?php endif ?>
-                        <a href='/notas/<?php echo $nota['idnota'] ?>'><h1><?php echo $nota['titulo']; ?></h1></a>
+                        <div class="clearboth"></div>
+
                         <?php if ($nota['imagen'] != '' && file_exists('images/notas/thumb/' . $nota['imagen'])) { ?>
-                            <img src='/images/notas/thumb/<?php echo $nota['imagen']; ?>' width="207px" height="
+                            <img src='/images/notas/thumb/<?php echo $nota['imagen']; ?>' width="214px;" height="
                             <?php
                             $size = getimagesize('images/notas/thumb/' . $nota['imagen']);
-                            echo 207 * $size[1] / $size[0] . 'px';
+                            echo 214 * $size[1] / $size[0] . 'px';
                             ?>"/>
 
                         <?php } ?>

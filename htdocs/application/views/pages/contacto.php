@@ -19,11 +19,10 @@
                 <div class="contacto">
                     <span class="floatleft">SEGUINOS</span>
                     <ul class="floatleft contactoinfo">
-                        <li>
-                            <a href="https://twitter.com/tiempodelacomun">@Tiempodelacomun</a>
-                        </li>
-                        <li>
-                            <a href="https://www.facebook.com/tiempodelacomunidad">tiempodelacomunidad</a>
+                        <li class="">
+                            <a href="https://twitter.com/tiempodelacomun">Twitter</a>
+                             - 
+                            <a href="https://www.facebook.com/tiempodelacomunidad">Facebook</a>
                         </li>
                     </ul>
                     <div class="clearboth"></div>

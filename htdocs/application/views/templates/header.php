@@ -41,7 +41,7 @@
                                             <fieldset id="loginBody">
                                                 <div id="usuariologueado" class="floatleft"> <?php echo $usuario['nombre_usuario']; ?></div>
                                                 <?php echo form_open('revista/logout'); ?>
-                                                <input type="submit" class="loginButton" name="submit" value="Desloguear"/>
+                                                <input type="submit" class="loginButton floatright" name="submit" value="Desloguear"/>
                                             </fieldset>
                                             <?php
                                         else:
@@ -53,13 +53,13 @@
                                                 <?php endif ?>
                                                 <fieldset>
                                                     <label for="usuario">Usuario</label> 
-                                                    <input type="input" value="<?php echo $this->input->post('usuario') ?>"  name="usuario" id="usuario" />
+                                                    <input type="input" class="loginInput" value="<?php echo $this->input->post('usuario') ?>"  name="usuario" id="usuario" />
                                                 </fieldset>
                                                 <fieldset>
                                                     <label for="password">Contraseña</label>
-                                                    <input type="password" name="password" />
+                                                    <input type="password" class="loginInput" name="password" />
                                                 </fieldset>
-                                                <input type="submit" name="submit" class="loginButton" value="Ingresar" />
+                                                <input type="submit" name="submit" class="loginButton floatleft" value="Ingresar" />
 
                                                 <div id="recuerdame">
                                                     <input type="checkbox" id="checkbox" name="recordar"/>

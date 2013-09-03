@@ -20,7 +20,9 @@ body{background-color:#fff;}
                        padding-bottom:5px;border-right:1px solid #CCC;}
 
 
-#botonera nav ul li a:hover{color:#000; text-decoration: underline;}
+#botonera nav ul li a.seleccionado:hover{ text-decoration: underline;}
+#botonera nav ul li a:not(.seleccionado):hover{color:#000; text-decoration: underline;}
+
 #botonera nav ul li a.borizq{border-left:1px solid #CCC;}
 
 
@@ -96,8 +98,8 @@ body{background-color:#fff;}
 #loginForm {
     width:248px; 
     margin-top:-1px;
-    background:#333333;
-    padding:6px;
+    border: solid #333 6px;
+    background-color: white;
 }
 #loginForm fieldset {
     margin:0 0 12px 0;
@@ -111,7 +113,11 @@ fieldset#loginBody {
     margin:0;
 }
 
-#usuariologueado{margin-top:8px; margin-right:10px;margin-left: 10px;}
+#usuariologueado
+{
+    margin-top: 9px; 
+    margin-left: 15px;
+}
 
 #loginForm #checkbox {
     width:auto;
@@ -136,30 +142,24 @@ fieldset#loginBody {
 }
 
 /* Default Input */
-#loginForm input {
+#loginForm input{
+    font-size:14px;
+}
+#loginForm .loginInput {
     border:1px solid #899caa;
-    color:#3a454d;
     font-weight:bold;
     padding:8px 8px;
-    box-shadow:inset 0px 1px 3px #bbb;
-    -webkit-box-shadow:inset 0px 1px 3px #bbb;
-    -moz-box-shadow:inset 0px 1px 3px #bbb;
-    font-size:16px;
 }
 
 /* Sign In Button */
-.loginButton {
-    font-size: 14px;
-    float:left;
-    background:#de4633 url(/images/login/loginbuttonbg.png) repeat-x;
-    color:#fff;
+#loginForm .loginButton {
+    color:white;
     padding:7px 10px 8px 10px;
-    box-shadow:none;
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
+    background-color: #C32127;
     margin:0 12px 0 0;
     cursor:pointer;
     *padding:7px 2px 8px 2px; /* IE7 Fix */
+
 }
 
 
@@ -328,6 +328,30 @@ input:focus {
 #posicion_notas{
     /*margin-left: 10px;*/
 }
+#posicion_notas .nota_formato li{
+    padding-top: 7px;
+    padding-left: 5px;
+}
+.icono{
+    width: 17px;
+    height: 18px;
+    background-repeat: no-repeat;
+    display:block;
+    text-indent:-5000em;
+}
+.eliminar{
+    background-image: url(/images/index/eliminargris.png);
+}
+.editar{
+    background-image: url(/images/index/editargris.png);
+}
+.eliminar:hover{
+    background-image: url(/images/index/eliminarrojo.png);
+}
+.editar:hover{
+    background-image: url(/images/index/editarverde.png);
+}
+
 #numeros{
     padding-right: 10px;
     padding-bottom: 10px;
@@ -463,6 +487,15 @@ input:focus {
 .contactoinfo{
     margin-left: 10px;
 }
+.contactoinfo a{
+    
+}
+.contactoinfo a:visited{
+    color: black;
+}
+.contactoinfo a:hover{
+    color: #666;
+}
 
 .contactoinfo img{
     vertical-align: middle;
@@ -471,4 +504,14 @@ input:focus {
 #botonera .seleccionado{
     background-color:#C32127;
     color:white;
+}
+
+#staff{
+    padding-top: 10px;
+}
+
+#staff li{
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
 }
