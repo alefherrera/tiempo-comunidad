@@ -487,18 +487,32 @@ input:focus {
 .contactoinfo{
     margin-left: 10px;
 }
-.contactoinfo #facebook,
-.contactoinfo #facebook:visited{
-    color: #3b5998;
-}
-.contactoinfo #twitter, 
-.contactoinfo #twitter:visited{
-    color: #09a0d7;
+
+.contactoinfo a{
+    float:left;
+    display:block;
+    text-indent: -50000em;
+    background-repeat: no-repeat;
+    margin-right: 10px;
 }
 
-.contactoinfo #twitter:hover,
+.contactoinfo #facebook,
+.contactoinfo #facebook:visited{
+    background-image: url(/images/index/facebook-logotipo.png);
+    width:68px;
+}
 .contactoinfo #facebook:hover{
-    color: #666;
+    background-image: url(/images/index/facebook-logotipo-hover.png);
+}
+
+.contactoinfo #twitter, 
+.contactoinfo #twitter:visited{
+    background-image: url(/images/index/twitter-logotipo.png);
+    width:64px;
+}
+
+.contactoinfo #twitter:hover{
+    background-image: url(/images/index/twitter-logotipo-hover.png);
 }
 
 .contactoinfo img{

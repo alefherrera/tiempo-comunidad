@@ -21,7 +21,6 @@
                     <ul class="floatleft contactoinfo">
                         <li class="">
                             <a id="twitter" href="https://twitter.com/tiempodelacomun">Twitter</a>
-                             - 
                             <a id="facebook" href="https://www.facebook.com/tiempodelacomunidad">Facebook</a>
                         </li>
                     </ul>
