@@ -333,8 +333,8 @@ input:focus {
     padding-left: 5px;
 }
 .icono{
-    width: 17px;
-    height: 18px;
+    width: 18px;
+    height: 17px;
     background-repeat: no-repeat;
     display:block;
     text-indent:-5000em;
@@ -487,13 +487,17 @@ input:focus {
 .contactoinfo{
     margin-left: 10px;
 }
-.contactoinfo a{
-    
+.contactoinfo #facebook,
+.contactoinfo #facebook:visited{
+    color: #3b5998;
 }
-.contactoinfo a:visited{
-    color: black;
+.contactoinfo #twitter, 
+.contactoinfo #twitter:visited{
+    color: #09a0d7;
 }
-.contactoinfo a:hover{
+
+.contactoinfo #twitter:hover,
+.contactoinfo #facebook:hover{
     color: #666;
 }
 
