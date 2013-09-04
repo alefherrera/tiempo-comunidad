@@ -17,7 +17,6 @@ class notas_model extends CI_Model{
     }
     
     public function cantidad_notas(){
-        $this->db->where('activo', true);
         $cantidad = $this->db->count_all_results('notas');
         if($cantidad == 0){
             return false;
@@ -32,7 +31,6 @@ class notas_model extends CI_Model{
         
         $campos = "idnota, titulo, idusuario, autor, fecha_alta fecha, bajada, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta, imagen";
         $this->db->select($campos, false);
-        $this->db->where('activo', true);
         $this->db->order_by('fecha','desc');
         
         $query = $this->db->get('notas', $cant_pag, ($pagina-1)*$cant_pag);
@@ -45,7 +43,7 @@ class notas_model extends CI_Model{
         
         $campos = "idnota, titulo, idusuario, autor, bajada, contenido, DATE_FORMAT(fecha_alta, '%d/%m/%Y') fecha_alta, imagen";
         $this->db->select($campos, false);
-        $query = $this->db->get_where('notas', array('idnota' => $idnota, 'activo' => true));
+        $query = $this->db->get_where('notas', array('idnota' => $idnota));
         return $query->row_array();
     }
     
@@ -54,7 +52,6 @@ class notas_model extends CI_Model{
         $insert['imagen'] = $imagen;
         $insert['contenido'] = $this->input->post('contenido');
         $insert['idusuario'] = $this->session->userdata('usuario')['idusuarios'];
-        $insert['activo'] = true;
         $insert['autor'] = $this->input->post('autor');
         $insert['bajada'] = $this->input->post('bajada');
         
@@ -65,11 +62,8 @@ class notas_model extends CI_Model{
     
     public function eliminar($idnota)
     {
-        $update['activo'] = false;
-        
-        $this->db->where('activo', true);
         $this->db->where('idnota', $idnota);
-        $this->db->update('notas', $update);
+        $this->db->delete('notas');
     }
 }
 
