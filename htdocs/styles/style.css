@@ -523,13 +523,67 @@ input:focus {
     background-color:#C32127;
     color:white;
 }
-
+#quienes .texto{
+    text-align:justify;
+}
 #staff{
     padding-top: 10px;
+}
+#staff .texto{
+    font-weight: bold;
 }
 
 #staff li{
     font-size: 15px;
     line-height: 1.5;
     color: #666;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+#posicion_anunciantes
+{
+    margin-top: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+#tabla_anunciantes
+{
+    
+}
+#tabla_anunciantes h1
+{
+    color: #C32127;
+    font-size: 24px;
+    font-family: 'open sans condensed';
+    line-height: 25px;
+    font-weight: bold;
+}
+
+#tabla_anunciantes ul
+{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 18px;
+    margin-right: 16px;
+}
+#tabla_anunciantes #tabla
+{
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+#tabla_anunciantes .anunciante{
+    width: 248px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    
+}
+#tabla_anunciantes strong{
+    font-weight: bold;
+}
+
+#tabla_anunciantes img{
+    margin-top: 5px;
+    margin-bottom:5px;
 }

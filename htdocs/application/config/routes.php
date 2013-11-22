@@ -38,23 +38,26 @@
 |
 */
 
-$route['default_controller'] = 'revista/view';
+$route['default_controller'] = 'pages/view/quienes';
 $route['404_override'] = '';
 
 //Notas
 $route['notas'] = '/notas/view';
 //Submit del eliminar y editar
-$route['notas/eliminar/(:any)'] = 'notas/eliminar/$1';
-$route['notas/editar/(:any)'] = 'notas/eliminar/$1';
-
+$route['notas/eliminar/(:any)'] = '/notas/eliminar/$1';
+$route['notas/editar_submit/(:any)'] = '/notas/editar_submit/$1';
 //Carga los datos al formulario
-$route['notas/ajax/editar/(:any)'] = 'notas/ajax_editar/$1';
-$route['notas/ajax/tabla/(:any)'] = 'notas/ajax_table/$1';
-$route['notas/(:any)'] = 'notas/view/$1';
-$route['nueva_nota'] = 'notas/nueva_nota';
-
+$route['notas/editar/(:any)'] = '/notas/cargar_editar/$1';
+$route['notas/ajax/tabla/(:any)'] = '/notas/ajax_table/$1';
+$route['notas/(:any)'] = '/notas/view/$1';
+$route['nueva_nota'] = '/notas/nueva_nota';
 //Nota
-$route['notas/(:any)'] = 'notas/nota_view/$1';
+$route['notas/(:any)'] = '/notas/nota_view/$1';
+
+//Anunciantes
+$route['anunciantes'] = '/anunciantes/view';
+$route['anunciantes/nuevo_anunciante'] = '/anunciantes/nuevo_anunciante';
+$route['anunciantes/eliminar/(:any)'] = '/anunciantes/eliminar/$1';
 
 //Revista
 $route['revista'] = 'revista/view';

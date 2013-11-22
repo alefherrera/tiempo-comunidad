@@ -1,5 +1,6 @@
 <script src="/scripts/masonry.js"></script>
 <script src="/scripts/notas.js"></script>
+<script src="/scripts/form.js"></script>
 <div class="contenido">
 
     <div id="principal" class="float70">
@@ -10,6 +11,11 @@
             <p id="nueva">*NUEVA NOTA</p>
 
             <div id="formulario" >
+                <div class="clearboth"></div>
+                <div class="error"><?php
+                    if (isset($error_nota))
+                        echo $error_nota
+                        ?></div>
                 <?php echo form_open_multipart('nueva_nota') ?>
                 <div>
                     <label for="titulo">Titulo *</label>

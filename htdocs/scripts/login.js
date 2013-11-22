@@ -9,7 +9,7 @@ $(function() {
             $(this).toggleClass("seleccionado");
     });
     if ($(".seleccionado").attr("href") === undefined)
-        $("#botonera").find("[href='" + "/revista" + "']").toggleClass("seleccionado");
+        $("#botonera").find("[href='" + "/quienes" + "']").toggleClass("seleccionado");
     
     var button = $('#loginButton');
     var box = $('#loginBox');

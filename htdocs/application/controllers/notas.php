@@ -71,22 +71,28 @@ class notas extends MY_Controller {
         //echo json_encode($this->data);
     }
 
-    public function ajax_editar($idnota = 0) {
+    public function cargar_editar($idnota = 0) {
+
         if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
-            return false;
+            show_404();
         }
         if ($idnota == 0) {
-            return false;
+            show_404();
         }
         $nota = $this->notas_model->nota($idnota);
         if (sizeof($nota) == 0 || $nota == false) {
-            return false;
+            show_404();
         }
         $this->data['nota'] = $nota;
-        echo json_encode($this->data);
+        $this->load->template('/notas/editar.php', $this->data);
     }
 
-    public function nueva_nota() {
+    public function editar_submit($idnota = 0) {
+        self::eliminar($idnota, false);
+        self::nueva_nota($idnota);
+    }
+
+    public function nueva_nota($idnota = 0) {
         if (!($this->data['usuario']['idnivel'] <= Contribuidor) || $this->data['usuario'] == null) {
             show_404();
             return;
@@ -137,7 +143,7 @@ class notas extends MY_Controller {
             }
         }
 
-        $idnota = $this->notas_model->nueva_nota($imagen['file_name']);
+        $idnota = $this->notas_model->nueva_nota($idnota, $imagen['file_name']);
 
         if ($idnota > 0) {
             $this->data['redireccion'] = '/notas/' . $idnota;
@@ -147,7 +153,7 @@ class notas extends MY_Controller {
             show_404();
     }
 
-    public function eliminar($idnota = 0) {
+    public function eliminar($idnota = 0, $view = false) {
         if ($idnota == 0) {
             show_404();
             return;

@@ -67,11 +67,11 @@
                             <div class="float30">
                                 <ul class="floatright">
                                     <li class="floatleft">
-                                        <a class="icono editar" href="#<?php echo $nota['idnota'] ?>">Editar</a>
+                                        <a class="icono editar" href="/notas/editar/<?php echo $nota['idnota'] ?>">Editar</a>
                                     </li>
                                     <li class="floatleft">
                                         <a class="icono eliminar" href="/notas/eliminar/<?php echo $nota['idnota'] ?>" onclick="return (window.confirm('¿Esta seguro que quiere eliminar esta nota?'));">
-                                        Eliminar
+                                            Eliminar
                                         </a>
                                     </li>
                                 </ul>
@@ -97,11 +97,6 @@
             </div>
         </div>
     <?php endif ?>
-    <div class="clearboth"></div>
-    <div class="error"><?php
-        if (isset($error_nota))
-            echo $error_nota
-            ?></div>
 </div>
 
 

@@ -30,4 +30,5 @@
     </div>
     <div class="float30">
     </div>
+    <div class="clearboth"></div>
 </div>

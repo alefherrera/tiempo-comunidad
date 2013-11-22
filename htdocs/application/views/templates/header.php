@@ -81,15 +81,15 @@
 
                         <div id="header">
                             <div class='contenido'>
-                                <a  href="/revista"> <img class="floatleft" src="/images/index/tiempologochico2.png"/></a>
+                                <a  href="/quienes"> <img class="floatleft" src="/images/index/tiempologochico2.png"/></a>
                                 <div id="botonera">
                                     <nav>   <ul>
 
                                             <li><a class="borizq" href="/quienes">QUIENES SOMOS</a> </li>
-                                            <li><a href="/revista">EDICIÓN IMPRESA</a> </li>
                                             <li><a href="/notas">NOTAS </a> </li>
-                                            <li><a href="/utiles">ÚTILES </a> </li>
                                             <li><a href="/anunciantes">ANUNCIANTES </a> </li>
+                                            <li><a href="/utiles">ÚTILES </a> </li>
+                                            <li><a href="/revista">EDICIÓN IMPRESA</a> </li>
                                             <li><a href="/contacto">CONTÁCTENOS </a> </li>
                                             <!--<li><img src="/images/index/promo_prueba.gif"/></li>-->
                                         </ul></nav>

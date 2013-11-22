@@ -47,7 +47,11 @@ class notas_model extends CI_Model{
         return $query->row_array();
     }
     
-    public function nueva_nota($imagen){
+    public function nueva_nota($idnota, $imagen){
+        if($idnota != 0)
+        {
+            $insert['idnota'] = $idnota;
+        }
         $insert['titulo'] = $this->input->post('titulo');
         $insert['imagen'] = $imagen;
         $insert['contenido'] = $this->input->post('contenido');

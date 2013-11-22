@@ -241,8 +241,10 @@ class Resize {
             $optimalHeight = $this->getSizeByFixedWidth($newWidth);
         } elseif ($this->height > $this->width) {
         // *** Image to be resized is taller (portrait)  
-            $optimalWidth = $this->getSizeByFixedHeight($newHeight);
-            $optimalHeight = $newHeight;
+//            $optimalWidth = $this->getSizeByFixedHeight($newHeight);
+//            $optimalHeight = $newHeight;
+                        $optimalWidth = $newWidth;
+            $optimalHeight = $this->getSizeByFixedWidth($newWidth);
         } else {
         // *** Image to be resizerd is a square  
             if ($newHeight < $newWidth) {
