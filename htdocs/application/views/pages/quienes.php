@@ -6,15 +6,19 @@
 ?>
 
 <div class="contenido">
-    <div id="quienes" class="float70 parrafo">
+    <div id="quienes" class="float45 parrafo">
+        <h5 class="h5quienes">sobre</h5>
+        <h4 class="h4quienes">TIEMPO DE LA COMUNIDAD</h4>
         <p class="texto">
             Somos una publicación mensual, de distribución gratuita, con una trayectoria periodística de más de 22 años en la zona norte.
             Contamos con una tirada de 3.000 ejemplares y nuestra área de distribución abarca los barrios de Munro, Carapachay, Villa Adelina, Villa Ballester y Florida.
             Nuestra labor siempre estuvo vinculada con la de aquellas organizaciones sin fines de lucro, entidades barriales, e instituciones colectivas. Desde nuestras páginas privilegiamos brindar el espacio para organizaciones y establecimientos  de bien público.
             Desde el punto de vista periodístico, nos caracterizamos por informar y opinar siempre desde un mismo punto de vista ideológico: la mejor manera de hacer mejor al mundo es a través del trabajo mancomunado, solidario y desinteresado. Posicionados en ese lugar, analizamos las situaciones cotidianas y las damos a conocer.
         </p>
+        <div class="rayafin"><img src="images/index/raya_fin.png"/></div>
+        <div id="linea"></div>
         <div id="staff">
-            <h1 class="texto">Staff</h1>
+            <h5 class="h5quienes">staff</h1>
             <ul>
                 <li>Ezequiel Sosa</li>
                 <li>Susana Crespo</li>
@@ -28,7 +32,7 @@
             </ul>
         </div>
     </div>
-    <div class="float30">
+    <div class="float30 margin40"><img src="images/index/23anos2.png"/>
     </div>
     <div class="clearboth"></div>
 </div>
