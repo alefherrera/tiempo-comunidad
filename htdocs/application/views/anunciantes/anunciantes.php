@@ -2,6 +2,7 @@
 <script src="/scripts/anunciantes.js"></script>
 <script src="/scripts/form.js"></script>
 
+
 <div class="contenido">
     <div id="principal" class="float70">
         <div id="posicion_anunciantes">
@@ -92,4 +93,5 @@
         <div class="anexo">
         </div>
     </div>
+    <div class="clearboth"></div>
 </div>

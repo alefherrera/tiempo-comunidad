@@ -1,9 +1,8 @@
-$(function() {
+$(window).load(function() {
     masonry();
     window.onresize = function() {
         masonry();
     };
-    
 });
 
 function masonry() {
