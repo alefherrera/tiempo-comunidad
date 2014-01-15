@@ -58,6 +58,7 @@ $route['notas/(:any)'] = '/notas/nota_view/$1';
 $route['anunciantes'] = '/anunciantes/view';
 $route['anunciantes/nuevo_anunciante'] = '/anunciantes/nuevo_anunciante';
 $route['anunciantes/eliminar/(:any)'] = '/anunciantes/eliminar/$1';
+$route['anunciantes/ajax/rubros_view/(:any)'] = '/anunciantes/ajax_rubros/$1';
 
 //Revista
 $route['revista'] = 'revista/view';

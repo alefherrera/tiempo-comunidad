@@ -15,17 +15,25 @@ class anunciantes_model extends CI_Model{
     {
         
     }
-    public function rubros()
+    public function rubros($idpadre = -1)
     {
         $this->db->select('idrubros, rubro');
         $this->db->order_by('rubro', 'asc');
+        if($idpadre != -1)
+        {
+            $this->db->where('idpadre', $idpadre);
+        }
         $query = $this->db->get_where('rubros', array('activo' => true));
         return $query->result_array();
     }
+    
+    
+
     public function anunciantes()
     {
         $this->db->select("*", false);
-        $this->db->join('rubros','rubros.idrubros = anunciantes.idrubros');
+        $this->db->join('rubros_anunciantes','rubros_anunciantes.idanunciantes = anunciantes.idanunciantes');
+        $this->db->join('rubros','rubros_anunciantes.idrubros = rubros.idrubros');
         $this->db->order_by('rubro','asc');
         $this->db->order_by('nombre','asc');
         $query = $this->db->get_where('anunciantes', array('anunciantes.activo' => true));
@@ -34,7 +42,7 @@ class anunciantes_model extends CI_Model{
     }
     
     public function nuevo_anunciante($logo){
-        $insert['idrubros'] = $this->input->post('rubro');
+        $insert['idsubrubros'] = $this->input->post('subrubro');
         $insert['logo'] = $logo;
         $insert['nombre'] = $this->input->post('nombre');
         $insert['direccion'] = $this->input->post('direccion');

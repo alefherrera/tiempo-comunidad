@@ -1,5 +1,19 @@
 <?php
 
+class item_rubro {
+
+    public $id;
+    public $text;
+    public $expanded;
+    public $spriteCssClass;
+    public $items = array();
+
+    public function addItem($item) {
+        array_push($this->items, $item);
+    }
+
+}
+
 class anunciantes extends MY_Controller {
 
     private static $cant_pagina = 9;
@@ -31,19 +45,19 @@ class anunciantes extends MY_Controller {
         $this->form_validation->set_rules('nombre', "Nombre", 'required');
         $this->form_validation->set_rules('direccion', "Dirección", 'required');
         $this->form_validation->set_rules('telefono', "Teléfono", 'required');
-        $rubro = $this->input->post('rubro');
-
-        if ($this->form_validation->run() === FALSE || $rubro <= 0) {
+        $rubros = json_decode($this->input->post('rubros'));
+            
+        
+        if ($this->form_validation->run() === FALSE || count($rubro) <= 0) {
             $this->data['nombre_form'] = $this->input->post('nombre');
             $this->data['telefono_form'] = $this->input->post('telefono');
             $this->data['direccion_form'] = $this->input->post('direccion');
             $this->data['mail_form'] = $this->input->post('mail');
             $this->data['web_form'] = $this->input->post('web');
-            $this->data['rubro_form'] = $rubro;
-
+            $this->data['rubros_form'] = htmlspecialchars(json_encode($rubros));
             $this->data['logo'] = $_FILES['logo']['name'];
             $this->data['error_anunciante'] = validation_errors();
-            if ($rubro <= 0)
+            if (count($rubros) <= 0)
                 $this->data['error_anunciante'] .= "El campo Rubro es requerido";
 
             $this->view();
@@ -65,14 +79,14 @@ class anunciantes extends MY_Controller {
                 $this->data['direccion_form'] = $this->input->post('direccion');
                 $this->data['mail_form'] = $this->input->post('mail');
                 $this->data['web_form'] = $this->input->post('web');
-                $this->data['rubro_form'] = $rubro;
+                $this->data['rubros_form'] = htmlspecialchars($rubros);
                 $this->data['error_anunciante'] = $this->upload->display_errors();
                 $this->view();
                 return;
             } else {
                 $logo = $this->upload->data();
 
-                //Hago el Thumb
+//Hago el Thumb
                 if (!file_exists('images/anunciantes/')) {
                     mkdir('images/anunciantes');
                 }
@@ -84,12 +98,43 @@ class anunciantes extends MY_Controller {
 
         $idanunciante = $this->anunciantes_model->nuevo_anunciante($logo['file_name']);
 
-         if ($idanunciante > 0) {
+        if ($idanunciante > 0) {
             $this->data['redireccion'] = '/anunciantes/';
             $this->load->template('/success.php', $this->data);
         }
         else
             show_404();
+    }
+
+    public function cargar_lista($item_l, $idpadre = 0) {
+        
+        $rubros = $this->anunciantes_model->rubros($idpadre);
+        
+        foreach ($rubros as $row) {
+            $item = new item_rubro();
+            $item->id = $row['idrubros'];
+            $item->text = $row['rubro'];
+            $item->expanded = true;
+            $item->spriteCssClass;
+            $item->items = self::cargar_lista($item->items, $row['idrubros']);
+
+            array_push($item_l, $item);
+        }
+
+        return $item_l;
+    }
+
+    public function ajax_rubros($idpadre = -1) {
+//        if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
+//            show_404();
+//            return;
+//        }
+        
+        $item_l = array();
+        $item_l = self::cargar_lista($item_l);
+
+        $array_final = json_encode($item_l);
+        echo $array_final;
     }
 
     public function eliminar($idanunciantes = 0, $view = false) {

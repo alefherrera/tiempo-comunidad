@@ -1,8 +1,8 @@
+
 <script src="/scripts/masonry.js"></script>
 <script src="/scripts/anunciantes.js"></script>
 <script src="/scripts/form.js"></script>
-
-
+<script src="/kendo_js/kendo.web.min.js"></script>
 <div class="contenido">
     <div id="principal" class="float70">
         <div id="posicion_anunciantes">
@@ -33,7 +33,11 @@
                     <label for="rubro">Rubro *</label>
                 </div>
                 <div>
-                    <?php include_once 'rubros_select.php'; ?>
+                    <div id="treeview"></div>
+                    <input id="rubros" type="hidden" name="rubros" value="<?php 
+                    if(isset($rubros_form))
+                        echo $rubros_form
+                    ?>"/>
                 </div>
                 <div>
                     <label for="logo">Logo</label>
@@ -77,7 +81,7 @@
                         echo $web_form
                         ?>"/>
                 </div>
-                <input id="botonconfrev" type="submit" onclick="return (window.confirm('¿Esta seguro que quiere agregar este anunciante?'))" value="Confirmar" />
+                <input id="botonconfrev" type="submit" onclick="return (window.confirm('¿Esta seguro que quiere agregar este anunciante?'));" value="Confirmar" />
                 </form>
                 <div>
                     Los campos con "*" son obligatorios.

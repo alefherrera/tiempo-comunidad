@@ -50,6 +50,8 @@
                 </ul>
             </div>
         <?php endforeach ?>
+        <?php if (count($anunciantes) >= 1): ?>
+        </div>
     </div>
-</div>
+<?php endif ?>
 </div>
