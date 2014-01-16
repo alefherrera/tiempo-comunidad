@@ -88,11 +88,26 @@ class notas extends MY_Controller {
     }
 
     public function editar_submit($idnota = 0) {
-        self::eliminar($idnota, false);
-        self::nueva_nota($idnota);
+        if ($idnota == 0) {
+            show_404();
+            return;
+        }
+        if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
+            show_404();
+            return;
+        }
+        $nota = $this->notas_model->nota($idnota);
+
+        $imagen_name = NULL;
+        if (!$this->input->post('eliminar') && $_FILES['imagen']['name'] == '') {
+            $imagen_name = $nota['imagen'];
+        }
+
+        $this->notas_model->eliminar($idnota);
+        self::nueva_nota($idnota, $imagen_name);
     }
 
-    public function nueva_nota($idnota = 0) {
+    public function nueva_nota($idnota = 0, $imagen_name = NULL) {
         if (!($this->data['usuario']['idnivel'] <= Contribuidor) || $this->data['usuario'] == null) {
             show_404();
             return;
@@ -113,8 +128,8 @@ class notas extends MY_Controller {
             $this->view();
             return;
         }
-        $imagen['file_name'] = NULL;
-        if (!($_FILES['imagen']['name'] == '')) {
+        $imagen['file_name'] = $imagen_name;
+        if ($_FILES['imagen']['name'] != '') {
             $config['upload_path'] = './images/notas/';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = '500';

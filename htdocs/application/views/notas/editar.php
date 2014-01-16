@@ -24,6 +24,10 @@
             <div>
                 <img src="/images/notas/thumb/<?php echo $nota['imagen'] ?>"/>
             </div>
+            <div>
+                <input type="checkbox" name="eliminar">
+                <label for="eliminar">Eliminar Imágen</label>
+            </div>
             <?php endif ?>
             <div>
                 <label for="ano">Autor (si no se completa el autor será "Anónimo")</label>
