@@ -27,10 +27,10 @@ class anunciantes extends MY_Controller {
         $this->load->library('common');
     }
 
-    public function view($pagina = 1) {
+    public function view($rubros = array()) {
         $this->data['title'] = 'Revista Tiempo - Anunciantes';
         $this->data['rubros'] = $this->anunciantes_model->rubros();
-        $this->data['anunciantes'] = $this->anunciantes_model->anunciantes();
+        $this->data['anunciantes'] = $this->anunciantes_model->anunciantes($rubros);
         $this->load->template('/anunciantes/anunciantes.php', $this->data);
     }
 
@@ -46,9 +46,9 @@ class anunciantes extends MY_Controller {
         $this->form_validation->set_rules('direccion', "Dirección", 'required');
         $this->form_validation->set_rules('telefono', "Teléfono", 'required');
         $rubros = json_decode($this->input->post('rubros'));
-            
         
-        if ($this->form_validation->run() === FALSE || count($rubro) <= 0) {
+        
+        if ($this->form_validation->run() === FALSE || count($rubros) <= 0) {
             $this->data['nombre_form'] = $this->input->post('nombre');
             $this->data['telefono_form'] = $this->input->post('telefono');
             $this->data['direccion_form'] = $this->input->post('direccion');
