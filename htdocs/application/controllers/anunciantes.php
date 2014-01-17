@@ -34,6 +34,12 @@ class anunciantes extends MY_Controller {
         $this->load->template('/anunciantes/anunciantes.php', $this->data);
     }
 
+    public function ajax_table($pagina = 1) {
+        $rubros = json_decode($this->input->post('rubros'));
+        $this->data['anunciantes'] = $this->anunciantes_model->anunciantes($rubros);
+        $this->load->view('anunciantes/tabla.php', $this->data);
+    }
+
     public function nuevo_anunciante($idnota = 0) {
         if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
             show_404();
@@ -46,8 +52,8 @@ class anunciantes extends MY_Controller {
         $this->form_validation->set_rules('direccion', "Dirección", 'required');
         $this->form_validation->set_rules('telefono', "Teléfono", 'required');
         $rubros = json_decode($this->input->post('rubros'));
-        
-        
+
+
         if ($this->form_validation->run() === FALSE || count($rubros) <= 0) {
             $this->data['nombre_form'] = $this->input->post('nombre');
             $this->data['telefono_form'] = $this->input->post('telefono');
@@ -106,10 +112,18 @@ class anunciantes extends MY_Controller {
             show_404();
     }
 
+    public function ajax_rubros($idpadre = -1) {
+        $item_l = array();
+        $item_l = self::cargar_lista($item_l);
+
+        $array_final = json_encode($item_l);
+        echo $array_final;
+    }
+
     public function cargar_lista($item_l, $idpadre = 0) {
-        
+
         $rubros = $this->anunciantes_model->rubros($idpadre);
-        
+
         foreach ($rubros as $row) {
             $item = new item_rubro();
             $item->id = $row['idrubros'];
@@ -122,19 +136,6 @@ class anunciantes extends MY_Controller {
         }
 
         return $item_l;
-    }
-
-    public function ajax_rubros($idpadre = -1) {
-//        if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
-//            show_404();
-//            return;
-//        }
-        
-        $item_l = array();
-        $item_l = self::cargar_lista($item_l);
-
-        $array_final = json_encode($item_l);
-        echo $array_final;
     }
 
     public function eliminar($idanunciantes = 0, $view = false) {

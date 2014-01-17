@@ -5,6 +5,8 @@
 <script src="/kendo_js/kendo.web.min.js"></script>
 <div class="contenido">
     <div id="principal" class="float70">
+        <div id="treeview_filtro"></div>
+        <div id="actualizar">Actualizar</div>
         <div id="posicion_anunciantes">
             <?php include_once 'tabla.php'; ?>
         </div>
@@ -18,7 +20,7 @@
                     if (isset($error_anunciante))
                         echo $error_anunciante
                         ?></div>
-                <?php echo form_open_multipart('/anunciantes/nuevo_anunciante') ?>
+                <?php echo form_open_multipart('/anunciantes/submit') ?>
 
                 <div>
                     <label for="titulo">Nombre *</label>
@@ -34,10 +36,10 @@
                 </div>
                 <div>
                     <div id="treeview"></div>
-                    <input id="rubros" type="hidden" name="rubros" value="<?php 
-                    if(isset($rubros_form))
+                    <input id="rubros" type="hidden" name="rubros" value="<?php
+                    if (isset($rubros_form))
                         echo $rubros_form
-                    ?>"/>
+                        ?>"/>
                 </div>
                 <div>
                     <label for="logo">Logo</label>

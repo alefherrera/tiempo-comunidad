@@ -41,27 +41,35 @@ class anunciantes_model extends CI_Model {
     }
 
     public function anunciantes($rubros) {
-        $this->db->select("anunciantes.idanunciantes, nombre, web, logo, telefono, direccion, mail", false);
+        $this->db->select("anunciantes.idanunciantes, 
+            nombre, 
+            web, 
+            logo, 
+            telefono, 
+            direccion, 
+            mail, 
+            GROUP_CONCAT(rubro SEPARATOR ' - ') as rubro", false);
         $this->db->join("rubros_anunciantes", "rubros_anunciantes.idanunciantes = anunciantes.idanunciantes");
+        $this->db->join("rubros", "rubros_anunciantes.idrubros = rubros.idrubros");
         $this->db->group_by("idanunciantes");
         $this->db->order_by('nombre', 'asc');
         if (count($rubros) > 0) {
+            $where = "";
             foreach ($rubros as $rubro) {
-                $where .= "idrubros = " . $rubro;
+                $where .= "rubros_anunciantes.idrubros = " . $rubro;
                 $where .= " OR ";
             }
             $where = substr($where, 0, count($where) - 5);
-            var_dump($where);
             $this->db->where('(' . $where . ')', null, false);
         }
-
+        
 
         $query = $this->db->get_where('anunciantes', array('anunciantes.activo' => true));
 
         $result = $query->result_array();
-        for ($i = 0; $i < count($result); $i++) {
-            $result[$i]['rubros'] = anunciantes_model::rubros_anunciantes($result[$i]['idanunciantes']);
-        }
+        //for ($i = 0; $i < count($result); $i++) {
+            //$result[$i]['rubros'] = anunciantes_model::rubros_anunciantes($result[$i]['idanunciantes']);
+        //}
 
         return $result;
     }

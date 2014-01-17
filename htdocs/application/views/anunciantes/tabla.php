@@ -7,17 +7,7 @@
             ?>
             <div>
                 <div class="anunciante">
-                    <?php
-                    foreach ($anunciante['rubros'] as $rubro):
-                        if ($rubro['idpadre'] == "0"):
-                            ?>
-                            <span><h1><?php echo $rubro['rubro'] ?></h1></span>
-                        <?php else: ?>
-                            <span><?php echo $rubro['rubro'] ?></span>
-                        <?php
-                        endif;
-                    endforeach
-                    ?>
+                    <span><?php echo $anunciante['rubro'] ?></span>
                     <ul>
                         <?php if ($usuario != false && $usuario['idnivel'] <= Administrador): ?>
                             <div>

@@ -31,6 +31,17 @@ $(document).ready(function() {
             e.preventDefault();
             nodo = $(e.node).find(":checkbox").eq(0);
             nodo.trigger("click");
+        }
+    });
+
+
+    $("#treeview_filtro").kendoTreeView({
+        checkboxes: {
+        },
+        select: function(e) {
+            e.preventDefault();
+            nodo = $(e.node).find(":checkbox").eq(0);
+            nodo.trigger("click");
             checked = nodo.prop("checked");
 
             if (checked)
@@ -51,54 +62,89 @@ $(document).ready(function() {
         }
     });
 
+
+    //Timeout y filtro de tabla
+    var actualizar_click = function(e) {
+        treeview = $("#treeview_filtro").data("kendoTreeView");
+        checkedNodes = [];
+        checkedNodeIds(treeview.dataSource.view(), checkedNodes);
+        nodos = JSON.stringify(checkedNodes);
+
+        $(this).unbind("click");
+        setTimeout(function(){
+            $("#actualizar").click(actualizar_click);
+        }, 1000);
+
+        $.ajax({
+            type: "POST",
+            url: "/anunciantes/ajax/rubros_table/1",
+            data: {rubros: nodos},
+            success: function(respuesta) {
+                $("#posicion_anunciantes").html(respuesta);
+                masonry();
+            }
+        });
+
+    };
+    $("#actualizar").click(actualizar_click);
+
     getTree(function(tree) {
         treeview = $("#treeview").data("kendoTreeView");
+        treeview_filtro = $("#treeview_filtro").data("kendoTreeView");
         parsedTree = $.parseJSON(tree);
-        treeview.setDataSource(new kendo.data.HierarchicalDataSource({
+        if (treeview !== null)
+            treeview.setDataSource(new kendo.data.HierarchicalDataSource({
+                data: parsedTree
+            }));
+        treeview_filtro.setDataSource(new kendo.data.HierarchicalDataSource({
             data: parsedTree
         }));
-
-
-        if ($("#rubros").val() !== "") {
+        rubros_hidden = $("#rubros");
+        if (rubros_hidden.val() !== "" && rubros_hidden.val() !== undefined) {
             var nodos = $.parseJSON($("#rubros").val());
 
             treeview = $("#treeview").data("kendoTreeView");
 
             for (i = 0; i < nodos.length; i++)
             {
-                console.log(nodos[i]);
                 nodo = treeview.findByUid(treeview.dataSource.get(nodos[i]).uid);
                 $(nodo).find(":checkbox").eq(0).trigger("click");
             }
         }
 
         $("#treeview :checkbox").click(function() {
-            nodo = $(this);
-            checked = nodo.prop("checked");
-            if (checked)
-            {
-                padre = nodo.closest('li').parent().closest('li').find(":checkbox").eq(0);
-                if (padre.prop("checked") === false)
-                    padre.trigger("click");
-            }
+            marcarNodos($(this));
 
-            if (!checked)
-            {
-                
-                nodo.closest('li').find(":checkbox").each(function(index) {
-                    if ($(this).prop("checked") === true) {
-                        $(this).trigger("click");
-                    }
-                });
-            }
+        });
+
+        $("#treeview_filtro :checkbox").click(function() {
+            marcarNodos($(this));
         });
     });
+
+    function marcarNodos(nodoc) {
+        checked = nodoc.prop("checked");
+        if (checked)
+        {
+            padre = nodoc.closest('li').parent().closest('li').find(":checkbox").eq(0);
+            if (padre.prop("checked") === false)
+                padre.trigger("click");
+        }
+
+        if (!checked)
+        {
+            nodoc.closest('li').find(":checkbox").each(function(index) {
+                if ($(this).prop("checked") === true) {
+                    $(this).trigger("click");
+                }
+            });
+        }
+    }
 
     $("#botonconfrev").click(function() {
         treeview = $("#treeview").data("kendoTreeView");
         checkedNodes = [];
         checkedNodeIds(treeview.dataSource.view(), checkedNodes);
-        console.log(checkedNodes);
         nodos = JSON.stringify(checkedNodes);
 
         $("#rubros").val(nodos);
