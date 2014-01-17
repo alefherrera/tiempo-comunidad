@@ -4,7 +4,6 @@ $(window).load(function() {
         masonry();
     };
 });
-
 function masonry() {
     var $container = $('#tabla');
     // initialize
@@ -19,7 +18,6 @@ function masonry() {
     $(".anunciante").each(function() {
         $(this).css({left: $(this).position().left - 1 - Math.ceil($(this).position().left / 256)});
     });
-
 }
 
 $(document).ready(function() {
@@ -33,8 +31,6 @@ $(document).ready(function() {
             nodo.trigger("click");
         }
     });
-
-
     $("#treeview_filtro").kendoTreeView({
         checkboxes: {
         },
@@ -43,7 +39,6 @@ $(document).ready(function() {
             nodo = $(e.node).find(":checkbox").eq(0);
             nodo.trigger("click");
             checked = nodo.prop("checked");
-
             if (checked)
             {
                 padre = $(e.node).closest('li').parent().closest('li').find(":checkbox").eq(0);
@@ -61,33 +56,32 @@ $(document).ready(function() {
             }
         }
     });
-
-
     //Timeout y filtro de tabla
     var actualizar_click = function(e) {
         treeview = $("#treeview_filtro").data("kendoTreeView");
         checkedNodes = [];
         checkedNodeIds(treeview.dataSource.view(), checkedNodes);
         nodos = JSON.stringify(checkedNodes);
-
-        $(this).unbind("click");
-        setTimeout(function(){
+        $("#actualizar").css("background", "red");
+        setTimeout(function() {
             $("#actualizar").click(actualizar_click);
-        }, 1000);
-
-        $.ajax({
-            type: "POST",
-            url: "/anunciantes/ajax/rubros_table/1",
-            data: {rubros: nodos},
-            success: function(respuesta) {
-                $("#posicion_anunciantes").html(respuesta);
-                masonry();
-            }
-        });
-
+            $("#actualizar").css("background", "green");
+        }, 2000);
+        $("#posicion_anunciantes").css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0.0}, 500,
+                function() {
+                    $.ajax({
+                        type: "POST",
+                        url: "/anunciantes/ajax/rubros_table/1",
+                        data: {rubros: nodos},
+                        success: function(respuesta) {
+                            $("#posicion_anunciantes").html(respuesta);
+                            $("#posicion_anunciantes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+                            masonry();
+                        }
+                    });
+                });
     };
     $("#actualizar").click(actualizar_click);
-
     getTree(function(tree) {
         treeview = $("#treeview").data("kendoTreeView");
         treeview_filtro = $("#treeview_filtro").data("kendoTreeView");
@@ -102,9 +96,7 @@ $(document).ready(function() {
         rubros_hidden = $("#rubros");
         if (rubros_hidden.val() !== "" && rubros_hidden.val() !== undefined) {
             var nodos = $.parseJSON($("#rubros").val());
-
             treeview = $("#treeview").data("kendoTreeView");
-
             for (i = 0; i < nodos.length; i++)
             {
                 nodo = treeview.findByUid(treeview.dataSource.get(nodos[i]).uid);
@@ -114,14 +106,11 @@ $(document).ready(function() {
 
         $("#treeview :checkbox").click(function() {
             marcarNodos($(this));
-
         });
-
         $("#treeview_filtro :checkbox").click(function() {
             marcarNodos($(this));
         });
     });
-
     function marcarNodos(nodoc) {
         checked = nodoc.prop("checked");
         if (checked)
@@ -146,19 +135,16 @@ $(document).ready(function() {
         checkedNodes = [];
         checkedNodeIds(treeview.dataSource.view(), checkedNodes);
         nodos = JSON.stringify(checkedNodes);
-
         $("#rubros").val(nodos);
         console.log(nodos);
     });
-
-
     function getTree(result) {
         $.get('/anunciantes/ajax/rubros_view/0', function(r) {
             result(r);
         });
     }
 
-    // function that gathers IDs of checked nodes
+// function that gathers IDs of checked nodes
     function checkedNodeIds(nodes, checkedNodes) {
 
         for (var i = 0; i < nodes.length; i++) {
