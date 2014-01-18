@@ -36,8 +36,31 @@ class anunciantes extends MY_Controller {
 
     public function ajax_table($pagina = 1) {
         $rubros = json_decode($this->input->post('rubros'));
-        $this->data['anunciantes'] = $this->anunciantes_model->anunciantes($rubros);
+        $this->data['anunciantes'] = $this->anunciantes_model->anunciantes(0, $rubros);
         $this->load->view('anunciantes/tabla.php', $this->data);
+    }
+
+    public function cargar_editar($idanunciante = 0) {
+        if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
+            show_404();
+            return;
+        }
+        $anunciante = $this->anunciantes_model->anunciantes($idanunciante);
+        if ($anunciante == null) {
+            show_404();
+            return;
+        }
+        
+        $this->data['nombre_form'] = $anunciante['nombre'];
+        $this->data['telefono_form'] = $anunciante['telefono'];
+        $this->data['direccion_form'] = $anunciante['direccion'];
+        $this->data['mail_form'] = $anunciante['mail'];
+        $this->data['web_form'] = $anunciante['web'];
+        $this->data['rubros_form'] = htmlspecialchars(json_encode(explode("-", $anunciante['idrubros'])));
+        $this->data['logo_form'] = $anunciante['logo'];
+        $this->data['descripcion_form'] = $anunciante['descripcion'];
+        
+        $this->load->template("/anunciantes/editar.php", $this->data);
     }
 
     public function nuevo_anunciante($idnota = 0) {

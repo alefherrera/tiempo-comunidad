@@ -57,7 +57,7 @@ $route['notas/(:any)'] = '/notas/nota_view/$1';
 //Anunciantes
 $route['anunciantes'] = '/anunciantes/view';
 $route['anunciantes/submit'] = '/anunciantes/nuevo_anunciante';
-$route['anunciantes/editar/(:any)'] = '/anunciantes/editar_anunciante/$1';
+$route['anunciantes/editar/(:any)'] = '/anunciantes/cargar_editar/$1';
 $route['anunciantes/editar/submit'] = '/anunciantes/editar_submit';
 $route['anunciantes/eliminar/(:any)'] = '/anunciantes/eliminar/$1';
 $route['anunciantes/ajax/rubros_table/(:any)'] = '/anunciantes/ajax_table/$1';

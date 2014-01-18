@@ -1,24 +1,3 @@
-$(window).load(function() {
-    masonry();
-    window.onresize = function() {
-        masonry();
-    };
-});
-function masonry() {
-    var $container = $('#tabla');
-    // initialize
-    $container.masonry({
-        singleMode: true,
-        columnWidth: 0,
-        itemSelector: '.anunciante',
-        transitionDuration: 0,
-        isFitWidth: true,
-        isRTL: false
-    });
-    $(".anunciante").each(function() {
-        $(this).css({left: $(this).position().left - 1 - Math.ceil($(this).position().left / 256)});
-    });
-}
 
 $(document).ready(function() {
 
@@ -90,9 +69,10 @@ $(document).ready(function() {
             treeview.setDataSource(new kendo.data.HierarchicalDataSource({
                 data: parsedTree
             }));
-        treeview_filtro.setDataSource(new kendo.data.HierarchicalDataSource({
-            data: parsedTree
-        }));
+        if (treeview_filtro !== null)
+            treeview_filtro.setDataSource(new kendo.data.HierarchicalDataSource({
+                data: parsedTree
+            }));
         rubros_hidden = $("#rubros");
         if (rubros_hidden.val() !== "" && rubros_hidden.val() !== undefined) {
             var nodos = $.parseJSON($("#rubros").val());

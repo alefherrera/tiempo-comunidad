@@ -1,6 +1,5 @@
 
-<script src="/scripts/anunciantes.js"></script>
-<script src="/scripts/form.js"></script>
+<script src="/scripts/anunciantes/treeview.js"></script>
 <script src="/kendo_js/kendo.web.min.js"></script>
 
 <div class="contenido">
@@ -90,3 +89,4 @@
         </div>
         <div class="clearboth"></div>
     </div>
+</div>

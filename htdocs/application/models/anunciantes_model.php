@@ -26,21 +26,7 @@ class anunciantes_model extends CI_Model {
         return $query->result_array();
     }
 
-    public function rubros_anunciantes($anunciante = 0) {
-        $this->db->select('rubros_anunciantes.idrubros, rubro, idanunciantes, idpadre');
-        $this->db->join('rubros', 'rubros_anunciantes.idrubros = rubros.idrubros');
-        $this->db->order_by('idpadre', 'asc');
-        $this->db->order_by('idanunciantes', 'asc');
-        $this->db->order_by('rubro', 'asc');
-
-        if ($anunciante != 0) {
-            $this->db->where('idanunciantes', $anunciante);
-        }
-        $query = $this->db->get_where('rubros_anunciantes', array('activo' => true));
-        return $query->result_array();
-    }
-
-    public function anunciantes($rubros) {
+    public function anunciantes($idanunciante = null, $rubros = array()) {
         $this->db->select("anunciantes.idanunciantes, 
             nombre, 
             web, 
@@ -48,7 +34,10 @@ class anunciantes_model extends CI_Model {
             telefono, 
             direccion, 
             mail, 
-            GROUP_CONCAT(rubro SEPARATOR ' - ') as rubro", false);
+            descripcion,
+            GROUP_CONCAT(rubro SEPARATOR ' - ') as rubro,
+            GROUP_CONCAT(rubros.idrubros SEPARATOR '-') as idrubros
+            ", false);
         $this->db->join("rubros_anunciantes", "rubros_anunciantes.idanunciantes = anunciantes.idanunciantes");
         $this->db->join("rubros", "rubros_anunciantes.idrubros = rubros.idrubros");
         $this->db->group_by("idanunciantes");
@@ -62,14 +51,18 @@ class anunciantes_model extends CI_Model {
             $where = substr($where, 0, count($where) - 5);
             $this->db->where('(' . $where . ')', null, false);
         }
-        
+
+        if ($idanunciante != null) {
+            $this->db->where("anunciantes.idanunciantes", $idanunciante);
+        }
+
 
         $query = $this->db->get_where('anunciantes', array('anunciantes.activo' => true));
 
         $result = $query->result_array();
-        //for ($i = 0; $i < count($result); $i++) {
-            //$result[$i]['rubros'] = anunciantes_model::rubros_anunciantes($result[$i]['idanunciantes']);
-        //}
+        if ($idanunciante != null) {
+            return $result[0];
+        }
 
         return $result;
     }
