@@ -54,15 +54,13 @@
             <div class='clearboth'></div>
         </div>
         <div class="clearboth"></div>
-        <div id="tabla">
+        <div id="tabla" class="pattern-white">
             <?php
             foreach ($notas as $nota) {
                 ?>
                 <div class="nota">
                     <div class="nota_formato" >
-                        <h5><?php echo $nota['fecha_alta']; ?> - Por <span><?php echo $nota['autor'] == '' ? 'Anónimo' : $nota['autor']; ?></span></h5>
-
-                        <a class="float70" href='/notas/<?php echo $nota['idnota'] ?>'><h1><?php echo $nota['titulo']; ?></h1></a>
+                        <h5 class="float70"><?php echo $nota['fecha_alta']; ?> - Por <span><?php echo $nota['autor'] == '' ? 'Anónimo' : $nota['autor']; ?></span></h5>
                         <?php if ($usuario != false && $usuario['idnivel'] <= Administrador): ?>
                             <div class="float30">
                                 <ul class="floatright">
@@ -78,6 +76,9 @@
                             </div>
                         <?php endif ?>
                         <div class="clearboth"></div>
+                        <a href='/notas/<?php echo $nota['idnota'] ?>'><h1><?php echo $nota['titulo']; ?></h1></a>
+
+                        <div class="clearboth"></div>
 
                         <?php if ($nota['imagen'] != '' && file_exists('images/notas/thumb/' . $nota['imagen'])) { ?>
                             <img src='/images/notas/thumb/<?php echo $nota['imagen']; ?>' width="214px;" height="
@@ -90,11 +91,8 @@
                         <p><?php echo nl2br($nota['bajada']) ?></p>
                     </div>
                 </div>
-
-
             <?php } ?>
-            <div class="clearboth">
-            </div>
+            <div class="clearboth"></div>
         </div>
     <?php endif ?>
 </div>

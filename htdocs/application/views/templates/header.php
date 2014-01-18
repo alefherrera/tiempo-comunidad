@@ -84,7 +84,7 @@
 
                                 <div id="header">
                                     <div class='contenido'>
-                                        <a  href="/quienes"> <img class="floatleft" src="/images/index/tiempologochico2.png"/></a>
+                                        <a  href="/quienes"> <img class="floatleft" src="/images/index/tiempo_logo_blanco4.png"/></a>
                                         <div id="botonera">
                                             <nav>   <ul>
 

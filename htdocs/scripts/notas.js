@@ -3,6 +3,7 @@ function cargar_notas(pagina, result)
 {
     $.get("/notas/ajax/tabla/" + pagina, function(r) {
         result(r);
+
     }
     );
 }
@@ -11,24 +12,28 @@ $(function() {
     window.onresize = function() {
         masonry();
     };
-    
+
 });
 
 
 function masonry() {
     var $container = $('#tabla');
-    // initialize
-    $container.masonry({
-        singleMode: true,
-        columnWidth: 0,
-        itemSelector: '.nota',
-        transitionDuration: 0,
-        isFitWidth: true,
-        isRTL: false
-    });
-    $(".nota").each(function() {
-        $(this).css({left: $(this).position().left - 1 - Math.ceil($(this).position().left / 256)});
-    });
+    setTimeout(function() {
+                // initialize
+                $container.masonry({
+                    singleMode: true,
+                    columnWidth: 0,
+                    itemSelector: '.nota',
+                    transitionDuration: 0,
+                    isFitWidth: true,
+                    isRTL: false
+                });
+                $(".nota").each(function() {
+                    $(this).css({left: $(this).position().left - 1 - Math.ceil($(this).position().left / 256)});
+                });
+                $("#tabla").width($("#tabla").width() - 3);
+            }
+    ,50);
 
 }
 

@@ -21,29 +21,13 @@ function verificar_revista()
 var texto;
 $(window).load(function() {
     var parrafo = $('.parrafo p');
-    var leermas = $('#leermas');
     var inforev = $('#inforev');
     var tiempomes = $('#tiempomes');
     var formulario = $('#formulario');
 
-    leermas.toggle();
     if (!$('#formulario .error').text() > 0)
         formulario.toggle();
 
-    if (parrafo.text().length > 600 && parrafo.height() > bordes())
-    {
-        texto = parrafo.html();
-        parrafo.html(parrafo.html().substring(0, 600));
-        parrafo.html(parrafo.html() + '...');
-        leermas.toggle();
-    }
-
-    leermas.mouseup(function() {
-        leermas.removeAttr('href');
-        leermas.toggle();
-        parrafo.html(texto);
-        tiempomes.css("margin-bottom", "20");
-    });
 
     $('#nueva').mouseup(function() {
         formulario.slideToggle("slow", function() {

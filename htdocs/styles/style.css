@@ -181,7 +181,23 @@ input:focus {
 }
 #rayas{
     padding:15px; margin-top: 30px; height:342px;
-    background: url(/images/index/rayas5.png)
+}
+.pattern-white{
+    background-image: url(/images/index/pattern-white.png);
+}
+
+.fin_parrafo{
+    background-image: url(/images/index/raya_fin.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    height: 4px;
+    margin-right: 15px;
+
+}
+#raya_parrafo{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: #e5e5e5 solid 1px;
 }
 
 
@@ -235,11 +251,23 @@ input:focus {
 
 /* contenido formulario end */
 
-#revpdf{font-size: 14px; font-weight: 400;color:#666; 
-        margin-left: 30px;
-        font-family: Arial, helvetica,sans-serif;
+#revpdf{
+    height: 20px;
+    padding-left: 20px;
+    margin-top: 20px;
+    display: block;
+    font-size: 14px; 
+    font-weight: 400;
+    color:#666; 
+    font-family: Arial, Helvetica,sans-serif;
+    background-image: url(/images/index/edicion_impresa.png);
+    background-position: left top;
+    background-repeat: no-repeat;
 }
-#revpdf:hover{color:#999;background-position: bottom left;}
+
+
+#revpdf:hover{color:#999;   background-position: bottom left;}
+
 
 .numeroaño{font-size:12px; font-weight:700; color:#000;}
 .titulo{font-size: 42px; font-weight: 700;color:#666; padding-bottom: 15px;}
@@ -248,11 +276,17 @@ input:focus {
     float:left;
     width: 450px;
 }
+
 #borde_separador{
     border-right: 1px solid #e5e5e5;
 }
-.parrafo{padding-left: 40px; margin-top: 30px; }
-
+.parrafo{margin-left: 40px; margin-top: 30px;
+}
+.parrafo span{
+    color: #959595;
+    margin-left: 5px;
+    font-size: 12px;
+}
 
 #derecha_revista{
 }
@@ -288,8 +322,9 @@ input:focus {
 
 }
 
-#leermas{font-size: 12px; font-weight: 700; color: #000; padding-right: 20px;
-         padding-bottom: 20px; padding-top: 5px;
+#leermas{font-size: 12px; font-weight: 700; color: #000; padding-right: 40px;
+         color: #C32127;
+         background-position: right center;
 }
 #leermas:hover{color:#999;}
 /* contenido1 formulario FIN */
@@ -308,7 +343,6 @@ input:focus {
 /* footer FIN */
 
 .float70, .float30, .float60, .float40{
-    width:70%;
     float:left;
 }
 .float70{
@@ -324,16 +358,15 @@ input:focus {
     width:40%;
 }
 
-
-
 /*TABLA*/
 #posicion_notas{
-    /*margin-left: 10px;*/
 }
 #posicion_notas .nota_formato li{
-    padding-top: 7px;
     padding-left: 5px;
+
 }
+
+
 .icono{
     width: 18px;
     height: 17px;
@@ -378,17 +411,24 @@ input:focus {
 #numeros .selected a{
     color: white;
 }
+
+
 .nota{
-    width:256px;
+    width:255px;
+    background-color: white;
 }
+
 .nota_formato{
     padding: 20px;
     padding-top: 10px;
-    border-right: solid 1px #ccc;
+
+
 }
 .nota .nota_formato{
+    border-right: solid 1px #ccc;
     border-left: solid 1px #ccc;
     border-bottom: solid 1px #ccc;
+
 }
 
 .nota_formato *{
@@ -410,9 +450,11 @@ input:focus {
     font-size: 24px;
     font-family:'open sans condensed';
     line-height: 25px;
+    background-repeat: no-repeat;
+    background-image: url(/images/index/ele.png);
+    background-position: right bottom;
 }
 .nota_formato p{
-
     margin-top: 8px;
 }
 
@@ -422,6 +464,7 @@ input:focus {
     font-size: 17px; 
     line-height: 1.2;
     color: #666;
+
 }
 #compartir{
     padding-left:20px;
@@ -449,6 +492,7 @@ input:focus {
     font-size: 15px;
     line-height: 1.5;
     color: #666;
+    padding-bottom: 35px;
 }
 .nota_formato img{
     margin-top: 8px;
@@ -456,6 +500,7 @@ input:focus {
 
 #nota .nota_formato{
     padding-bottom: 0px;
+
 }
 #nota .nota_formato h1{
     font-size: 38px;
@@ -525,33 +570,58 @@ input:focus {
     background-color:#C32127;
     color:white;
 }
-#quienes .texto{
-    text-align:justify;
+#quienes{
+    float:left;
+    width: 45%;
 }
+#quienes h5{
+    font-size:18px; font-weight:700; color:#C32127;
+}
+#quienes h4{
+    font-size:26px; font-weight:700; color:#666;margin-bottom:10px;
+}
+#quienes .texto{
+}
+
+#quienes .fin_parrafo{
+    margin-right: 40px;
+
+}
+#quienes .fin_parrafo{
+    margin-right: 40px;
+
+}
+
 #staff{
     padding-top: 10px;
 }
 #staff .texto{
     font-weight: bold;
 }
-
+#staff ul{
+    margin-top: 10px;
+    margin-bottom: 90px;
+}
 #staff li{
+    font-weight: bold;
     font-size: 15px;
-    line-height: 1.5;
-    color: #666;
-    list-style-type: disc;
-    list-style-position: inside;
+    color: #999;
+    float:left;
+    margin-right: 4px;
+}
+#imagen_quienes{
+    margin-left: 40px;
+    margin-top: 40px;
 }
 
 #posicion_anunciantes
 {
     margin-top: 20px;
-    padding-left: 20px;
     margin-bottom: 20px;
 }
 #tabla_anunciantes
 {
-    
+
 }
 #tabla_anunciantes h1
 {
@@ -579,7 +649,7 @@ input:focus {
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     border-left: 1px solid #ccc;
-    
+
 }
 #tabla_anunciantes strong{
     font-weight: bold;
