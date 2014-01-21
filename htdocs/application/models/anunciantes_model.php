@@ -61,7 +61,10 @@ class anunciantes_model extends CI_Model {
 
         $result = $query->result_array();
         if ($idanunciante != null) {
-            return $result[0];
+            if(isset($result[0]))
+                return $result[0];
+            else
+                return false;
         }
 
         return $result;

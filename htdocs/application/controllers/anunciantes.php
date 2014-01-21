@@ -27,10 +27,14 @@ class anunciantes extends MY_Controller {
         $this->load->library('common');
     }
 
-    public function view($idanunciante = 0) {
+    public function view($idanunciantes = 0) {
         $this->data['title'] = 'Revista Tiempo - Anunciantes';
-        $this->data['anunciantes'] = $this->anunciantes_model->anunciantes($idanunciante, array());
-        $this->load->template('/anunciantes/anunciantes.php', $this->data);
+        $this->data['anunciantes'] = $this->anunciantes_model->anunciantes($idanunciantes);
+        
+        if($idanunciantes == 0)
+            $this->load->template('/anunciantes/anunciantes.php', $this->data);
+        else 
+            $this->load->template('/anunciantes/anunciante.php', $this->data);
     }
 
     public function ajax_table($pagina = 1) {
@@ -55,7 +59,7 @@ class anunciantes extends MY_Controller {
 
         $this->data['idanunciantes'] = $idanunciante;
 
-        if (!isset($this->data['error_nota'])) {
+        if (!isset($this->data['error_anunciante'])) {
             $this->data['nombre_form'] = $anunciante['nombre'];
             $this->data['telefono_form'] = $anunciante['telefono'];
             $this->data['direccion_form'] = $anunciante['direccion'];
@@ -70,7 +74,7 @@ class anunciantes extends MY_Controller {
         $this->load->template("/anunciantes/editar.php", $this->data);
     }
 
-    public function editar_submit($idanunciante = 0){
+    public function editar_submit($idanunciante = 0) {
         if ($idanunciante == 0) {
             show_404();
             return;
@@ -82,18 +86,19 @@ class anunciantes extends MY_Controller {
         $anunciante = $this->anunciantes_model->anunciantes($idanunciante);
 
         $imagen_name = NULL;
-        if (!$this->input->post('eliminar') && $_FILES['imagen']['name'] == '') {
+        if (!$this->input->post('eliminar') && $_FILES['logo']['name'] == '') {
             $imagen_name = $anunciante['logo'];
         }
 
         $imagen = $this->validate($imagen_name);
         if ($imagen == false) {
+
             $this->cargar_editar($idanunciante);
             return;
         }
 
         $this->anunciantes_model->eliminar($idanunciante);
-        $idanunciante = $this->notas_model->nuevo_anunciante($idanunciante);
+        $idanunciante = $this->anunciantes_model->nuevo_anunciante($imagen['file_name']);
 
         if ($idanunciante > 0) {
             $this->data['redireccion'] = '/anunciantes/' . $idanunciante;
@@ -125,8 +130,8 @@ class anunciantes extends MY_Controller {
             return false;
         }
 
-        $logo['file_name'] = NULL;
-        if (!($_FILES['logo']['name'] == '')) {
+        $logo['file_name'] = $imagen_name;
+        if (!($_FILES['logo']['name'] == '' )) {
             $config['upload_path'] = './images/anunciantes/';
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = '500';
@@ -159,7 +164,7 @@ class anunciantes extends MY_Controller {
         return $logo;
     }
 
-    public function nuevo_anunciante($idnota = 0) {
+    public function nuevo_anunciante($idanunciante) {
         if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
             show_404();
             return;

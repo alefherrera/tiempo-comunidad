@@ -11,7 +11,7 @@
                 if (isset($error_anunciante))
                     echo $error_anunciante
                     ?></div>
-            <?php echo form_open_multipart('/anunciantes/editar/submit' . $idanunciantes) ?>
+            <?php echo form_open_multipart('/anunciantes/editar/submit/' . $idanunciantes) ?>
 
             <div>
                 <label for="titulo">Nombre *</label>

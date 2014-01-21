@@ -55,14 +55,14 @@ $route['nueva_nota'] = '/notas/nueva_nota';
 $route['notas/(:any)'] = '/notas/nota_view/$1';
 
 //Anunciantes
-$route['anunciantes'] = '/anunciantes/view';
 $route['anunciantes/submit'] = '/anunciantes/nuevo_anunciante';
+$route['anunciantes/editar/submit/(:any)'] = '/anunciantes/editar_submit/$1';
 $route['anunciantes/editar/(:any)'] = '/anunciantes/cargar_editar/$1';
-$route['anunciantes/editar/submit'] = '/anunciantes/editar_submit';
 $route['anunciantes/eliminar/(:any)'] = '/anunciantes/eliminar/$1';
 $route['anunciantes/ajax/rubros_table/(:any)'] = '/anunciantes/ajax_table/$1';
 $route['anunciantes/ajax/rubros_view/(:any)'] = '/anunciantes/ajax_rubros/$1';
-$route['anunciantes/(:any)'] = '/anunciantes/$1';
+$route['anunciantes/(:any)'] = '/anunciantes/view/$1';
+$route['anunciantes'] = '/anunciantes/view';
 
 //Revista
 $route['revista'] = 'revista/view';
