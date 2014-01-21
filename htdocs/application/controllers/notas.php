@@ -117,11 +117,9 @@ class notas extends MY_Controller {
             $this->cargar_editar($idnota);
             return;
         }
-
-        $this->notas_model->eliminar($idnota);
-        $idnota = $this->notas_model->nueva_nota($idnota, $imagen['file_name']);
-
+        $idnota = $this->notas_model->editar($idnota, $imagen['file_name'],$nota['fecha']);
         if ($idnota > 0) {
+            
             $this->data['redireccion'] = '/notas/' . $idnota;
             $this->load->template('/success.php', $this->data);
         }
@@ -156,7 +154,7 @@ class notas extends MY_Controller {
             $this->load->library('upload', $config);
             if (!$this->upload->do_upload('imagen')) {
                 $this->data['titulo_form'] = $this->input->post('titulo');
-                $this->data['bajada'] = $this->input->post('bajada');
+                $this->data['bajada_form'] = $this->input->post('bajada');
                 $this->data['contenido_form'] = $this->input->post('contenido');
                 $this->data['autor_form'] = $this->input->post('autor');
                 $this->data['error_nota'] = $this->upload->display_errors();
