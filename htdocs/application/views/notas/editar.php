@@ -4,14 +4,18 @@
     <div id="principal" class="float70">
         <p id="nueva">EDITAR NOTA</p>
         <div id="formulario" >
-            <?php echo form_open_multipart('/notas/editar_submit/'.$nota['idnota']) ?>
+            <div class="error"><?php
+                if (isset($error_nota))
+                    echo $error_nota
+                    ?></div>
+            <?php echo form_open_multipart('/notas/editar_submit/' . $idnota) ?>
             <div>
                 <label for="titulo">Titulo *</label>
             </div>
             <div>
                 <input type="text" name="titulo" maxlength="45" value="<?php
-                if (isset($nota))
-                    echo $nota['titulo'];
+                if (isset($titulo_form))
+                    echo $titulo_form;
                 ?>"/>
             </div>
             <div>
@@ -20,22 +24,22 @@
             <div>
                 <input type="file" name="imagen" size="45" />
             </div>
-            <?php if(isset($nota['imagen'])):?>
-            <div>
-                <img src="/images/notas/thumb/<?php echo $nota['imagen'] ?>"/>
-            </div>
-            <div>
-                <input type="checkbox" name="eliminar">
-                <label for="eliminar">Eliminar Imágen</label>
-            </div>
+            <?php if (isset($imagen_form)): ?>
+                <div>
+                    <img src="/images/anunciantes/<?php echo $imagen_form ?>"/>
+                </div>
+                <div>
+                    <input type="checkbox" name="eliminar">
+                    <label for="eliminar">Eliminar Imágen</label>
+                </div>
             <?php endif ?>
             <div>
                 <label for="ano">Autor (si no se completa el autor será "Anónimo")</label>
             </div>
             <div>
                 <input type="text" name="autor" maxlength="45" value="<?php
-                if (isset($nota))
-                    echo $nota['autor']
+                if (isset($autor_form))
+                    echo $autor_form
                     ?>"/>
             </div>
             <div>
@@ -43,8 +47,8 @@
             </div>
             <div>
                 <textarea name="bajada" maxlength="65000" rows="4"><?php
-                    if (isset($nota))
-                        echo $nota['bajada'];
+                    if (isset($bajada_form))
+                        echo $bajada_form;
                     ?></textarea>
             </div>
             <div>
@@ -52,8 +56,8 @@
             </div>
             <div>
                 <textarea name="contenido" maxlength="65000" rows="15"><?php
-                    if (isset($nota))
-                        echo $nota['contenido']
+                    if (isset($contenido_form))
+                        echo $contenido_form
                         ?></textarea>
             </div>
             <input id="botonconfrev" type="submit" onclick="return (window.confirm('¿Esta seguro que quiere editar esta nota?'))" value="Confirmar" />

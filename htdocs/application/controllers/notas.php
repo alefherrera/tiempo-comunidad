@@ -72,7 +72,6 @@ class notas extends MY_Controller {
     }
 
     public function cargar_editar($idnota = 0) {
-
         if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
             show_404();
         }
@@ -80,10 +79,20 @@ class notas extends MY_Controller {
             show_404();
         }
         $nota = $this->notas_model->nota($idnota);
+
         if (sizeof($nota) == 0 || $nota == false) {
             show_404();
         }
-        $this->data['nota'] = $nota;
+        $this->data['idnota'] = $idnota;
+
+        if (!isset($this->data['error_nota'])) {
+            $this->data['titulo_form'] = $nota['titulo'];
+            $this->data['autor_form'] = $nota['autor'];
+            $this->data['bajada_form'] = $nota['bajada'];
+            $this->data['contenido_form'] = $nota['contenido'];
+        }
+        $this->data['imagen_form'] = $nota['imagen'];
+
         $this->load->template('/notas/editar.php', $this->data);
     }
 
@@ -103,16 +112,25 @@ class notas extends MY_Controller {
             $imagen_name = $nota['imagen'];
         }
 
-        $this->notas_model->eliminar($idnota);
-        self::nueva_nota($idnota, $imagen_name);
-    }
-
-    public function nueva_nota($idnota = 0, $imagen_name = NULL) {
-        if (!($this->data['usuario']['idnivel'] <= Contribuidor) || $this->data['usuario'] == null) {
-            show_404();
+        $imagen = $this->validate($imagen_name);
+        if ($imagen == false) {
+            $this->cargar_editar($idnota);
             return;
         }
 
+        $this->notas_model->eliminar($idnota);
+        $idnota = $this->notas_model->nueva_nota($idnota, $imagen['file_name']);
+
+        if ($idnota > 0) {
+            $this->data['redireccion'] = '/notas/' . $idnota;
+            $this->load->template('/success.php', $this->data);
+        }
+        else
+            show_404();
+    }
+
+    //Devuelvo los datos de la imagen subida si todo ok, false si todo no ok
+    public function validate($imagen_name = NULL) {
         $this->load->library('form_validation');
 
         $this->form_validation->set_rules('titulo', "Titulo", 'required');
@@ -123,10 +141,9 @@ class notas extends MY_Controller {
             $this->data['bajada_form'] = $this->input->post('bajada');
             $this->data['contenido_form'] = $this->input->post('contenido');
             $this->data['autor_form'] = $this->input->post('autor');
-            $this->data['imagen'] = $_FILES['imagen']['name'];
+            $this->data['imagen_form'] = $_FILES['imagen']['name'];
             $this->data['error_nota'] = validation_errors();
-            $this->view();
-            return;
+            return false;
         }
         $imagen['file_name'] = $imagen_name;
         if ($_FILES['imagen']['name'] != '') {
@@ -143,8 +160,7 @@ class notas extends MY_Controller {
                 $this->data['contenido_form'] = $this->input->post('contenido');
                 $this->data['autor_form'] = $this->input->post('autor');
                 $this->data['error_nota'] = $this->upload->display_errors();
-                $this->view();
-                return;
+                return false;
             } else {
                 $imagen = $this->upload->data();
 
@@ -156,6 +172,21 @@ class notas extends MY_Controller {
                 $resize->resizeImage(214, 0);
                 $resize->saveImage('images/notas/thumb/' . $imagen['file_name']);
             }
+        }
+
+        return $imagen;
+    }
+
+    public function nueva_nota($idnota = 0) {
+        if (!($this->data['usuario']['idnivel'] <= Contribuidor) || $this->data['usuario'] == null) {
+            show_404();
+            return;
+        }
+
+        $imagen = $this->validate();
+        if ($imagen == false) {
+            $this->view();
+            return;
         }
 
         $idnota = $this->notas_model->nueva_nota($idnota, $imagen['file_name']);

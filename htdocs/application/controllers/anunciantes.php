@@ -27,10 +27,9 @@ class anunciantes extends MY_Controller {
         $this->load->library('common');
     }
 
-    public function view($rubros = array()) {
+    public function view($idanunciante = 0) {
         $this->data['title'] = 'Revista Tiempo - Anunciantes';
-        $this->data['rubros'] = $this->anunciantes_model->rubros();
-        $this->data['anunciantes'] = $this->anunciantes_model->anunciantes($rubros);
+        $this->data['anunciantes'] = $this->anunciantes_model->anunciantes($idanunciante, array());
         $this->load->template('/anunciantes/anunciantes.php', $this->data);
     }
 
@@ -45,31 +44,66 @@ class anunciantes extends MY_Controller {
             show_404();
             return;
         }
+        if ($idanunciante == 0) {
+            show_404();
+        }
         $anunciante = $this->anunciantes_model->anunciantes($idanunciante);
         if ($anunciante == null) {
             show_404();
             return;
         }
-        
-        $this->data['nombre_form'] = $anunciante['nombre'];
-        $this->data['telefono_form'] = $anunciante['telefono'];
-        $this->data['direccion_form'] = $anunciante['direccion'];
-        $this->data['mail_form'] = $anunciante['mail'];
-        $this->data['web_form'] = $anunciante['web'];
-        $this->data['rubros_form'] = htmlspecialchars(json_encode(explode("-", $anunciante['idrubros'])));
+
+        $this->data['idanunciantes'] = $idanunciante;
+
+        if (!isset($this->data['error_nota'])) {
+            $this->data['nombre_form'] = $anunciante['nombre'];
+            $this->data['telefono_form'] = $anunciante['telefono'];
+            $this->data['direccion_form'] = $anunciante['direccion'];
+            $this->data['mail_form'] = $anunciante['mail'];
+            $this->data['web_form'] = $anunciante['web'];
+            $this->data['rubros_form'] = htmlspecialchars(json_encode(explode("-", $anunciante['idrubros'])));
+            $this->data['descripcion_form'] = $anunciante['descripcion'];
+        }
+
         $this->data['logo_form'] = $anunciante['logo'];
-        $this->data['descripcion_form'] = $anunciante['descripcion'];
-        
+
         $this->load->template("/anunciantes/editar.php", $this->data);
     }
 
-    public function nuevo_anunciante($idnota = 0) {
+    public function editar_submit($idanunciante = 0){
+        if ($idanunciante == 0) {
+            show_404();
+            return;
+        }
         if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
             show_404();
             return;
         }
+        $anunciante = $this->anunciantes_model->anunciantes($idanunciante);
 
+        $imagen_name = NULL;
+        if (!$this->input->post('eliminar') && $_FILES['imagen']['name'] == '') {
+            $imagen_name = $anunciante['logo'];
+        }
 
+        $imagen = $this->validate($imagen_name);
+        if ($imagen == false) {
+            $this->cargar_editar($idanunciante);
+            return;
+        }
+
+        $this->anunciantes_model->eliminar($idanunciante);
+        $idanunciante = $this->notas_model->nuevo_anunciante($idanunciante);
+
+        if ($idanunciante > 0) {
+            $this->data['redireccion'] = '/anunciantes/' . $idanunciante;
+            $this->load->template('/success.php', $this->data);
+        }
+        else
+            show_404();
+    }
+
+    public function validate($imagen_name = NULL) {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('nombre', "Nombre", 'required');
         $this->form_validation->set_rules('direccion', "Dirección", 'required');
@@ -88,9 +122,7 @@ class anunciantes extends MY_Controller {
             $this->data['error_anunciante'] = validation_errors();
             if (count($rubros) <= 0)
                 $this->data['error_anunciante'] .= "El campo Rubro es requerido";
-
-            $this->view();
-            return;
+            return false;
         }
 
         $logo['file_name'] = NULL;
@@ -110,12 +142,11 @@ class anunciantes extends MY_Controller {
                 $this->data['web_form'] = $this->input->post('web');
                 $this->data['rubros_form'] = htmlspecialchars($rubros);
                 $this->data['error_anunciante'] = $this->upload->display_errors();
-                $this->view();
-                return;
+                return false;
             } else {
                 $logo = $this->upload->data();
 
-//Hago el Thumb
+                //Hago el Thumb
                 if (!file_exists('images/anunciantes/')) {
                     mkdir('images/anunciantes');
                 }
@@ -123,6 +154,21 @@ class anunciantes extends MY_Controller {
                 $resize->resizeImage(214, 0);
                 $resize->saveImage('images/anunciantes/' . $logo['file_name']);
             }
+        }
+
+        return $logo;
+    }
+
+    public function nuevo_anunciante($idnota = 0) {
+        if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
+            show_404();
+            return;
+        }
+        $logo = $this->validate();
+
+        if ($logo == false) {
+            $this->view();
+            return;
         }
 
         $idanunciante = $this->anunciantes_model->nuevo_anunciante($logo['file_name']);

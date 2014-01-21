@@ -62,6 +62,7 @@ $route['anunciantes/editar/submit'] = '/anunciantes/editar_submit';
 $route['anunciantes/eliminar/(:any)'] = '/anunciantes/eliminar/$1';
 $route['anunciantes/ajax/rubros_table/(:any)'] = '/anunciantes/ajax_table/$1';
 $route['anunciantes/ajax/rubros_view/(:any)'] = '/anunciantes/ajax_rubros/$1';
+$route['anunciantes/(:any)'] = '/anunciantes/$1';
 
 //Revista
 $route['revista'] = 'revista/view';

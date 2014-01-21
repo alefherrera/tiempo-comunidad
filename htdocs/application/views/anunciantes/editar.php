@@ -11,7 +11,7 @@
                 if (isset($error_anunciante))
                     echo $error_anunciante
                     ?></div>
-            <?php echo form_open_multipart('/anunciantes/editar/submit') ?>
+            <?php echo form_open_multipart('/anunciantes/editar/submit' . $idanunciantes) ?>
 
             <div>
                 <label for="titulo">Nombre *</label>
@@ -38,6 +38,15 @@
             <div>
                 <input type="file" name="logo" size="45" />
             </div>
+            <?php if (isset($logo_form)): ?>
+                <div>
+                    <img src="/images/notas/thumb/<?php echo $logo_form ?>"/>
+                </div>
+                <div>
+                    <input type="checkbox" name="eliminar">
+                    <label for="eliminar">Eliminar Imágen</label>
+                </div>
+            <?php endif ?>
             <div>
                 <label for="direccion">Dirección *</label>
             </div>
