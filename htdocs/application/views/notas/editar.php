@@ -26,7 +26,7 @@
             </div>
             <?php if (isset($imagen_form)): ?>
                 <div>
-                    <img src="/images/anunciantes/<?php echo $imagen_form ?>"/>
+                    <img src="/images/notas/thumb/<?php echo $imagen_form ?>"/>
                 </div>
                 <div>
                     <input type="checkbox" name="eliminar">

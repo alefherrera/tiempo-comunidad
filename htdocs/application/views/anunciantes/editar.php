@@ -40,7 +40,7 @@
             </div>
             <?php if (isset($logo_form)): ?>
                 <div>
-                    <img src="/images/notas/thumb/<?php echo $logo_form ?>"/>
+                    <img src="/images/anunciantes/<?php echo $logo_form ?>"/>
                 </div>
                 <div>
                     <input type="checkbox" name="eliminar">
