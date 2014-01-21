@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    $("#treeview_filtro").kendoTreeView({
+    $("#treeview").kendoTreeView({
         select: function(e) {
             e.preventDefault();
         }
@@ -25,7 +25,7 @@ $(document).ready(function() {
     });
 
     function getTree(result) {
-        $.get('/anunciantes/ajax/rubros_view/0', function(r) {
+        $.get('/anunciantes/ajax/rubros_view/19', function(r) {
             result(r);
         });
     }

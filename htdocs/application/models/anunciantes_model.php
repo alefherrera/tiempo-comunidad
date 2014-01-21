@@ -16,13 +16,18 @@ class anunciantes_model extends CI_Model {
         
     }
 
-    public function rubros($idpadre = -1) {
-        $this->db->select('idrubros, rubro');
+    public function rubros($idpadre = -1, $idanunciante = 0) {
+        $this->db->select('rubros.idrubros, rubro');
         $this->db->order_by('rubro', 'asc');
         if ($idpadre != -1) {
             $this->db->where('idpadre', $idpadre);
         }
+        if($idanunciante != 0){
+            $this->db->join("rubros_anunciantes", "rubros_anunciantes.idrubros = rubros.idrubros");
+            $this->db->where('idanunciantes', $idanunciante);
+        }
         $query = $this->db->get_where('rubros', array('activo' => true));
+
         return $query->result_array();
     }
 

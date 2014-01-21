@@ -33,7 +33,7 @@ class anunciantes extends MY_Controller {
         
         if($idanunciantes == 0)
             $this->load->template('/anunciantes/anunciantes.php', $this->data);
-        else 
+        else
             $this->load->template('/anunciantes/anunciante.php', $this->data);
     }
 
@@ -186,25 +186,23 @@ class anunciantes extends MY_Controller {
             show_404();
     }
 
-    public function ajax_rubros($idpadre = -1) {
+    public function ajax_rubros($idanunciante = 0) {
         $item_l = array();
-        $item_l = self::cargar_lista($item_l);
+        $item_l = self::cargar_lista($item_l, 0, $idanunciante);
 
         $array_final = json_encode($item_l);
         echo $array_final;
     }
 
-    public function cargar_lista($item_l, $idpadre = 0) {
-
-        $rubros = $this->anunciantes_model->rubros($idpadre);
-
+    public function cargar_lista($item_l, $idpadre = 0, $idanunciante = 0) {
+        $rubros = $this->anunciantes_model->rubros($idpadre, $idanunciante);
         foreach ($rubros as $row) {
             $item = new item_rubro();
             $item->id = $row['idrubros'];
             $item->text = $row['rubro'];
             $item->expanded = true;
             $item->spriteCssClass;
-            $item->items = self::cargar_lista($item->items, $row['idrubros']);
+            $item->items = self::cargar_lista($item->items, $row['idrubros'], $idanunciante);
 
             array_push($item_l, $item);
         }

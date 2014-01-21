@@ -1,5 +1,5 @@
 
-<script src="/scripts/anunciantes/treeview.js"></script>
+<script src="/scripts/anunciantes/anunciante.js"></script>
 <script src="/kendo_js/kendo.web.min.js"></script>
 
 <div class="contenido">
@@ -12,57 +12,57 @@
                 ?></div>
         <div>
             <h1><?php
-                if (isset($nombre_form))
-                    echo $nombre_form
+                if (isset($anunciantes['nombre']))
+                    echo $anunciantes['nombre'];
                     ?></h1>
         </div>
         <div>
             <div id="treeview"></div>
             <div id="rubros" style="visibility: hidden"><?php
-                if (isset($rubros_form))
-                    echo $rubros_form
+                if (isset($anunciantes['rubros']))
+                    echo $anunciantes['rubros'];
                     ?>"/>
             </div>
         </div>
-        <?php if (isset($direccion_form)): ?>
+        <?php if (isset($anunciantes['direccion'])): ?>
             <div>
                 <span>Dirección</span>
             </div>
             <div>
                 <span>
-                    <?php echo $direccion_form ?>
+                    <?php echo $anunciantes['direccion']?>
                 </span>
             </div>
         <?php endif ?>
-        <?php if (isset($telefono_form)): ?>
+        <?php if (isset($anunciantes['telefono'])): ?>
             <div>
                 <span>Teléfono</span>
             </div>
             <div>
                 <span>
-                    <?php echo $telefono_form ?>
+                    <?php echo $anunciantes['telefono'] ?>
                 </span>
             </div>
         <?php endif ?>
-        <?php if (isset($mail_form)): ?>
+        <?php if (isset($anunciantes['mail']) && $anunciantes['mail'] != ''): ?>
             <div>
                 <span>Mail</span>
             </div>
             <div>
                 <span>
                     <?php
-                    echo $mail_form
+                    echo $anunciantes['mail'];
                     ?>
                 </span>
             </div>
         <?php endif ?>
-        <?php if (isset($web_form)): ?>
+        <?php if (isset($anunciantes['web']) && $anunciantes['web']!= ''): ?>
             <div>
                 <span>Web</span>
             </div>
             <div>
                 <span>
-                    <?php echo $web_form ?>
+                    <?php echo $anunciantes['web'] ?>
                 </span>
             </div>
             <?php endif ?>
@@ -75,5 +75,4 @@
         </div>
     </div>
     <div class="clearboth"></div>
-</div>
 </div>
