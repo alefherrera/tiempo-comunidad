@@ -1,5 +1,8 @@
 
 $(document).ready(function() {
+    //Escondo los filtros hasta que carguen
+    $("#filtros").toggle();
+    $("#treeview").toggle();
 
     $("#treeview").kendoTreeView({
         checkboxes: {
@@ -10,42 +13,38 @@ $(document).ready(function() {
             nodo.trigger("click");
         }
     });
-    $("#treeview_filtro").kendoTreeView({
-        checkboxes: {
-        },
-        select: function(e) {
-            e.preventDefault();
-            nodo = $(e.node).find(":checkbox").eq(0);
-            nodo.trigger("click");
-            checked = nodo.prop("checked");
-            if (checked)
-            {
-                padre = $(e.node).closest('li').parent().closest('li').find(":checkbox").eq(0);
-                if (padre.prop("checked") === false)
-                    padre.trigger("click");
-            }
 
-            if (!checked)
-            {
-                $(e.node).find(":checkbox").each(function(index) {
-                    if ($(this).prop("checked") === true) {
-                        $(this).trigger("click");
-                    }
-                });
+    $(".treeview_filtros").each(function(index) {
+        $(this).kendoTreeView({
+            checkboxes: {
+                checkChildren: true
+            },
+            select: function(e) {
+                e.preventDefault();
+                nodo = $(e.node).find(":checkbox").eq(0);
+                nodo.trigger("click");
             }
-        }
+        });
     });
+
     //Timeout y filtro de tabla
     var actualizar_click = function(e) {
-        treeview = $("#treeview_filtro").data("kendoTreeView");
         checkedNodes = [];
-        checkedNodeIds(treeview.dataSource.view(), checkedNodes);
+        for (var i = 0; i < treeview_filtros.length; i++) {
+            checkedNodeIds(treeview_filtros[i].dataSource.view(), checkedNodes);
+        }
+        if (checkedNodes.length === 0) {
+            //Si no selecciona nada
+            alert("Seleccione al menos un filtro");
+            return;
+        }
         nodos = JSON.stringify(checkedNodes);
         $("#actualizar").css("background", "red");
+        $("#actualizar").unbind("click");
         setTimeout(function() {
             $("#actualizar").click(actualizar_click);
             $("#actualizar").css("background", "green");
-        }, 2000);
+        }, 1000);
         $("#posicion_anunciantes").css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0.0}, 500,
                 function() {
                     $.ajax({
@@ -53,26 +52,64 @@ $(document).ready(function() {
                         url: "/anunciantes/ajax/rubros_table/1",
                         data: {rubros: nodos},
                         success: function(respuesta) {
-                            $("#posicion_anunciantes").html(respuesta);
-                            $("#posicion_anunciantes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
-                            masonry();
+                            $("#posicion_anunciantes").html(respuesta).imagesLoaded().then(function() {
+                                $("#posicion_anunciantes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
+                                masonry();
+
+                            }
+                            );
                         }
                     });
                 });
     };
     $("#actualizar").click(actualizar_click);
+
     getTree(function(tree) {
         treeview = $("#treeview").data("kendoTreeView");
-        treeview_filtro = $("#treeview_filtro").data("kendoTreeView");
-        parsedTree = $.parseJSON(tree);
-        if (treeview !== null)
+
+        treeview_filtros = new Array();
+        $(".treeview_filtros").each(function(index) {
+            treeview_filtros.push($(this).data("kendoTreeView"));
+        });
+        var parsedTree = $.parseJSON(tree);
+
+        var cant_col = ($(".treeview_filtros")).length;
+        var total = parsedTree.length;
+        var resto = (parsedTree.length % cant_col);
+        var t_filtros = new Array();
+
+        //Calculo cuantas van por columna y separo
+        var cuantos_voy = 0;
+        for (var i = 0; i < cant_col; i++) {
+            if (resto > 0) {
+                var end = (((total) / cant_col | 0) + 1);
+                t_filtros[i] = parsedTree.slice(cuantos_voy, cuantos_voy + end);
+                cuantos_voy += end;
+                resto--;
+            } else {
+                var end = ((total) / cant_col | 0);
+                t_filtros[i] = parsedTree.slice(cuantos_voy, cuantos_voy + end);
+                cuantos_voy += end;
+            }
+        }
+
+        if (treeview !== null) {
             treeview.setDataSource(new kendo.data.HierarchicalDataSource({
                 data: parsedTree
             }));
-        if (treeview_filtro !== null)
-            treeview_filtro.setDataSource(new kendo.data.HierarchicalDataSource({
-                data: parsedTree
-            }));
+            treeview.collapse(".k-item");
+        }
+
+        if (treeview_filtros !== null) {
+            for (var i = 0; i < treeview_filtros.length; i++) {
+                treeview_filtros[i].setDataSource(new kendo.data.HierarchicalDataSource({
+                    data: t_filtros[i]
+                }));
+                treeview_filtros[i].collapse(".k-item");
+            }
+        }
+
+
         rubros_hidden = $("#rubros");
         if (rubros_hidden.val() !== "" && rubros_hidden.val() !== undefined) {
             var nodos = $.parseJSON($("#rubros").val());
@@ -87,10 +124,21 @@ $(document).ready(function() {
         $("#treeview :checkbox").click(function() {
             marcarNodos($(this));
         });
-        $("#treeview_filtro :checkbox").click(function() {
-            marcarNodos($(this));
-        });
+
+        //Vuelvo a mostrar todos los filtros
+        setTimeout(function() {
+            $("#filtros").toggle("");
+        }, 750);
+        $("#treeview").toggle();
+
     });
+
+    function getTree(result) {
+        $.get('/anunciantes/ajax/rubros_view/0', function(r) {
+            result(r);
+        });
+    }
+
     function marcarNodos(nodoc) {
         checked = nodoc.prop("checked");
         if (checked)
@@ -111,32 +159,22 @@ $(document).ready(function() {
     }
 
     $("#botonconfrev").click(function() {
-        treeview = $("#treeview").data("kendoTreeView");
         checkedNodes = [];
         checkedNodeIds(treeview.dataSource.view(), checkedNodes);
         nodos = JSON.stringify(checkedNodes);
         $("#rubros").val(nodos);
-        console.log(nodos);
     });
-    function getTree(result) {
-        $.get('/anunciantes/ajax/rubros_view/0', function(r) {
-            result(r);
-        });
-    }
 
-// function that gathers IDs of checked nodes
+
+    //Agarro todos los nodos marcados
     function checkedNodeIds(nodes, checkedNodes) {
-
         for (var i = 0; i < nodes.length; i++) {
             if (nodes[i].checked) {
                 checkedNodes.push(nodes[i].id);
             }
-
             if (nodes[i].hasChildren) {
                 checkedNodeIds(nodes[i].children.view(), checkedNodes);
             }
         }
     }
-
-
 });

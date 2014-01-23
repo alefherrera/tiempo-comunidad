@@ -82,6 +82,7 @@ class anunciantes_model extends CI_Model {
         $insert['telefono'] = $this->input->post('telefono');
         $insert['mail'] = $this->input->post('mail');
         $insert['web'] = $this->input->post('web');
+        $insert['descripcion'] = $this->input->post('descripcion');
         $rubros = json_decode($this->input->post('rubros'));
 
         $this->db->trans_start();

@@ -14,14 +14,14 @@
             <h1><?php
                 if (isset($anunciantes['nombre']))
                     echo $anunciantes['nombre'];
-                    ?></h1>
+                ?></h1>
         </div>
         <div>
             <div id="treeview"></div>
             <div id="rubros" style="visibility: hidden"><?php
                 if (isset($anunciantes['rubros']))
                     echo $anunciantes['rubros'];
-                    ?>"/>
+                ?>"/>
             </div>
         </div>
         <?php if (isset($anunciantes['direccion'])): ?>
@@ -30,7 +30,7 @@
             </div>
             <div>
                 <span>
-                    <?php echo $anunciantes['direccion']?>
+                    <?php echo $anunciantes['direccion'] ?>
                 </span>
             </div>
         <?php endif ?>
@@ -56,7 +56,7 @@
                 </span>
             </div>
         <?php endif ?>
-        <?php if (isset($anunciantes['web']) && $anunciantes['web']!= ''): ?>
+        <?php if (isset($anunciantes['web']) && $anunciantes['web'] != ''): ?>
             <div>
                 <span>Web</span>
             </div>
@@ -65,7 +65,15 @@
                     <?php echo $anunciantes['web'] ?>
                 </span>
             </div>
-            <?php endif ?>
+        <?php endif ?>
+        <?php if (isset($anunciantes['descripcion']) && $anunciantes['descripcion'] != ''): ?>
+            <div>
+                <label for="descripcion">Descripción</label>
+            </div>
+            <div>
+                <?php echo nl2br($anunciantes['descripcion']) ?>
+            </div>
+        <?php endif ?>
     </div>
     <div id="aside" class="float30" class="floatleft">
         <div class="anexo">

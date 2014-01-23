@@ -122,6 +122,7 @@ class anunciantes extends MY_Controller {
             $this->data['direccion_form'] = $this->input->post('direccion');
             $this->data['mail_form'] = $this->input->post('mail');
             $this->data['web_form'] = $this->input->post('web');
+            $this->data['descripcion_form'] = $this->input->post('descripcion');
             $this->data['rubros_form'] = htmlspecialchars(json_encode($rubros));
             $this->data['logo'] = $_FILES['logo']['name'];
             $this->data['error_anunciante'] = validation_errors();
@@ -145,7 +146,8 @@ class anunciantes extends MY_Controller {
                 $this->data['direccion_form'] = $this->input->post('direccion');
                 $this->data['mail_form'] = $this->input->post('mail');
                 $this->data['web_form'] = $this->input->post('web');
-                $this->data['rubros_form'] = htmlspecialchars($rubros);
+                $this->data['descripcion_form'] = $this->input->post('descripcion');
+                $this->data['rubros_form'] = htmlspecialchars(json_encode($rubros));
                 $this->data['error_anunciante'] = $this->upload->display_errors();
                 return false;
             } else {
@@ -164,7 +166,7 @@ class anunciantes extends MY_Controller {
         return $logo;
     }
 
-    public function nuevo_anunciante($idanunciante) {
+    public function nuevo_anunciante() {
         if (!($this->data['usuario']['idnivel'] <= Administrador) || $this->data['usuario'] == null) {
             show_404();
             return;

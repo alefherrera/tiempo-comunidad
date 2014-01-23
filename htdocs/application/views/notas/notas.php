@@ -45,7 +45,7 @@
                     <label for="bajada">Bajada *</label>
                 </div>
                 <div>
-                    <textarea name="bajada" maxlength="65000" rows="4"><?php
+                    <textarea name="bajada" maxlength="500" rows="4"><?php
                         if (isset($bajada_form))
                             echo $bajada_form
                             ?></textarea>

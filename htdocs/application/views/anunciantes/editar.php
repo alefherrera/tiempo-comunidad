@@ -83,6 +83,15 @@
                     echo $web_form
                     ?>"/>
             </div>
+            <div>
+                <label for="descripcion">Descripción</label>
+            </div>
+            <div>
+                <textarea type="text" rows="15" name="descripcion" maxlength="10000"><?php
+                    if (isset($descripcion_form))
+                        echo $descripcion_form
+                        ?></textarea>
+            </div>
             <input id="botonconfrev" type="submit" onclick="return (window.confirm('¿Esta seguro que quiere agregar este anunciante?'));" value="Confirmar" />
             </form>
             <div>
