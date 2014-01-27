@@ -30,11 +30,14 @@ class anunciantes extends MY_Controller {
     public function view($idanunciantes = 0) {
         $this->data['title'] = 'Revista Tiempo - Anunciantes';
         $this->data['anunciantes'] = $this->anunciantes_model->anunciantes($idanunciantes);
-        
-        if($idanunciantes == 0)
+
+        if ($idanunciantes == 0) {
             $this->load->template('/anunciantes/anunciantes.php', $this->data);
-        else
+        } elseif ($this->data['anunciantes'] != false) {
             $this->load->template('/anunciantes/anunciante.php', $this->data);
+        } else {
+            show_404();
+        }
     }
 
     public function ajax_table($pagina = 1) {
