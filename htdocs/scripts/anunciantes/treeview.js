@@ -39,11 +39,13 @@ $(document).ready(function() {
             return;
         }
         nodos = JSON.stringify(checkedNodes);
-        $("#actualizar").css("background", "red");
+        $("#actualizar").css("background", "#333");
+        $("#actualizar").text("Buscando");
         $("#actualizar").unbind("click");
         setTimeout(function() {
             $("#actualizar").click(actualizar_click);
-            $("#actualizar").css("background", "green");
+            $("#actualizar").css("background", "#a6a6a6");
+            $("#actualizar").text("Buscar");
         }, 1000);
         $("#posicion_anunciantes").css({opacity: 1.0, visibility: "visible"}).animate({opacity: 0.0}, 500,
                 function() {
@@ -52,14 +54,11 @@ $(document).ready(function() {
                         url: "/anunciantes/ajax/rubros_table/1",
                         data: {rubros: nodos},
                         success: function(respuesta) {
-                            $("#posicion_anunciantes").html(respuesta).imagesLoaded().then(function() {
+                            $("#posicion_anunciantes").html(respuesta);
                                 $("#posicion_anunciantes").css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0});
                                 masonry();
-
-                            }
-                            );
-                        }
-                    });
+                        }});
+                        
                 });
     };
     $("#actualizar").click(actualizar_click);

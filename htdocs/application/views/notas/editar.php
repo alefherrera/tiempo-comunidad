@@ -1,7 +1,7 @@
 
 
 <div class="contenido">
-    <div id="principal" class="float70">
+    <div id="principal" class="col_contenido">
         <p id="nueva">EDITAR NOTA</p>
         <div id="formulario" >
             <div class="error"><?php
@@ -66,7 +66,7 @@
                 Los campos con "*" son obligatorios.
             </div>
         </div>
-        <div class="float30">
+        <div class="col_anunciantes">
         </div>
         <div class="clearboth"></div>
     </div>

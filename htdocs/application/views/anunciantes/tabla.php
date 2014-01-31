@@ -1,27 +1,39 @@
 
 <div id="tabla_anunciantes">
-    <div id="tabla">
+    <div id="tabla" class="pattern-white">
 
         <?php
         foreach ($anunciantes as $anunciante) :
             ?>
             <div>
                 <div class="anunciante">
-                    <span><?php echo $anunciante['rubro'] ?></span>
+                    <span class="rubro"><?php echo $anunciante['rubro'] ?></span>
                     <ul>
                         <?php if ($usuario != false && $usuario['idnivel'] <= Administrador): ?>
                             <div>
-                                <a class="floatright icono eliminar" href="/anunciantes/eliminar/<?php echo $anunciante['idanunciantes'] ?>" onclick="return (window.confirm('¿Esta seguro que quiere eliminar esta nota?'));">
-                                    Eliminar
-                                </a>
+                                
                             </div>
                         <?php endif ?>
                         <li>
-                            Nombre: <strong><?php echo $anunciante['nombre'] ?></strong>
+                            <a class="title float60" href="/anunciantes/<?php echo $anunciante['idanunciantes'] ?>"><strong><?php echo $anunciante['nombre'] ?></strong></a>
+                            <ul class="floatright">
+                                    <li class="floatleft">
+                                        <a class="icono editar" href="/anunciantes/editar/<?php echo $anunciante['idanunciantes'] ?>">
+                                            Editar
+                                        </a>
+                                    </li>
+                                    <li class="floatleft">
+                                        <a class="icono eliminar" href="/anunciantes/eliminar/<?php echo $anunciante['idanunciantes'] ?>" onclick="return (window.confirm('¿Esta seguro que quiere eliminar esta nota?'));">
+                                            Eliminar
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <div class="clearboth"></div>
                         </li>
                         <?php if ($anunciante['logo'] != ''): ?>
                             <li>
-                                <img src="/images/anunciantes/<?php echo $anunciante['logo'] ?>">
+                                <img src="/images/anunciantes/<?php echo $anunciante['logo'] ?>" width="174px" height="98px">
                             </li>
                         <?php endif ?>
                         <li>
@@ -46,5 +58,6 @@
 
         <?php endforeach ?>
     </div>
+    <div class="clearboth"></div>
 
 </div>

@@ -161,7 +161,7 @@ class anunciantes extends MY_Controller {
                     mkdir('images/anunciantes');
                 }
                 $resize = new Resize('images/anunciantes/' . $logo['file_name']);
-                $resize->resizeImage(214, 0);
+                $resize->resizeImage(251, 0);
                 $resize->saveImage('images/anunciantes/' . $logo['file_name']);
             }
         }

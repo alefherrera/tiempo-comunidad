@@ -15,7 +15,7 @@ function masonry() {
         isFitWidth: true,
         isRTL: false
     });
-    $(".anunciante").each(function() {
-        $(this).css({left: $(this).position().left - 1 - Math.ceil($(this).position().left / 256)});
-    });
+    //$(".anunciante").each(function() {
+        //$(this).css({left: $(this).position().left - 1 - Math.ceil($(this).position().left / 176)});
+    //});
 }

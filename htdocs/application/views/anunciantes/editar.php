@@ -3,7 +3,7 @@
 <script src="/kendo_js/kendo.web.min.js"></script>
 
 <div class="contenido">
-    <div id="principal" class="float70">
+    <div id="principal" class="col_contenido">
 
         <div id="formulario" >
             <div class="clearboth"></div>
@@ -98,7 +98,7 @@
                 Los campos con "*" son obligatorios.
             </div>
         </div>
-        <div id="aside" class="float30" class="floatleft">
+        <div id="aside" class="col_anunciantes">
             <div class="anexo">
             </div>
 

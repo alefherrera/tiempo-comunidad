@@ -81,10 +81,10 @@
                         <div class="clearboth"></div>
 
                         <?php if ($nota['imagen'] != '' && file_exists('images/notas/thumb/' . $nota['imagen'])) { ?>
-                            <img src='/images/notas/thumb/<?php echo $nota['imagen']; ?>' width="214px;" height="
+                            <img src='/images/notas/thumb/<?php echo $nota['imagen']; ?>' width="251px;" height="
                             <?php
                             $size = getimagesize('images/notas/thumb/' . $nota['imagen']);
-                            echo 214 * $size[1] / $size[0] . 'px';
+                            echo 251 * $size[1] / $size[0] . 'px';
                             ?>"/>
 
                         <?php } ?>

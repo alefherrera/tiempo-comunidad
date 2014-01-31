@@ -6,7 +6,7 @@
 ?>
 
 <div class="contenido">
-    <div class="float70">
+    <div class="col_contenido">
         <div class="float40">
             <div id="columnadirector">
                 <div class="contacto">
@@ -48,7 +48,7 @@
         </div>
         <div class="clearboth"></div>
     </div>
-    <div class="float30">
+    <div class="col_anunciantes">
     </div>
     <div class="clearboth"></div>
 

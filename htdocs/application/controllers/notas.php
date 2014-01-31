@@ -167,7 +167,7 @@ class notas extends MY_Controller {
                     mkdir('images/notas/thumb');
                 }
                 $resize = new Resize('images/notas/' . $imagen['file_name']);
-                $resize->resizeImage(214, 0);
+                $resize->resizeImage(251, 0);
                 $resize->saveImage('images/notas/thumb/' . $imagen['file_name']);
             }
         }

@@ -1,5 +1,7 @@
 @charset "utf-8";
-/* CSS Document */
+
+
+/* VARIOS */
 
 * { border:0; margin:0; padding:0;
     font-family:Arial, Helvetica; font-size: 14px; font-weight:300; letter-spacing:0.00em;
@@ -7,7 +9,42 @@
 .error{
     color:red;
 }
-body{background-color:#fff;}
+h5{
+    font-size:18px; font-weight:700; color:#db9079;
+}
+h4{
+    font-size:36px; font-weight:700; color:#666;margin-bottom:10px;
+}
+.border{
+    border-right: 1px solid #ccc;
+    padding-right: 45px;
+}
+.floatleft{float:left;}
+.floatright{float:right;}
+.clearboth{clear:both;}
+
+.float70, .float30, .float60, .float40{
+    float:left;
+}
+.float70{
+    width:70%;
+}
+.float30{
+    width:30%;
+}
+.float60{
+    width:60%;
+}
+.float40{
+    width:40%;
+}
+
+.k-checkbox{
+    margin-top: 7px;
+}
+/* VARIOS FIN */
+
+/* HEADER */
 #header{background-color: #f9f9f9;}
 #header .contenido{
     border-bottom: 1px solid #ccc;
@@ -26,6 +63,10 @@ body{background-color:#fff;}
 #botonera nav ul li a.borizq{border-left:1px solid #CCC;}
 
 
+#botonera .seleccionado{
+    background-color:#C32127;
+    color:white;
+}
 
 #top{ background-color: #333; }
 #topinfo{width:1100px; margin: 0 auto; background-color: #333; }
@@ -33,36 +74,57 @@ body{background-color:#fff;}
 #topinfo h5 span{font-size: 12px; font-weight: 700;}
 
 .paddingsociales{float:left; padding-right: 10px; padding-top: 6px; }
+/* HEADER FIN */
 
-
+/* FORMATO GENERAL */
+body{background-color:#fff;}
 
 #wrapper{margin:auto; background-color:#fff; width:1100px;
          border-left:1px solid #CCC;;border-right:1px solid #CCC;;
 }
 
+#body{ width:1100px; min-height: 2000px; }
 
-#footer{background-color:#C32127;  width:1100px;}
+#body .contenido{
+    padding-top: 45px;
+    padding-bottom: 15px;
+}
+#tiempomes{ width:1100px;}
+
+.col_contenido{
+    float: left;
+    width:80%;
+}
+.col_anunciantes{
+    float: left;
+    width: 20%;
+}
+.col_anunciantes .anunciante{
+    background-color: #ccc;
+    width: 190px;
+    height: 120px;
+    margin-bottom: 24px;
+    margin-left: 15px;
+}
+/* FORMATO GENERAL FIN */
+
+/* FOOTER */
+#footer{background-color:#343432;  width:1100px;}
 #footer .contenido{ padding-bottom: 30px;
                     border-top: 1px solid #ccc;
 
 }
 
-.floatleft{float:left;}
-.floatright{float:right;}
-.clearboth{clear:both;}
+.copyright{color:#fff; font-size:11px ;clear:both; display:block; margin-left:20px; margin-top:10px;}
+
+#botonerafooter nav ul{margin-left: 15px;}
+#botonerafooter nav ul li{float:left; margin-right:10px; margin-top:20px;}
+#botonerafooter nav ul li a{display:block;font-family:"Open Sans Condensed"; font-weight:700;color:#FFF;  font-size:12px; padding-left:5px; padding-right:5px; padding-top:4px; padding-bottom:5px;}
+#botonerafooter nav ul li a:hover{text-decoration: underline;}
+.padding0 {padding:0;}
+/* FOOTER FIN */
 
 
-
-
-
-
-#body{ width:1100px; min-height: 2000px; }
-
-#body .contenido{
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-#tiempomes{ width:1100px;}
 
 
 /*LOGIN*/
@@ -141,7 +203,6 @@ fieldset#loginBody {
     margin:0 0 6px 0;
 }
 
-/* Default Input */
 #loginForm input{
     font-size:14px;
 }
@@ -151,7 +212,6 @@ fieldset#loginBody {
     padding:8px 8px;
 }
 
-/* Sign In Button */
 #loginForm .loginButton {
     color:white;
     padding:7px 10px 8px 10px;
@@ -172,9 +232,11 @@ fieldset#loginBody {
 input:focus {
     outline:none;
 }
+/* LOGIN FIN */
 
-/* Fin Login */
 
+
+/* EDICION IMPRESA */
 #izquierda_revista {
     float:left;
     width:269px;
@@ -195,7 +257,7 @@ input:focus {
 
 }
 #raya_parrafo{
-    margin-top: 20px;
+    margin-top: 10px;
     margin-bottom: 10px;
     border-bottom: #e5e5e5 solid 1px;
 }
@@ -206,16 +268,15 @@ input:focus {
 }
 .imgprueba{width:239px; height:342px; display: block;}
 
-/* contenido formulario */
 
 #nueva{margin-left: 30px; font-weight:700; margin-bottom: 15px;
        margin-top: 20px;}
 #nueva:hover{text-decoration: underline;cursor:pointer;}
 .contenido div#formulario{display: block; margin-left: 30px; margin-bottom: 20px;}
-.contenido input{margin-bottom: 15px;
-                 -moz-border-radius: 3px;
-                 border-radius: 3px;
-                 border: 1px solid #ccc;}
+.contenido form input{margin-bottom: 15px;
+                      -moz-border-radius: 3px;
+                      border-radius: 3px;
+                      border: 1px solid #ccc;}
 #inputtitulo{width:400px;}
 
 .contenido select{margin-bottom: 15px;
@@ -249,7 +310,6 @@ input:focus {
 }
 #botonconfrev:hover{background-color: #999; cursor: pointer;}
 
-/* contenido formulario end */
 
 #revpdf{
     height: 20px;
@@ -326,44 +386,19 @@ input:focus {
          color: #C32127;
          background-position: right center;
 }
-#leermas:hover{color:#999;}
-/* contenido1 formulario FIN */
-
-/* footer inicio */
-
-.copyright{color:#fff; font-size:11px ;clear:both; display:block; margin-left:20px; margin-top:10px;}
-
-#botonerafooter nav ul{margin-left: 15px;}
-#botonerafooter nav ul li{float:left; margin-right:10px; margin-top:20px;}
-#botonerafooter nav ul li a{display:block;font-family:"Open Sans Condensed"; font-weight:700;color:#FFF;  font-size:12px; padding-left:5px; padding-right:5px; padding-top:4px; padding-bottom:5px;}
-#botonerafooter nav ul li a:hover{text-decoration: underline;}
-.padding0 {padding:0;}
+/* EDICION IMPRESA FIN */
 
 
-/* footer FIN */
 
-.float70, .float30, .float60, .float40{
-    float:left;
+
+/*NOTAS*/
+#notas h4, #notas h5{
+    padding-left: 20px;
 }
-.float70{
-    width:70%;
-}
-.float30{
-    width:30%;
-}
-.float60{
-    width:60%;
-}
-.float40{
-    width:40%;
-}
-
-/*TABLA*/
 #posicion_notas{
 }
 #posicion_notas .nota_formato li{
     padding-left: 5px;
-
 }
 
 
@@ -411,52 +446,59 @@ input:focus {
 #numeros .selected a{
     color: white;
 }
-
-
-.nota{
-    width:255px;
+#notas .nota{
+    width:293px;
     background-color: white;
 }
 
-.nota_formato{
+#notas .nota_formato{
     padding: 20px;
     padding-top: 10px;
 
 
 }
-.nota .nota_formato{
+#notas .nota .nota_formato{
     border-right: solid 1px #ccc;
     border-left: solid 1px #ccc;
     border-bottom: solid 1px #ccc;
 
 }
 
-.nota_formato *{
+#notas .nota_formato *{
 
 }
 
-.nota_formato h5{
+#notas .nota_formato h5{
+    padding-left: 0px;
     font-size:10px;
     padding-bottom: 2px;
+    color: #666;
 }
-.nota_formato h5 span{
+#notas .nota_formato h5 span{
+
     font-weight:bold;
     font-size:10px;
 }
 
-.nota_formato h1{
+#notas .nota_formato h1{
     font-weight: bold;
     color: #C32127;
     font-size: 24px;
     font-family:'open sans condensed';
     line-height: 25px;
     background-repeat: no-repeat;
-    background-image: url(/images/index/ele.png);
+    background-image: url(/images/varios/l_chica.png);
     background-position: right bottom;
 }
-.nota_formato p{
+#notas .nota_formato p{
     margin-top: 8px;
 }
+
+/* FIN NOTAS */
+
+
+/* NOTA VIEW */
+
 
 #nota .nota_formato .bajada{
     font-family: "Arial", sans-serif;
@@ -464,8 +506,11 @@ input:focus {
     font-size: 17px; 
     line-height: 1.2;
     color: #666;
-
 }
+#nota .nota_formato h1{
+    background-image: url(/images/varios/l_grande.png);
+}
+
 #compartir{
     padding-left:20px;
     padding-top:20px;
@@ -492,7 +537,7 @@ input:focus {
     font-size: 15px;
     line-height: 1.5;
     color: #666;
-    padding-bottom: 35px;
+    padding-bottom: 15px;
 }
 .nota_formato img{
     margin-top: 8px;
@@ -509,7 +554,9 @@ input:focus {
 #nota .nota_formato h5{
     padding-bottom: 10px;
 }
+/* FIN NOTA VIEW */
 
+/* CONTACTO */
 #columnadirector, #columnaconsultenos{
     margin-top:30px;
 }
@@ -565,21 +612,15 @@ input:focus {
 .contactoinfo img{
     vertical-align: middle;
 }
+/* FIN CONTACTO */
 
-#botonera .seleccionado{
-    background-color:#C32127;
-    color:white;
-}
+
+/* QUIENES SOMOS */
 #quienes{
     float:left;
-    width: 45%;
+    width: 55%;    
 }
-#quienes h5{
-    font-size:18px; font-weight:700; color:#C32127;
-}
-#quienes h4{
-    font-size:26px; font-weight:700; color:#666;margin-bottom:10px;
-}
+
 #quienes .texto{
 }
 
@@ -589,8 +630,48 @@ input:focus {
 }
 #quienes .fin_parrafo{
     margin-right: 40px;
+}
+#quienes #links li{
+    float:left;
+    margin: 7px;
 
 }
+#quienes #links .contacto{
+    background-image: url(/images/index/flechita_contacto.png);
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 35px;
+
+}
+#quienes #links li a{
+    color: #616161;
+    font-size: 23px;
+    font-family: "open sans condensed";
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: #c9c8c6;
+}
+
+#quienes #links li #facebook,#quienes #links li #twitter{
+    padding: 0px;
+    float:left;
+    width: 34px;
+    height: 34px;
+    background-repeat: no-repeat;
+}
+#quienes #links li #facebook{
+    background-image: url(/images/index/facebook_medianoOff.png);
+    margin-right: 7px;
+}
+
+#quienes #links li #twitter{
+    background-image: url(/images/index/twitter_medianoOff.png);
+}
+#quienes #links li a:hover{
+    color: #616161;
+    background-color: #e3e2e0;
+}
+
 
 #staff{
     padding-top: 10px;
@@ -610,10 +691,53 @@ input:focus {
     margin-right: 4px;
 }
 #imagen_quienes{
-    margin-left: 40px;
-    margin-top: 40px;
+    float: left;
+    width: 45%;
+}
+#imagen_quienes .imagen{
+    background-image: url(/images/index/23anos.png); 
+    width:300px; height:400px;
+    margin: auto;
+}
+/* FIN QUIENES SOMOS */
+
+/* ANUNCIANTES */
+#anunciantes{
+    
+}
+#anunciantes .border{
+    padding: 0px;
 }
 
+#anunciantes h5, #anunciantes h4{
+    padding-left: 20px;
+}
+#anunciantes h4{
+    margin-bottom: 0px;
+}
+#anunciantes h5{
+    font-size: 12px;
+    margin-bottom: 20px;
+}
+#anunciantes #filtros{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#anunciantes #filtros #actualizar{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    background-color: #a6a6a6;
+    color:white;
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    
+}
 #posicion_anunciantes
 {
     margin-top: 20px;
@@ -621,7 +745,6 @@ input:focus {
 }
 #tabla_anunciantes
 {
-
 }
 #tabla_anunciantes h1
 {
@@ -636,8 +759,25 @@ input:focus {
 {
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-left: 18px;
-    margin-right: 16px;
+}
+#tabla_anunciantes li
+{
+    font-size: 12px;
+    color: #999;
+}
+#tabla_anunciantes li a
+{
+    font-size: 12px;
+}
+#tabla_anunciantes .title{
+    margin-bottom: 7px;
+    color: #333;
+}
+#tabla_anunciantes .rubro{
+    font-size: 10px;
+    display:inline-block;
+    line-height: 10px;
+    color: #db9079;
 }
 #tabla_anunciantes #tabla
 {
@@ -645,17 +785,51 @@ input:focus {
     margin-bottom: 40px;
 }
 #tabla_anunciantes .anunciante{
-    width: 248px;
-    border-right: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    border-left: 1px solid #ccc;
-
+    width: 174px;
+    padding: 20px;
+    float: left;
+    border-bottom: solid 1px #ccc;
+    background-color: white;
+}
+#tabla_anunciantes .anunciante li{
 }
 #tabla_anunciantes strong{
     font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 #tabla_anunciantes img{
     margin-top: 5px;
     margin-bottom:5px;
 }
+/* FIN ANUNCIANTES */
+
+/* ANUNCIANTE */
+#anunciante{
+    padding-left: 20px;
+}
+#anunciante h5{
+    font-size: 14px;
+    color: #48b6af;
+    
+}
+#imagen_anunciante{
+    margin-top: 20px;
+    float:left;
+}
+#medio_anunciante{
+    padding-left: 40px;
+    float: left;
+    width: 60%;
+}
+#medio_anunciante h1{
+    font-weight: bold;
+    font-size: 26px;
+    color: #333;
+}
+#medio_anunciante .k-in{
+    color:#48b6af;
+}
+
+/* FIN ANUNCIANTE */
