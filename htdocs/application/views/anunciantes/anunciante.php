@@ -13,79 +13,68 @@
                         <img src="/images/anunciantes/<?php echo $anunciantes['logo'] ?>" width="214px">
                     </li>
                 <?php endif ?>
+
             </div>
 
-            <div id="medio_anunciante">
-                <div class="clearboth"></div>
-                <div class="error"><?php
-                    if (isset($error_anunciante))
-                        echo $error_anunciante
-                        ?></div>
-                <div>
+
+            <div class="float70">
+                <div id="medio_anunciante">
+                    <div class="error"><?php
+                        if (isset($error_anunciante))
+                            echo $error_anunciante
+                            ?></div>
                     <h1><?php
                         if (isset($anunciantes['nombre']))
                             echo $anunciantes['nombre'];
                         ?></h1>
-                </div>
-                <div>
-                    <div id="treeview"></div>
-                    <div id="rubros" style="visibility: hidden"><?php
-                        if (isset($anunciantes['rubros']))
-                            echo $anunciantes['rubros'];
-                        ?>"/>
+                    <div>
+                        <div id="rubros" style="visibility: hidden"><?php
+                            if (isset($anunciantes['rubros']))
+                                echo $anunciantes['rubros'];
+                            ?>
+                        </div>
                     </div>
                 </div>
                 <div id="puntos_anunciante">
                     <?php if (isset($anunciantes['direccion'])): ?>
                         <div>
-                            <span>Dirección</span>
+                            <span>Dirección</span><br/>
+                            <?php echo $anunciantes['direccion'] ?>
                         </div>
-                        <div>
-                            <span>
-                                <?php echo $anunciantes['direccion'] ?>
-                            </span>
-                        </div>
+
                     <?php endif ?>
                     <?php if (isset($anunciantes['telefono'])): ?>
                         <div>
-                            <span>Teléfono</span>
+                            <span>Teléfono</span><br/>
+                            <?php echo $anunciantes['telefono'] ?>
                         </div>
-                        <div>
-                            <span>
-                                <?php echo $anunciantes['telefono'] ?>
-                            </span>
-                        </div>
+
                     <?php endif ?>
                     <?php if (isset($anunciantes['mail']) && $anunciantes['mail'] != ''): ?>
                         <div>
-                            <span>Mail</span>
+                            <span>Mail</span><br/>
+                            <a href="mailto:<?php echo $anunciantes['mail'] ?>"><?php echo $anunciantes['mail'] ?></a>
                         </div>
-                        <div>
-                            <span>
-                                <?php
-                                echo $anunciantes['mail'];
-                                ?>
-                            </span>
-                        </div>
+
                     <?php endif ?>
                     <?php if (isset($anunciantes['web']) && $anunciantes['web'] != ''): ?>
                         <div>
-                            <span>Web</span>
+                            <span>Web</span><br/>
+                            <a href="<?php echo $anunciantes['web'] ?>"><?php echo $anunciantes['web'] ?></a>
                         </div>
-                        <div>
-                            <span>
-                                <?php echo $anunciantes['web'] ?>
-                            </span>
-                        </div>
+
                     <?php endif ?>
                     <?php if (isset($anunciantes['descripcion']) && $anunciantes['descripcion'] != ''): ?>
                         <div>
-                            <span>Descripción</span>
-                        </div>
-                        <div>
+                            <span>Descripción</span><br/>
                             <?php echo nl2br($anunciantes['descripcion']) ?>
                         </div>
+
                     <?php endif ?>
+                </div>
+                <div id="tags_anunciante">
+                    <div id="treeview"></div>
+
                 </div>
             </div>
             <div class="clearboth"></div>

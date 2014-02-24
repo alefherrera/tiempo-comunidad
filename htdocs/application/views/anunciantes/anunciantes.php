@@ -16,7 +16,6 @@
                     <div class="floatleft treeview_filtros"></div>
                     <div class="floatleft treeview_filtros"></div>
                     <div class="floatleft treeview_filtros"></div>
-                    <div class="floatleft treeview_filtros"></div>
                     <div class="clearboth"></div>
                     <div id="actualizar">Buscar</div>
                                                         <div id="raya_parrafo"></div>
