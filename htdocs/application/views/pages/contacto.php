@@ -35,7 +35,7 @@
                     
                     <ul class="floatleft contactoinfo">
                         <li>
-                            <img src="/images/varios/tel.gif"/>(011) 4756 - 0385
+                            <img src="/images/varios/tel.gif"/>(011) 1564301873
                         </li>
                         <li >
                             <img src="/images/varios/mail.gif"/>info@revistatiempo.com.ar

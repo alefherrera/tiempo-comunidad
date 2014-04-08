@@ -114,12 +114,13 @@ class anunciantes extends MY_Controller {
     public function validate($imagen_name = NULL) {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('nombre', "Nombre", 'required');
-        $this->form_validation->set_rules('direccion', "Dirección", 'required');
-        $this->form_validation->set_rules('telefono', "Teléfono", 'required');
         $rubros = json_decode($this->input->post('rubros'));
+        $error_completar = false;
+        if($this->input->post('telefono') == '' && $this->input->post('direccion') == ''){
+            $error_completar = true;
+        }
 
-
-        if ($this->form_validation->run() === FALSE || count($rubros) <= 0) {
+        if ($this->form_validation->run() === FALSE || count($rubros) <= 0 || $error_completar) {
             $this->data['nombre_form'] = $this->input->post('nombre');
             $this->data['telefono_form'] = $this->input->post('telefono');
             $this->data['direccion_form'] = $this->input->post('direccion');
@@ -129,8 +130,12 @@ class anunciantes extends MY_Controller {
             $this->data['rubros_form'] = htmlspecialchars(json_encode($rubros));
             $this->data['logo'] = $_FILES['logo']['name'];
             $this->data['error_anunciante'] = validation_errors();
-            if (count($rubros) <= 0)
+            if(count($rubros) <= 0){
                 $this->data['error_anunciante'] .= "El campo Rubro es requerido";
+            }elseif($error_completar){
+                $this->data['error_anunciante'] .= "Debe completar Dirección o Teléfono";
+            }
+                
             return false;
         }
 
@@ -187,8 +192,9 @@ class anunciantes extends MY_Controller {
             $this->data['redireccion'] = '/anunciantes/';
             $this->load->template('/success.php', $this->data);
         }
-        else
+        else{
             show_404();
+        }
     }
 
     public function ajax_rubros($idanunciante = 0) {

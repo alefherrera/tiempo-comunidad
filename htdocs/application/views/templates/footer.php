@@ -16,8 +16,8 @@
                 </ul></nav>
         </div>
 
-        <div class="copyright">Director: Anabela Tamagna | info@revistatiempo.com.ar | Tel/Fax: (011) 4756 - 0385 | 
-            <strong> <?php echo date('Y'); ?></strong>	© Ramon Labs </div>
+        <div class="copyright">Director: Anabela Tamagna | info@revistatiempo.com.ar | Tel/Fax: (011) 1564301873 | 
+            <?php echo date('Y'); ?> © Ramon Labs </div>
     </div>
 </div>
 

@@ -13,13 +13,16 @@
     <div id="quienes">
         <div class="border">
             <div>
-                <h5>sobre</h5>
+                <h5>Sobre</h5>
                 <h4>Tiempo de la Comunidad</h4>
                 <p class="texto">
-                    Somos una publicación mensual, de distribución gratuita, con una trayectoria periodística de más de 22 años en la zona norte.
-                    Contamos con una tirada de 3.000 ejemplares y nuestra área de distribución abarca los barrios de Munro, Carapachay, Villa Adelina, Villa Ballester y Florida.
-                    Nuestra labor siempre estuvo vinculada con la de aquellas organizaciones sin fines de lucro, entidades barriales, e instituciones colectivas. Desde nuestras páginas privilegiamos brindar el espacio para organizaciones y establecimientos  de bien público.
-                    Desde el punto de vista periodístico, nos caracterizamos por informar y opinar siempre desde un mismo punto de vista ideológico: la mejor manera de hacer mejor al mundo es a través del trabajo mancomunado, solidario y desinteresado. Posicionados en ese lugar, analizamos las situaciones cotidianas y las damos a conocer.
+                    Somos una publicación mensual, de distribución gratuita, con 23 años de trayectoria 
+                    periodística. Nuestra labor se vincula con organizaciones sin fines de lucro, entidades 
+                    barriales, e instituciones colectivas así como también con los vecinos de la zona que 
+                    trabajan diariamente para mejorar nuestros barrios. Desde el punto de vista periodístico, 
+                    nos caracterizamos por informar y opinar siempre desde un mismo punto de vista ideológico: 
+                    el mundo mejora con el trabajo mancomunado, solidario y desinteresado. Posicionados en ese 
+                    lugar, nos presentamos todos los meses ante nuestros lectores.
                 </p>
                 <div id="raya_parrafo"></div>
             </div>
