@@ -12,10 +12,11 @@
                 <?php echo nl2br($nota['bajada']) ?>
             </p>
             <?php if ($nota['imagen'] != ''): ?>
-                <img style="width:100%" src="/images/notas/<?php echo $nota['imagen'] ?>"/>
+            
+                <img class="<?php echo $nota['img_class']?>" src="/images/notas/<?php echo $nota['imagen'] ?>"/>
             <?php endif ?>
 
-            <p class="texto">
+            <p class="texto texto_wrap">
                 <?php echo nl2br($nota['contenido']) ?>
             </p>
         </div>

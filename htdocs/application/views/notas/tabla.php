@@ -54,7 +54,7 @@
             <div class='clearboth'></div>
         </div>
         <div class="clearboth"></div>
-        <div id="tabla" class="pattern-white">
+        <div id="tabla">
             <?php
             foreach ($notas as $nota) {
                 ?>
@@ -76,19 +76,20 @@
                             </div>
                         <?php endif ?>
                         <div class="clearboth"></div>
-                        <a href='/notas/<?php echo $nota['idnota'] ?>'><h1><?php echo $nota['titulo']; ?></h1></a>
+                        
 
-                        <div class="clearboth"></div>
+                        
 
                         <?php if ($nota['imagen'] != '' && file_exists('images/notas/thumb/' . $nota['imagen'])) { ?>
-                            <img src='/images/notas/thumb/<?php echo $nota['imagen']; ?>' width="251px;" height="
+                            <img class="img_chica" src='/images/notas/thumb/<?php echo $nota['imagen']; ?>' width="200px;" height="
                             <?php
                             $size = getimagesize('images/notas/thumb/' . $nota['imagen']);
-                            echo 251 * $size[1] / $size[0] . 'px';
+                            echo 200 * $size[1] / $size[0] . 'px';
                             ?>"/>
-
                         <?php } ?>
+                        <a href='/notas/<?php echo $nota['idnota'] ?>'><h1><?php echo $nota['titulo']; ?></h1></a>
                         <p><?php echo nl2br($nota['bajada']) ?></p>
+                        <div class="clearboth"></div>
                     </div>
                 </div>
             <?php } ?>

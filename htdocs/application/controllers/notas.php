@@ -60,8 +60,21 @@ class notas extends MY_Controller {
             return;
         }
 
+        //Seteo el estilo que tiene que tener la imagen de acuerdo a su ancho y alto
+        $img_class = '';
+        if ($nota['imagen'] ==! NULL) {
+            $size = getimagesize('images/notas/' . $nota['imagen']);
+
+            if ($size[0] <= $size[1]) {//Ancho menor que alto
+                $img_class = 'img_chica';
+            } else
+                $img_class = 'img_grande';
+        }
+
         $this->data['title'] = $nota['titulo'];
         $this->data['nota'] = $nota;
+        $this->data['nota']['img_class'] = $img_class;
+
         $this->load->template('/notas/nota.php', $this->data);
     }
 
@@ -117,13 +130,12 @@ class notas extends MY_Controller {
             $this->cargar_editar($idnota);
             return;
         }
-        $idnota = $this->notas_model->editar($idnota, $imagen['file_name'],$nota['fecha']);
+        $idnota = $this->notas_model->editar($idnota, $imagen['file_name'], $nota['fecha']);
         if ($idnota > 0) {
-            
+
             $this->data['redireccion'] = '/notas/' . $idnota;
             $this->load->template('/success.php', $this->data);
-        }
-        else
+        } else
             show_404();
     }
 
@@ -192,8 +204,7 @@ class notas extends MY_Controller {
         if ($idnota > 0) {
             $this->data['redireccion'] = '/notas/' . $idnota;
             $this->load->template('/success.php', $this->data);
-        }
-        else
+        } else
             show_404();
     }
 

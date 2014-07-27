@@ -25,7 +25,7 @@ $(document).ready(function() {
     });
 
     function getTree(result) {
-        $.get('/anunciantes/ajax/rubros_view/19', function(r) {
+        $.get('/anunciantes/ajax/rubros_view/' + window.location.pathname.split("/")[2], function(r) {
             result(r);
         });
     }

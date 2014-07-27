@@ -55,6 +55,8 @@ class anunciantes extends MY_Controller {
             show_404();
         }
         $anunciante = $this->anunciantes_model->anunciantes($idanunciante);
+        $especial = $this->anunciantes_model->especiales($idanunciante);
+
         if ($anunciante == null) {
             show_404();
             return;
@@ -70,9 +72,16 @@ class anunciantes extends MY_Controller {
             $this->data['web_form'] = $anunciante['web'];
             $this->data['rubros_form'] = htmlspecialchars(json_encode(explode("-", $anunciante['idrubros'])));
             $this->data['descripcion_form'] = $anunciante['descripcion'];
+            if ($especial != null) {
+                $this->data['especial_form'] = $especial['link'];
+                $this->data['link_form'] = $especial['link'];
+            }
         }
 
         $this->data['logo_form'] = $anunciante['logo'];
+        $this->data['logo_especial_form'] = $especial['imagen'];
+
+
 
         $this->load->template("/anunciantes/editar.php", $this->data);
     }
@@ -86,28 +95,35 @@ class anunciantes extends MY_Controller {
             show_404();
             return;
         }
+
         $anunciante = $this->anunciantes_model->anunciantes($idanunciante);
 
         $imagen_name = NULL;
         if (!$this->input->post('eliminar') && $_FILES['logo']['name'] == '') {
             $imagen_name = $anunciante['logo'];
         }
-
         $imagen = $this->validate($imagen_name);
-        if ($imagen == false) {
+        $imagen_especial = $this->validate_especial();
 
+        if ($imagen == false) {
+            $this->cargar_editar($idanunciante);
+            return;
+        }
+        if ($imagen_especial == false) {
             $this->cargar_editar($idanunciante);
             return;
         }
 
+
         $this->anunciantes_model->eliminar($idanunciante);
-        $idanunciante = $this->anunciantes_model->nuevo_anunciante($imagen['file_name']);
+        $idanunciante = $this->anunciantes_model->nuevo_anunciante($imagen['file_name'], $imagen_especial['file_name']);
+
+
 
         if ($idanunciante > 0) {
             $this->data['redireccion'] = '/anunciantes/' . $idanunciante;
             $this->load->template('/success.php', $this->data);
-        }
-        else
+        } else
             show_404();
     }
 
@@ -116,7 +132,7 @@ class anunciantes extends MY_Controller {
         $this->form_validation->set_rules('nombre', "Nombre", 'required');
         $rubros = json_decode($this->input->post('rubros'));
         $error_completar = false;
-        if($this->input->post('telefono') == '' && $this->input->post('direccion') == ''){
+        if ($this->input->post('telefono') == '' && $this->input->post('direccion') == '') {
             $error_completar = true;
         }
 
@@ -127,15 +143,23 @@ class anunciantes extends MY_Controller {
             $this->data['mail_form'] = $this->input->post('mail');
             $this->data['web_form'] = $this->input->post('web');
             $this->data['descripcion_form'] = $this->input->post('descripcion');
+
+
+            $this->data['descripcion_form'] = $this->input->post('descripcion');
             $this->data['rubros_form'] = htmlspecialchars(json_encode($rubros));
             $this->data['logo'] = $_FILES['logo']['name'];
             $this->data['error_anunciante'] = validation_errors();
-            if(count($rubros) <= 0){
+            if (count($rubros) <= 0) {
                 $this->data['error_anunciante'] .= "El campo Rubro es requerido";
-            }elseif($error_completar){
+            } elseif ($error_completar) {
                 $this->data['error_anunciante'] .= "Debe completar Dirección o Teléfono";
             }
-                
+
+            //Para cargar el especial
+            if ($this->input->post('especial') != null && $this->input->post('especial') == true) {
+                $this->data['especial_form'] = true;
+                $this->data['link_form'] = $this->input->post('link');
+            }
             return false;
         }
 
@@ -145,6 +169,7 @@ class anunciantes extends MY_Controller {
             $config['allowed_types'] = 'gif|jpg|png';
             $config['max_size'] = '500';
             $config['remove_spaces'] = TRUE;
+            $config['encrypt_name'] = TRUE;
 
             $this->load->helper('file');
             $this->load->library('upload', $config);
@@ -171,7 +196,30 @@ class anunciantes extends MY_Controller {
             }
         }
 
+
         return $logo;
+    }
+
+    public function validate_especial() {
+        $logo_especial['file_name'] = '';
+        if (!($_FILES['logo_especial']['name'] == '' )) {
+            $config['upload_path'] = './images/anunciantes/especiales/';
+            $config['allowed_types'] = 'gif|jpg|png';
+            $config['max_size'] = '500';
+            $config['remove_spaces'] = TRUE;
+            $config['encrypt_name'] = TRUE;
+
+            $this->load->helper('file');
+            $this->load->library('upload');
+            $this->upload->initialize($config);
+            if (!$this->upload->do_upload('logo_especial')) {
+                $this->data['error_especial'] = $this->upload->display_errors();
+                return false;
+            }
+            $logo_especial = $this->upload->data();
+        }
+
+        return $logo_especial;
     }
 
     public function nuevo_anunciante() {
@@ -191,8 +239,7 @@ class anunciantes extends MY_Controller {
         if ($idanunciante > 0) {
             $this->data['redireccion'] = '/anunciantes/';
             $this->load->template('/success.php', $this->data);
-        }
-        else{
+        } else {
             show_404();
         }
     }

@@ -5,8 +5,6 @@
 
     <div id="principal" class="col_contenido">
         <div id="notas">
-            <h4>Selección de Notas</h4>
-
             <div id="posicion_notas">
 
             </div>

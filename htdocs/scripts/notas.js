@@ -10,7 +10,7 @@ function cargar_notas(pagina, result)
 $(function() {
     crear_tabla(location.href);
     window.onresize = function() {
-        masonry();
+        //masonry();
     };
 
 });
@@ -28,8 +28,15 @@ function masonry() {
             isFitWidth: true,
             isRTL: false
         });
+        
         $(".nota").each(function() {
-            $(this).css({left: $(this).position().left - 1 - Math.ceil($(this).position().left / 256)});
+            $(this).css({left: $(this).position().left - 1});
+            if(Math.ceil($(this).position().left / 293) == 2){
+                $(this).css({left: $(this).position().left - 1});
+            }
+        });
+        $(".nota").each(function() {
+            $(this).css({left: $(this).position().left - 1});
         });
         $("#tabla").width($("#tabla").width() - 3);
     }
@@ -54,6 +61,6 @@ function crear_tabla(url)
     cargar_notas(pagina, function(respuesta) {
         $("#posicion_notas").html(respuesta);
         set_trigger();
-        masonry();
+        //masonry();
     });
 }

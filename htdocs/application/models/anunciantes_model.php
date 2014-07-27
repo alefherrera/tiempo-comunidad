@@ -22,7 +22,7 @@ class anunciantes_model extends CI_Model {
         if ($idpadre != -1) {
             $this->db->where('idpadre', $idpadre);
         }
-        if($idanunciante != 0){
+        if ($idanunciante != 0) {
             $this->db->join("rubros_anunciantes", "rubros_anunciantes.idrubros = rubros.idrubros");
             $this->db->where('idanunciantes', $idanunciante);
         }
@@ -66,7 +66,7 @@ class anunciantes_model extends CI_Model {
 
         $result = $query->result_array();
         if ($idanunciante != null) {
-            if(isset($result[0]))
+            if (isset($result[0]))
                 return $result[0];
             else
                 return false;
@@ -75,7 +75,31 @@ class anunciantes_model extends CI_Model {
         return $result;
     }
 
-    public function nuevo_anunciante($logo) {
+    public function especiales($idanunciante = null) {
+        $this->db->select("anunciantes_especiales.idanunciantes_especiales, 
+            idanunciantes, 
+            link, 
+            imagen
+            ", false);
+
+        if ($idanunciante != null) {
+            $this->db->where("anunciantes_especiales.idanunciantes", $idanunciante);
+        }
+
+        $query = $this->db->get_where('anunciantes_especiales', array('anunciantes_especiales.activo' => true));
+
+        $result = $query->result_array();
+        if ($idanunciante != null) {
+            if (isset($result[0]))
+                return $result[0];
+            else
+                return false;
+        }
+
+        return $result;
+    }
+
+    public function nuevo_anunciante($logo, $logo_especial = null) {
         $insert['logo'] = $logo;
         $insert['nombre'] = $this->input->post('nombre');
         $insert['direccion'] = $this->input->post('direccion');
@@ -96,7 +120,24 @@ class anunciantes_model extends CI_Model {
             $insert['idrubros'] = $rubro;
             $this->db->insert('rubros_anunciantes', $insert);
         }
-
+        
+        $insert = array();
+        
+        if($this->input->post('especial') != null && $this->input->post('especial') == true){
+            $insert['idanunciantes'] = $anunciante;
+            $insert['link'] = '/anunciantes/' + $anunciante;
+            if($this->input->post('link') != ''){
+                $insert['link'] = $this->input->post('link');
+            }
+            
+            //SI NO LO ENCUENTRO EN ESPECIALES TENGO QUE BUSCARLO EN ANUNCIANTES
+            $insert['imagen'] = $logo;
+            if($logo_especial != ''){
+                $insert['imagen'] = $logo_especial;
+            }
+            
+            $this->db->insert('anunciantes_especiales', $insert);
+        }
         $this->db->trans_complete();
 
         return $anunciante;
@@ -109,6 +150,17 @@ class anunciantes_model extends CI_Model {
 
         $this->db->where('idanunciantes', $idanunciantes);
         $this->db->update('anunciantes', $data);
+        
+        $this->eliminar_especial($idanunciantes);
+    }
+
+    public function eliminar_especial($idanunciantes) {
+        $data = array(
+            'activo' => false
+        );
+
+        $this->db->where('idanunciantes', $idanunciantes);
+        $this->db->update('anunciantes_especiales', $data);
     }
 
 }

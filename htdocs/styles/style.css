@@ -5,7 +5,10 @@
 
 * { border:0; margin:0; padding:0;
     font-family:Arial, Helvetica; font-size: 14px; font-weight:300; letter-spacing:0.00em;
-    list-style:none; text-decoration:none;}/* CSS Document */
+    list-style:none; text-decoration:none;
+    word-wrap: break-word;
+}/* CSS Document */
+    
 .error{
     color:red;
 }
@@ -244,9 +247,7 @@ input:focus {
 #rayas{
     padding:15px; margin-top: 30px; height:342px;
 }
-.pattern-white{
-    background-image: url(/images/index/pattern-white.png);
-}
+
 
 .fin_parrafo{
     background-image: url(/images/index/raya_fin.png);
@@ -285,7 +286,7 @@ input:focus {
                   border: 1px solid #ccc;
 
 }
-.contenido textarea{margin-bottom: 15px; width: 500px; 
+.contenido textarea{margin-bottom: 15px; width: 400px; 
                     -moz-border-radius: 3px;
                     border-radius: 3px;
                     border: 1px solid #ccc;    
@@ -400,7 +401,9 @@ input:focus {
 #posicion_notas .nota_formato li{
     padding-left: 5px;
 }
-
+#tabla_notas{
+    width: 80%;
+}
 
 .icono{
     width: 18px;
@@ -447,7 +450,6 @@ input:focus {
     color: white;
 }
 #notas .nota{
-    width:293px;
     background-color: white;
 }
 
@@ -459,7 +461,6 @@ input:focus {
 }
 #notas .nota .nota_formato{
     border-right: solid 1px #ccc;
-    border-left: solid 1px #ccc;
     border-bottom: solid 1px #ccc;
 
 }
@@ -489,6 +490,9 @@ input:focus {
     background-repeat: no-repeat;
     background-image: url(/images/varios/l_chica.png);
     background-position: right bottom;
+}
+#notas .nota_formato h1:hover{
+    text-decoration: underline;
 }
 #notas .nota_formato p{
     margin-top: 8px;
@@ -565,6 +569,18 @@ input:focus {
     padding-bottom: 10px;
     color: #666;
     font-size: 12px;
+}
+.img_chica{
+    float:left;
+    margin-right: 10px;
+}
+#nota .img_chica{
+    margin-right: 30px;
+}
+#nota .img_grande{
+    width:100%;
+}
+#nota .texto_wrap{
 }
 /* FIN NOTA VIEW */
 /* UTILES */
@@ -825,7 +841,11 @@ input:focus {
 }
 #tabla_anunciantes li a
 {
-    font-size: 12px;
+    font-weight: bold;
+    font-size: 14px;
+}
+#tabla_anunciantes li a:hover{
+    text-decoration: underline;
 }
 #tabla_anunciantes .title{
     margin-bottom: 7px;
@@ -861,6 +881,9 @@ input:focus {
     margin-top: 5px;
     margin-bottom:5px;
 }
+
+
+
 /* FIN ANUNCIANTES */
 
 /* ANUNCIANTE */
